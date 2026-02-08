@@ -1,0 +1,40 @@
+{
+  "name": "@kesbyte-digital/capacitor-image-gallery",
+  "version": "0.0.0",
+  "description": "Capacitor Image Gallery Plugin - Binary Distribution",
+  "main": "dist/plugin.cjs.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "unpkg": "dist/plugin.js",
+  "files": [
+    "ios/Frameworks/ImageGallery.xcframework",
+    "android/libs/*.aar",
+    "dist/",
+    "CapacitorImageGallery.podspec",
+    "Package.swift"
+  ],
+  "author": "KesByte Digital <contact@kesbyte.digital>",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KesByte-Digital/capacitor-image-gallery-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KesByte-Digital/capacitor-image-gallery-plugin/issues"
+  },
+  "homepage": "https://github.com/KesByte-Digital/capacitor-image-gallery-plugin#readme",
+  "keywords": [
+    "capacitor",
+    "plugin",
+    "gallery",
+    "images",
+    "photos",
+    "exif",
+    "location",
+    "ios",
+    "android"
+  ],
+  "peerDependencies": {
+    "@capacitor/core": "^8.0.0"
+  }
+}
