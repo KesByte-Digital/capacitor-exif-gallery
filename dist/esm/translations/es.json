@@ -1,0 +1,20 @@
+{
+    "galleryTitle": "Seleccionar imágenes",
+    "selectButton": "Seleccionar",
+    "cancelButton": "Cancelar",
+    "selectAllButton": "Seleccionar todo",
+    "deselectAllButton": "Deseleccionar todo",
+    "selectionCounter": "{count} de {total} seleccionados",
+    "confirmButton": "Confirmar",
+    "filterDialogTitle": "Opciones de filtro",
+    "radiusLabel": "Radio",
+    "startDateLabel": "Fecha de inicio",
+    "endDateLabel": "Fecha de fin",
+    "loadingMessage": "Cargando imágenes...",
+    "emptyMessage": "No se encontraron imágenes",
+    "errorMessage": "Ocurrió un error",
+    "retryButton": "Reintentar",
+    "initializationError": "Plugin no inicializado. Llame primero a initialize().",
+    "permissionError": "Permiso denegado. Por favor, conceda acceso a su biblioteca de fotos.",
+    "filterError": "Parámetros de filtro inválidos. Por favor, verifique su configuración."
+}

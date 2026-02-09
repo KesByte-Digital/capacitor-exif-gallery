@@ -1,0 +1,20 @@
+{
+    "galleryTitle": "Bilder auswählen",
+    "selectButton": "Auswählen",
+    "cancelButton": "Abbrechen",
+    "selectAllButton": "Alle auswählen",
+    "deselectAllButton": "Alle abwählen",
+    "selectionCounter": "{count} von {total} ausgewählt",
+    "confirmButton": "Bestätigen",
+    "filterDialogTitle": "Filter-Optionen",
+    "radiusLabel": "Radius",
+    "startDateLabel": "Startdatum",
+    "endDateLabel": "Enddatum",
+    "loadingMessage": "Bilder werden geladen...",
+    "emptyMessage": "Keine Bilder gefunden",
+    "errorMessage": "Ein Fehler ist aufgetreten",
+    "retryButton": "Erneut versuchen",
+    "initializationError": "Plugin nicht initialisiert. Rufen Sie zuerst initialize() auf.",
+    "permissionError": "Berechtigung verweigert. Bitte gewähren Sie Zugriff auf Ihre Fotobibliothek.",
+    "filterError": "Ungültige Filter-Parameter. Bitte überprüfen Sie Ihre Konfiguration."
+}

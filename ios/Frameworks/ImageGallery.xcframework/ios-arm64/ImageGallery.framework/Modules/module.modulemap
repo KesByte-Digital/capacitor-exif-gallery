@@ -1,0 +1,4 @@
+framework module ImageGallery {
+  header "ImageGallery-Swift.h"
+  requires objc
+}

@@ -1,0 +1,20 @@
+{
+    "galleryTitle": "Select Images",
+    "selectButton": "Select",
+    "cancelButton": "Cancel",
+    "selectAllButton": "Select All",
+    "deselectAllButton": "Deselect All",
+    "selectionCounter": "{count} of {total} selected",
+    "confirmButton": "Confirm",
+    "filterDialogTitle": "Filter Options",
+    "radiusLabel": "Radius",
+    "startDateLabel": "Start Date",
+    "endDateLabel": "End Date",
+    "loadingMessage": "Loading images...",
+    "emptyMessage": "No images found",
+    "errorMessage": "An error occurred",
+    "retryButton": "Retry",
+    "initializationError": "Plugin not initialized. Call initialize() first.",
+    "permissionError": "Permission denied. Please grant access to your photo library.",
+    "filterError": "Invalid filter parameters. Please check your configuration."
+}

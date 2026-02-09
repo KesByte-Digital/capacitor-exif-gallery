@@ -1,0 +1,20 @@
+{
+    "galleryTitle": "Sélectionner des images",
+    "selectButton": "Sélectionner",
+    "cancelButton": "Annuler",
+    "selectAllButton": "Tout sélectionner",
+    "deselectAllButton": "Tout désélectionner",
+    "selectionCounter": "{count} sur {total} sélectionnés",
+    "confirmButton": "Confirmer",
+    "filterDialogTitle": "Options de filtre",
+    "radiusLabel": "Rayon",
+    "startDateLabel": "Date de début",
+    "endDateLabel": "Date de fin",
+    "loadingMessage": "Chargement des images...",
+    "emptyMessage": "Aucune image trouvée",
+    "errorMessage": "Une erreur s'est produite",
+    "retryButton": "Réessayer",
+    "initializationError": "Plugin non initialisé. Appelez d'abord initialize().",
+    "permissionError": "Permission refusée. Veuillez autoriser l'accès à votre photothèque.",
+    "filterError": "Paramètres de filtre invalides. Veuillez vérifier votre configuration."
+}

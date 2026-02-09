@@ -1,0 +1,2763 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "ImageGallery",
+    "printedName": "ImageGallery",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "CommonCrypto",
+        "printedName": "CommonCrypto",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "CryptoKit",
+        "printedName": "CryptoKit",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "Security",
+        "printedName": "Security",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SecurityHelper",
+        "printedName": "SecurityHelper",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "assemblePublicKey",
+            "printedName": "assemblePublicKey()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:12ImageGallery14SecurityHelperO17assemblePublicKeySSyFZ",
+            "mangledName": "$s12ImageGallery14SecurityHelperO17assemblePublicKeySSyFZ",
+            "moduleName": "ImageGallery",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "verifySignature",
+            "printedName": "verifySignature(payload:signature:publicKey:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:12ImageGallery14SecurityHelperO15verifySignature7payload9signature9publicKeySbSS_S2StFZ",
+            "mangledName": "$s12ImageGallery14SecurityHelperO15verifySignature7payload9signature9publicKeySbSS_S2StFZ",
+            "moduleName": "ImageGallery",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "verifyIntegrity",
+            "printedName": "verifyIntegrity()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:12ImageGallery14SecurityHelperO15verifyIntegritySbyFZ",
+            "mangledName": "$s12ImageGallery14SecurityHelperO15verifyIntegritySbyFZ",
+            "moduleName": "ImageGallery",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:12ImageGallery14SecurityHelperO",
+        "mangledName": "$s12ImageGallery14SecurityHelperO",
+        "moduleName": "ImageGallery",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "LicenseError",
+        "printedName": "LicenseError",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "missingLicense",
+            "printedName": "missingLicense",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ImageGallery.LicenseError.Type) -> ImageGallery.LicenseError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LicenseError",
+                    "printedName": "ImageGallery.LicenseError",
+                    "usr": "s:12ImageGallery12LicenseErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ImageGallery.LicenseError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LicenseError",
+                        "printedName": "ImageGallery.LicenseError",
+                        "usr": "s:12ImageGallery12LicenseErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:12ImageGallery12LicenseErrorO07missingC0yA2CmF",
+            "mangledName": "$s12ImageGallery12LicenseErrorO07missingC0yA2CmF",
+            "moduleName": "ImageGallery",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "invalidFormat",
+            "printedName": "invalidFormat",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ImageGallery.LicenseError.Type) -> ImageGallery.LicenseError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LicenseError",
+                    "printedName": "ImageGallery.LicenseError",
+                    "usr": "s:12ImageGallery12LicenseErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ImageGallery.LicenseError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LicenseError",
+                        "printedName": "ImageGallery.LicenseError",
+                        "usr": "s:12ImageGallery12LicenseErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:12ImageGallery12LicenseErrorO13invalidFormatyA2CmF",
+            "mangledName": "$s12ImageGallery12LicenseErrorO13invalidFormatyA2CmF",
+            "moduleName": "ImageGallery",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "missingFields",
+            "printedName": "missingFields",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ImageGallery.LicenseError.Type) -> ImageGallery.LicenseError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LicenseError",
+                    "printedName": "ImageGallery.LicenseError",
+                    "usr": "s:12ImageGallery12LicenseErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ImageGallery.LicenseError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LicenseError",
+                        "printedName": "ImageGallery.LicenseError",
+                        "usr": "s:12ImageGallery12LicenseErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:12ImageGallery12LicenseErrorO13missingFieldsyA2CmF",
+            "mangledName": "$s12ImageGallery12LicenseErrorO13missingFieldsyA2CmF",
+            "moduleName": "ImageGallery",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "bundleIdMismatch",
+            "printedName": "bundleIdMismatch",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ImageGallery.LicenseError.Type) -> ImageGallery.LicenseError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LicenseError",
+                    "printedName": "ImageGallery.LicenseError",
+                    "usr": "s:12ImageGallery12LicenseErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ImageGallery.LicenseError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LicenseError",
+                        "printedName": "ImageGallery.LicenseError",
+                        "usr": "s:12ImageGallery12LicenseErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:12ImageGallery12LicenseErrorO16bundleIdMismatchyA2CmF",
+            "mangledName": "$s12ImageGallery12LicenseErrorO16bundleIdMismatchyA2CmF",
+            "moduleName": "ImageGallery",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "platformMismatch",
+            "printedName": "platformMismatch",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ImageGallery.LicenseError.Type) -> ImageGallery.LicenseError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LicenseError",
+                    "printedName": "ImageGallery.LicenseError",
+                    "usr": "s:12ImageGallery12LicenseErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ImageGallery.LicenseError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LicenseError",
+                        "printedName": "ImageGallery.LicenseError",
+                        "usr": "s:12ImageGallery12LicenseErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:12ImageGallery12LicenseErrorO16platformMismatchyA2CmF",
+            "mangledName": "$s12ImageGallery12LicenseErrorO16platformMismatchyA2CmF",
+            "moduleName": "ImageGallery",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "invalidSignature",
+            "printedName": "invalidSignature",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ImageGallery.LicenseError.Type) -> ImageGallery.LicenseError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LicenseError",
+                    "printedName": "ImageGallery.LicenseError",
+                    "usr": "s:12ImageGallery12LicenseErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ImageGallery.LicenseError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LicenseError",
+                        "printedName": "ImageGallery.LicenseError",
+                        "usr": "s:12ImageGallery12LicenseErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:12ImageGallery12LicenseErrorO16invalidSignatureyA2CmF",
+            "mangledName": "$s12ImageGallery12LicenseErrorO16invalidSignatureyA2CmF",
+            "moduleName": "ImageGallery",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "expired",
+            "printedName": "expired",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ImageGallery.LicenseError.Type) -> (Foundation.Date) -> ImageGallery.LicenseError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Foundation.Date) -> ImageGallery.LicenseError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LicenseError",
+                        "printedName": "ImageGallery.LicenseError",
+                        "usr": "s:12ImageGallery12LicenseErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Date",
+                        "printedName": "Foundation.Date",
+                        "usr": "s:10Foundation4DateV"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ImageGallery.LicenseError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LicenseError",
+                        "printedName": "ImageGallery.LicenseError",
+                        "usr": "s:12ImageGallery12LicenseErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:12ImageGallery12LicenseErrorO7expiredyAC10Foundation4DateVcACmF",
+            "mangledName": "$s12ImageGallery12LicenseErrorO7expiredyAC10Foundation4DateVcACmF",
+            "moduleName": "ImageGallery",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "errorDescription",
+            "printedName": "errorDescription",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:12ImageGallery12LicenseErrorO16errorDescriptionSSSgvp",
+            "mangledName": "$s12ImageGallery12LicenseErrorO16errorDescriptionSSSgvp",
+            "moduleName": "ImageGallery",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:12ImageGallery12LicenseErrorO16errorDescriptionSSSgvg",
+                "mangledName": "$s12ImageGallery12LicenseErrorO16errorDescriptionSSSgvg",
+                "moduleName": "ImageGallery",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "errorCode",
+            "printedName": "errorCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:12ImageGallery12LicenseErrorO9errorCodeSSvp",
+            "mangledName": "$s12ImageGallery12LicenseErrorO9errorCodeSSvp",
+            "moduleName": "ImageGallery",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:12ImageGallery12LicenseErrorO9errorCodeSSvg",
+                "mangledName": "$s12ImageGallery12LicenseErrorO9errorCodeSSvg",
+                "moduleName": "ImageGallery",
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:12ImageGallery12LicenseErrorO",
+        "mangledName": "$s12ImageGallery12LicenseErrorO",
+        "moduleName": "ImageGallery",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "LocalizedError",
+            "printedName": "LocalizedError",
+            "usr": "s:10Foundation14LocalizedErrorP",
+            "mangledName": "$s10Foundation14LocalizedErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "LicenseKey",
+        "printedName": "LicenseKey",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "bundleId",
+            "printedName": "bundleId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:12ImageGallery10LicenseKeyV8bundleIdSSvp",
+            "mangledName": "$s12ImageGallery10LicenseKeyV8bundleIdSSvp",
+            "moduleName": "ImageGallery",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:12ImageGallery10LicenseKeyV8bundleIdSSvg",
+                "mangledName": "$s12ImageGallery10LicenseKeyV8bundleIdSSvg",
+                "moduleName": "ImageGallery",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "platforms",
+            "printedName": "platforms",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:12ImageGallery10LicenseKeyV9platformsSaySSGvp",
+            "mangledName": "$s12ImageGallery10LicenseKeyV9platformsSaySSGvp",
+            "moduleName": "ImageGallery",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:12ImageGallery10LicenseKeyV9platformsSaySSGvg",
+                "mangledName": "$s12ImageGallery10LicenseKeyV9platformsSaySSGvg",
+                "moduleName": "ImageGallery",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "expiresAt",
+            "printedName": "expiresAt",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Date?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Date",
+                    "printedName": "Foundation.Date",
+                    "usr": "s:10Foundation4DateV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:12ImageGallery10LicenseKeyV9expiresAt10Foundation4DateVSgvp",
+            "mangledName": "$s12ImageGallery10LicenseKeyV9expiresAt10Foundation4DateVSgvp",
+            "moduleName": "ImageGallery",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Foundation.Date?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Date",
+                        "printedName": "Foundation.Date",
+                        "usr": "s:10Foundation4DateV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:12ImageGallery10LicenseKeyV9expiresAt10Foundation4DateVSgvg",
+                "mangledName": "$s12ImageGallery10LicenseKeyV9expiresAt10Foundation4DateVSgvg",
+                "moduleName": "ImageGallery",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "features",
+            "printedName": "features",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:12ImageGallery10LicenseKeyV8featuresSaySSGvp",
+            "mangledName": "$s12ImageGallery10LicenseKeyV8featuresSaySSGvp",
+            "moduleName": "ImageGallery",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:12ImageGallery10LicenseKeyV8featuresSaySSGvg",
+                "mangledName": "$s12ImageGallery10LicenseKeyV8featuresSaySSGvg",
+                "moduleName": "ImageGallery",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "version",
+            "printedName": "version",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:12ImageGallery10LicenseKeyV7versionSSvp",
+            "mangledName": "$s12ImageGallery10LicenseKeyV7versionSSvp",
+            "moduleName": "ImageGallery",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:12ImageGallery10LicenseKeyV7versionSSvg",
+                "mangledName": "$s12ImageGallery10LicenseKeyV7versionSSvg",
+                "moduleName": "ImageGallery",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "signature",
+            "printedName": "signature",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:12ImageGallery10LicenseKeyV9signatureSSvp",
+            "mangledName": "$s12ImageGallery10LicenseKeyV9signatureSSvp",
+            "moduleName": "ImageGallery",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:12ImageGallery10LicenseKeyV9signatureSSvg",
+                "mangledName": "$s12ImageGallery10LicenseKeyV9signatureSSvg",
+                "moduleName": "ImageGallery",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "decode",
+            "printedName": "decode(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "LicenseKey",
+                "printedName": "ImageGallery.LicenseKey",
+                "usr": "s:12ImageGallery10LicenseKeyV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:12ImageGallery10LicenseKeyV6decode4fromACSS_tKFZ",
+            "mangledName": "$s12ImageGallery10LicenseKeyV6decode4fromACSS_tKFZ",
+            "moduleName": "ImageGallery",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:12ImageGallery10LicenseKeyV",
+        "mangledName": "$s12ImageGallery10LicenseKeyV",
+        "moduleName": "ImageGallery",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "LicenseValidator",
+        "printedName": "LicenseValidator",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "validate",
+            "printedName": "validate()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:12ImageGallery16LicenseValidatorC8validateSbyKFZ",
+            "mangledName": "$s12ImageGallery16LicenseValidatorC8validateSbyKFZ",
+            "moduleName": "ImageGallery",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "clearCache",
+            "printedName": "clearCache()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:12ImageGallery16LicenseValidatorC10clearCacheyyFZ",
+            "mangledName": "$s12ImageGallery16LicenseValidatorC10clearCacheyyFZ",
+            "moduleName": "ImageGallery",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:12ImageGallery16LicenseValidatorC",
+        "mangledName": "$s12ImageGallery16LicenseValidatorC",
+        "moduleName": "ImageGallery",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Capacitor",
+        "printedName": "Capacitor",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "Photos",
+        "printedName": "Photos",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "CoreLocation",
+        "printedName": "CoreLocation",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ImageGalleryPluginPlugin",
+        "printedName": "ImageGalleryPluginPlugin",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "identifier",
+            "printedName": "identifier",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@ImageGallery@objc(cs)ImageGalleryPluginPlugin(py)identifier",
+            "mangledName": "$s12ImageGallery0ab6PluginC0C10identifierSSvp",
+            "moduleName": "ImageGallery",
+            "objc_name": "identifier",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "ObjC",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@ImageGallery@objc(cs)ImageGalleryPluginPlugin(im)identifier",
+                "mangledName": "$s12ImageGallery0ab6PluginC0C10identifierSSvg",
+                "moduleName": "ImageGallery",
+                "implicit": true,
+                "objc_name": "identifier",
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "jsName",
+            "printedName": "jsName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@ImageGallery@objc(cs)ImageGalleryPluginPlugin(py)jsName",
+            "mangledName": "$s12ImageGallery0ab6PluginC0C6jsNameSSvp",
+            "moduleName": "ImageGallery",
+            "objc_name": "jsName",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "ObjC",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@ImageGallery@objc(cs)ImageGalleryPluginPlugin(im)jsName",
+                "mangledName": "$s12ImageGallery0ab6PluginC0C6jsNameSSvg",
+                "moduleName": "ImageGallery",
+                "implicit": true,
+                "objc_name": "jsName",
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "pluginMethods",
+            "printedName": "pluginMethods",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Capacitor.CAPPluginMethod]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CAPPluginMethod",
+                    "printedName": "Capacitor.CAPPluginMethod",
+                    "usr": "c:objc(cs)CAPPluginMethod"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@ImageGallery@objc(cs)ImageGalleryPluginPlugin(py)pluginMethods",
+            "mangledName": "$s12ImageGallery0ab6PluginC0C13pluginMethodsSaySo15CAPPluginMethodCGvp",
+            "moduleName": "ImageGallery",
+            "objc_name": "pluginMethods",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "ObjC",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Capacitor.CAPPluginMethod]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CAPPluginMethod",
+                        "printedName": "Capacitor.CAPPluginMethod",
+                        "usr": "c:objc(cs)CAPPluginMethod"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@ImageGallery@objc(cs)ImageGalleryPluginPlugin(im)pluginMethods",
+                "mangledName": "$s12ImageGallery0ab6PluginC0C13pluginMethodsSaySo15CAPPluginMethodCGvg",
+                "moduleName": "ImageGallery",
+                "implicit": true,
+                "objc_name": "pluginMethods",
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(bridge:pluginId:pluginName:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ImageGalleryPluginPlugin",
+                "printedName": "ImageGallery.ImageGalleryPluginPlugin",
+                "usr": "c:@M@ImageGallery@objc(cs)ImageGalleryPluginPlugin"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CAPBridgeProtocol",
+                "printedName": "any Capacitor.CAPBridgeProtocol",
+                "usr": "c:@M@Capacitor@objc(pl)CAPBridgeProtocol"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@ImageGallery@objc(cs)ImageGalleryPluginPlugin(im)initWithBridge:pluginId:pluginName:",
+            "mangledName": "$s12ImageGallery0ab6PluginC0C6bridge8pluginId0E4NameAC9Capacitor17CAPBridgeProtocol_p_S2Stcfc",
+            "moduleName": "ImageGallery",
+            "deprecated": true,
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "initWithBridge:pluginId:pluginName:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override",
+              "Available"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ImageGalleryPluginPlugin",
+                "printedName": "ImageGallery.ImageGalleryPluginPlugin",
+                "usr": "c:@M@ImageGallery@objc(cs)ImageGalleryPluginPlugin"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@ImageGallery@objc(cs)ImageGalleryPluginPlugin(im)init",
+            "mangledName": "$s12ImageGallery0ab6PluginC0CACycfc",
+            "moduleName": "ImageGallery",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@ImageGallery@objc(cs)ImageGalleryPluginPlugin",
+        "mangledName": "$s12ImageGallery0ab6PluginC0C",
+        "moduleName": "ImageGallery",
+        "objc_name": "ImageGalleryPluginPlugin",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC",
+          "RawDocComment"
+        ],
+        "superclassUsr": "c:objc(cs)CAPPlugin",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "Capacitor.CAPPlugin",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ImageGalleryPlugin",
+        "printedName": "ImageGalleryPlugin",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "echo",
+            "printedName": "echo(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@ImageGallery@objc(cs)ImageGalleryPlugin(im)echo:",
+            "mangledName": "$s12ImageGallery0aB6PluginC4echoyS2SF",
+            "moduleName": "ImageGallery",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setTranslations",
+            "printedName": "setTranslations(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@ImageGallery@objc(cs)ImageGalleryPlugin(im)setTranslations:",
+            "mangledName": "$s12ImageGallery0aB6PluginC15setTranslationsyySDyS2SGF",
+            "moduleName": "ImageGallery",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getTranslations",
+            "printedName": "getTranslations()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@ImageGallery@objc(cs)ImageGalleryPlugin(im)getTranslations",
+            "mangledName": "$s12ImageGallery0aB6PluginC15getTranslationsSDyS2SGyF",
+            "moduleName": "ImageGallery",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "isPhotoLibraryPermissionRequested",
+            "printedName": "isPhotoLibraryPermissionRequested()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@ImageGallery@objc(cs)ImageGalleryPlugin(im)isPhotoLibraryPermissionRequested",
+            "mangledName": "$s12ImageGallery0aB6PluginC33isPhotoLibraryPermissionRequestedSbyF",
+            "moduleName": "ImageGallery",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setPhotoLibraryPermissionRequested",
+            "printedName": "setPhotoLibraryPermissionRequested(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@ImageGallery@objc(cs)ImageGalleryPlugin(im)setPhotoLibraryPermissionRequested:",
+            "mangledName": "$s12ImageGallery0aB6PluginC34setPhotoLibraryPermissionRequestedyySbF",
+            "moduleName": "ImageGallery",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "trySetPhotoLibraryPermissionRequested",
+            "printedName": "trySetPhotoLibraryPermissionRequested()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@ImageGallery@objc(cs)ImageGalleryPlugin(im)trySetPhotoLibraryPermissionRequested",
+            "mangledName": "$s12ImageGallery0aB6PluginC37trySetPhotoLibraryPermissionRequestedSbyF",
+            "moduleName": "ImageGallery",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ImageGalleryPlugin",
+                "printedName": "ImageGallery.ImageGalleryPlugin",
+                "usr": "c:@M@ImageGallery@objc(cs)ImageGalleryPlugin"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@ImageGallery@objc(cs)ImageGalleryPlugin(im)init",
+            "mangledName": "$s12ImageGallery0aB6PluginCACycfc",
+            "moduleName": "ImageGallery",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@ImageGallery@objc(cs)ImageGalleryPlugin",
+        "mangledName": "$s12ImageGallery0aB6PluginC",
+        "moduleName": "ImageGallery",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC",
+          "RawDocComment"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Photos",
+        "printedName": "Photos",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "CoreLocation",
+        "printedName": "CoreLocation",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "CoreLocation",
+        "printedName": "CoreLocation",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "Photos",
+        "printedName": "Photos",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "CoreLocation",
+        "printedName": "CoreLocation",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "Photos",
+        "printedName": "Photos",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "CoreLocation",
+        "printedName": "CoreLocation",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "Capacitor",
+        "printedName": "Capacitor",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "Photos",
+        "printedName": "Photos",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "Photos",
+        "printedName": "Photos",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "Capacitor",
+        "printedName": "Capacitor",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "CoreLocation",
+        "printedName": "CoreLocation",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "CoreLocation",
+        "printedName": "CoreLocation",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "Photos",
+        "printedName": "Photos",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "Capacitor",
+        "printedName": "Capacitor",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "Photos",
+        "printedName": "Photos",
+        "declKind": "Import",
+        "moduleName": "ImageGallery"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "PHAsset",
+        "printedName": "PHAsset",
+        "declKind": "Class",
+        "usr": "c:objc(cs)PHAsset",
+        "moduleName": "Photos",
+        "isOpen": true,
+        "intro_iOS": "8",
+        "objc_name": "PHAsset",
+        "declAttributes": [
+          "Available",
+          "ObjC",
+          "SynthesizedProtocol",
+          "Sendable",
+          "Dynamic"
+        ],
+        "superclassUsr": "c:objc(cs)PHObject",
+        "isExternal": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "Photos.PHObject",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterBadgeView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 775,
+      "length": 2,
+      "value": "10"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterBadgeView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 807,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterBadgeView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 947,
+      "length": 2,
+      "value": "10"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/License\/SecurityHelper.swift",
+      "kind": "StringLiteral",
+      "offset": 976,
+      "length": 18,
+      "value": "\"f84f221203e91955\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/License\/SecurityHelper.swift",
+      "kind": "StringLiteral",
+      "offset": 1097,
+      "length": 18,
+      "value": "\"b7689d00a36fdeca\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/License\/SecurityHelper.swift",
+      "kind": "StringLiteral",
+      "offset": 1217,
+      "length": 18,
+      "value": "\"7477bdef664b7a2e\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/License\/SecurityHelper.swift",
+      "kind": "StringLiteral",
+      "offset": 1338,
+      "length": 18,
+      "value": "\"7efcf7a7fca4a118\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/License\/LicenseValidator.swift",
+      "kind": "StringLiteral",
+      "offset": 1695,
+      "length": 24,
+      "value": "\"CodewaveGalleryLicense\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/License\/LicenseValidator.swift",
+      "kind": "StringLiteral",
+      "offset": 1808,
+      "length": 5,
+      "value": "\"ios\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/ImageGalleryPluginPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 201,
+      "length": 12,
+      "value": "\"kilometers\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/ImageGalleryPluginPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 231,
+      "length": 7,
+      "value": "\"miles\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/ImageGalleryPluginPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 1145,
+      "length": 26,
+      "value": "\"ImageGalleryPluginPlugin\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/ImageGalleryPluginPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 1196,
+      "length": 20,
+      "value": "\"ImageGalleryPlugin\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/ImageGalleryPluginPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 1299,
+      "length": 6,
+      "value": "\"echo\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/ImageGalleryPluginPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 1374,
+      "length": 12,
+      "value": "\"initialize\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/ImageGalleryPluginPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 1455,
+      "length": 6,
+      "value": "\"pick\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/ImageGalleryPluginPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2034,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/ImageGalleryPluginPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2909,
+      "length": 1,
+      "value": "5"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/ImageGalleryPlugin.swift",
+      "kind": "Dictionary",
+      "offset": 382,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/ImageGalleryPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 511,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/ImageGalleryPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 618,
+      "length": 29,
+      "value": "\"com.bmad.imagegallery.state\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/ImageFilterCoordinator.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3411,
+      "length": 1,
+      "value": "5"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "FloatLiteral",
+      "offset": 639,
+      "length": 6,
+      "value": "5000.0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 800,
+      "length": 2,
+      "value": "-1"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "Array",
+      "offset": 1828,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1994,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2034,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2225,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2422,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2479,
+      "length": 2,
+      "value": "18"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2675,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2728,
+      "length": 2,
+      "value": "16"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2938,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3006,
+      "length": 2,
+      "value": "16"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3263,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3299,
+      "length": 4,
+      "value": "5000"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3341,
+      "length": 5,
+      "value": "50000"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3378,
+      "length": 4,
+      "value": "5000"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3594,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3651,
+      "length": 2,
+      "value": "18"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3850,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3903,
+      "length": 2,
+      "value": "16"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4124,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4416,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4469,
+      "length": 2,
+      "value": "16"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4688,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4987,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5040,
+      "length": 2,
+      "value": "14"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5111,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5138,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5336,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5441,
+      "length": 2,
+      "value": "12"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5620,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5758,
+      "length": 2,
+      "value": "10"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5825,
+      "length": 2,
+      "value": "17"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6006,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6145,
+      "length": 2,
+      "value": "10"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6208,
+      "length": 2,
+      "value": "17"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6390,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6529,
+      "length": 2,
+      "value": "10"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6592,
+      "length": 2,
+      "value": "17"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7044,
+      "length": 4,
+      "value": "5000"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "Dictionary",
+      "offset": 7156,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 7198,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 7236,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/FilterDialogViewController.swift",
+      "kind": "FloatLiteral",
+      "offset": 7328,
+      "length": 3,
+      "value": "5.0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/PermissionErrorHandler.swift",
+      "kind": "Dictionary",
+      "offset": 1114,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/PermissionErrorHandler.swift",
+      "kind": "Dictionary",
+      "offset": 1980,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/EmptyStateView.swift",
+      "kind": "StringLiteral",
+      "offset": 1150,
+      "length": 27,
+      "value": "\"photo.on.rectangle.angled\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/EmptyStateView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1384,
+      "length": 2,
+      "value": "18"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/EmptyStateView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1473,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/EmptyStateView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1653,
+      "length": 2,
+      "value": "16"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/EmptyStateView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1808,
+      "length": 1,
+      "value": "8"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/EmptyStateView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1989,
+      "length": 2,
+      "value": "16"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/SelectionManager.swift",
+      "kind": "Array",
+      "offset": 1271,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/SelectionManager.swift",
+      "kind": "StringLiteral",
+      "offset": 1494,
+      "length": 50,
+      "value": "\"com.bmad.capacitor.imagegallery.selectionManager\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/SelectionOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 878,
+      "length": 2,
+      "value": "28"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/SelectionOverlayView.swift",
+      "kind": "StringLiteral",
+      "offset": 946,
+      "length": 23,
+      "value": "\"checkmark.circle.fill\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/SelectionOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1311,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/SelectionOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1322,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/SelectionOverlayView.swift",
+      "kind": "FloatLiteral",
+      "offset": 1365,
+      "length": 3,
+      "value": "0.5"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/SelectionOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1408,
+      "length": 1,
+      "value": "4"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/PermissionManager.swift",
+      "kind": "Dictionary",
+      "offset": 1923,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/PermissionManager.swift",
+      "kind": "Dictionary",
+      "offset": 2370,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/LoadingOverlayView.swift",
+      "kind": "FloatLiteral",
+      "offset": 593,
+      "length": 3,
+      "value": "0.8"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/LoadingOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 632,
+      "length": 2,
+      "value": "12"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/LoadingOverlayView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 670,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/LoadingOverlayView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 900,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/LoadingOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1091,
+      "length": 2,
+      "value": "16"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/LoadingOverlayView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1180,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/DistanceCalculator.swift",
+      "kind": "IntegerLiteral",
+      "offset": 618,
+      "length": 9,
+      "value": "6371000"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/ImageGalleryViewController.swift",
+      "kind": "Array",
+      "offset": 1296,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/ImageGalleryViewController.swift",
+      "kind": "Dictionary",
+      "offset": 1348,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/ImageGalleryViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1615,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/ImageGalleryViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1707,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/ImageGalleryViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2390,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/ImageGalleryViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2512,
+      "length": 3,
+      "value": "200"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/ImageGalleryViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2525,
+      "length": 3,
+      "value": "200"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/ImageGalleryViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4025,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/ImageGalleryViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4064,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/GalleryCell.swift",
+      "kind": "StringLiteral",
+      "offset": 779,
+      "length": 13,
+      "value": "\"GalleryCell\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ImageGalleryPluginPlugin\/GalleryCell.swift",
+      "kind": "BooleanLiteral",
+      "offset": 937,
+      "length": 4,
+      "value": "true"
+    }
+  ]
+}
