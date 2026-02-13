@@ -1,16 +1,16 @@
 import { registerPlugin } from '@capacitor/core';
-import { ImageGalleryImpl } from './ImageGalleryImpl';
+import { ExifGalleryImpl } from './ExifGalleryImpl';
 /**
  * Native plugin instance (registered via Capacitor Bridge).
  * Provides direct bridge communication with iOS/Android native code.
  *
  * @internal
  */
-export const ImageGalleryNative = registerPlugin('ImageGalleryPlugin', {
-    web: () => import('./web').then((m) => new m.ImageGalleryPluginWeb()),
+export const ExifGalleryNative = registerPlugin('ExifGalleryPlugin', {
+    web: () => import('./web').then((m) => new m.ExifGalleryPluginWeb()),
 });
 /**
- * ImageGallery Plugin Instance.
+ * ExifGallery Plugin Instance.
  *
  * This combines TypeScript-side logic (translation loading, validation)
  * with native platform calls via Capacitor Bridge.
@@ -19,13 +19,13 @@ export const ImageGalleryNative = registerPlugin('ImageGalleryPlugin', {
  *
  * @example
  * ```typescript
- * import { ImageGallery } from 'capacitor-image-gallery';
+ * import { ExifGallery } from 'capacitor-exif-gallery';
  *
  * // Initialize plugin
- * await ImageGallery.initialize({ locale: 'de' });
+ * await ExifGallery.initialize({ locale: 'de' });
  *
  * // Pick images with location filter
- * const result = await ImageGallery.pick({
+ * const result = await ExifGallery.pick({
  *   filter: {
  *     location: {
  *       coordinates: [{ lat: 48.8566, lng: 2.3522 }],
@@ -35,7 +35,7 @@ export const ImageGalleryNative = registerPlugin('ImageGalleryPlugin', {
  * });
  * ```
  */
-export const ImageGallery = new ImageGalleryImpl(ImageGalleryNative);
+export const ExifGallery = new ExifGalleryImpl(ExifGalleryNative);
 export * from './definitions';
 export { PluginState } from './PluginState';
 export * from './errors';

@@ -78,7 +78,7 @@ export interface InitConfig {
      *
      * @example
      * ```typescript
-     * await ImageGallery.initialize({ locale: 'de' });
+     * await ExifGallery.initialize({ locale: 'de' });
      * ```
      */
     locale?: SupportedLocale;
@@ -89,7 +89,7 @@ export interface InitConfig {
      *
      * @example
      * ```typescript
-     * await ImageGallery.initialize({
+     * await ExifGallery.initialize({
      *   customTexts: {
      *     galleryTitle: 'Choose Your Photos',
      *     confirmButton: 'Done'
@@ -106,7 +106,7 @@ export interface InitConfig {
      *
      * @example
      * ```typescript
-     * await ImageGallery.initialize({ requestPermissionsUpfront: true });
+     * await ExifGallery.initialize({ requestPermissionsUpfront: true });
      * ```
      */
     requestPermissionsUpfront?: boolean;
@@ -150,7 +150,7 @@ export interface LocationFilter {
      * @see https://developers.google.com/maps/documentation/utilities/polylinealgorithm
      * @example
      * // Using encoded polyline (from Google Maps API)
-     * const result = await ImageGallery.pick({
+     * const result = await ExifGallery.pick({
      *   filter: {
      *     location: {
      *       polyline: "_p~iF~ps|U_ulLnnqC",
@@ -161,7 +161,7 @@ export interface LocationFilter {
      *
      * @example
      * // Using coordinate array
-     * const result = await ImageGallery.pick({
+     * const result = await ExifGallery.pick({
      *   filter: {
      *     location: {
      *       polyline: [
@@ -233,7 +233,7 @@ export interface PickOptions {
      *
      * @example
      * ```typescript
-     * await ImageGallery.pick({
+     * await ExifGallery.pick({
      *   filter: {
      *     location: {
      *       coordinates: [{lat: 48.1, lng: 11.5}],
@@ -253,7 +253,7 @@ export interface PickOptions {
      *
      * @example
      * ```typescript
-     * await ImageGallery.pick({
+     * await ExifGallery.pick({
      *   filter: { location: {...} },
      *   fallbackThreshold: 10  // Fallback if < 10 images found
      * });
@@ -281,19 +281,19 @@ export interface PickOptions {
      * @example
      * ```typescript
      * // Use miles for US users
-     * await ImageGallery.pick({
+     * await ExifGallery.pick({
      *   filter: { location: {...} },
      *   distanceUnit: 'miles'
      * });
      *
      * // Use kilometers (default)
-     * await ImageGallery.pick({
+     * await ExifGallery.pick({
      *   filter: { location: {...} }
      * });
      *
      * // Based on user preference
      * const userUnit = userSettings.useMetric ? 'kilometers' : 'miles';
-     * await ImageGallery.pick({
+     * await ExifGallery.pick({
      *   filter: { location: {...} },
      *   distanceUnit: userUnit
      * });
@@ -314,25 +314,25 @@ export interface PickOptions {
      * @example
      * ```typescript
      * // Fine-grained control: 1km steps (5, 6, 7, 8, ...)
-     * await ImageGallery.pick({
+     * await ExifGallery.pick({
      *   filter: { location: {...} },
      *   distanceStep: 1
      * });
      *
      * // Default: 5km steps (5, 10, 15, 20, ...)
-     * await ImageGallery.pick({
+     * await ExifGallery.pick({
      *   filter: { location: {...} }
      *   // distanceStep defaults to 5
      * });
      *
      * // Coarse control: 10km steps (10, 20, 30, 40, 50)
-     * await ImageGallery.pick({
+     * await ExifGallery.pick({
      *   filter: { location: {...} },
      *   distanceStep: 10
      * });
      *
      * // Can be combined with distanceUnit
-     * await ImageGallery.pick({
+     * await ExifGallery.pick({
      *   filter: { location: {...} },
      *   distanceUnit: 'miles',
      *   distanceStep: 5  // 5km steps, displayed as miles
@@ -393,10 +393,10 @@ export interface PickResult {
  *
  * @example
  * ```typescript
- * import { ImageGallery } from 'capacitor-image-gallery';
+ * import { ExifGallery } from 'capacitor-exif-gallery';
  *
  * // Initialize plugin (once at app startup)
- * await ImageGallery.initialize({
+ * await ExifGallery.initialize({
  *   locale: 'de',
  *   customTexts: {
  *     galleryTitle: 'Wähle Fotos'
@@ -404,7 +404,7 @@ export interface PickResult {
  * });
  *
  * // Open gallery with filter
- * const result = await ImageGallery.pick({
+ * const result = await ExifGallery.pick({
  *   filter: {
  *     location: {
  *       polyline: gpsTrack,  // LatLng[]
@@ -422,7 +422,7 @@ export interface PickResult {
  * }
  * ```
  */
-export interface ImageGalleryPlugin {
+export interface ExifGalleryPlugin {
     /**
      * Initialize the plugin with optional configuration.
      *
@@ -441,13 +441,13 @@ export interface ImageGalleryPlugin {
      * @example
      * ```typescript
      * // Minimal - use defaults
-     * await ImageGallery.initialize();
+     * await ExifGallery.initialize();
      *
      * // With locale
-     * await ImageGallery.initialize({ locale: 'de' });
+     * await ExifGallery.initialize({ locale: 'de' });
      *
      * // With custom text overrides
-     * await ImageGallery.initialize({
+     * await ExifGallery.initialize({
      *   customTexts: {
      *     galleryTitle: 'Choose Photos',
      *     confirmButton: 'Done'
@@ -455,7 +455,7 @@ export interface ImageGalleryPlugin {
      * });
      *
      * // Request permissions upfront
-     * await ImageGallery.initialize({
+     * await ExifGallery.initialize({
      *   requestPermissionsUpfront: true
      * });
      * ```
@@ -481,10 +481,10 @@ export interface ImageGalleryPlugin {
      * @example
      * ```typescript
      * // No filter - user sets filters manually
-     * const result = await ImageGallery.pick();
+     * const result = await ExifGallery.pick();
      *
      * // Location filter with polyline
-     * const result = await ImageGallery.pick({
+     * const result = await ExifGallery.pick({
      *   filter: {
      *     location: {
      *       polyline: [{lat: 48.1, lng: 11.5}, {lat: 48.2, lng: 11.6}],
@@ -494,7 +494,7 @@ export interface ImageGalleryPlugin {
      * });
      *
      * // Time range filter
-     * const result = await ImageGallery.pick({
+     * const result = await ExifGallery.pick({
      *   filter: {
      *     timeRange: {
      *       start: new Date('2024-01-01'),
@@ -504,7 +504,7 @@ export interface ImageGalleryPlugin {
      * });
      *
      * // Combined filters
-     * const result = await ImageGallery.pick({
+     * const result = await ExifGallery.pick({
      *   filter: {
      *     location: { coordinates: [{lat: 48.1, lng: 11.5}], radius: 500 },
      *     timeRange: { start: new Date('2024-01-01'), end: new Date() }

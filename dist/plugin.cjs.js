@@ -202,23 +202,23 @@ class PolylineDecoder {
 }
 
 /**
- * Error types thrown by the Image Gallery Plugin.
+ * Error types thrown by the ExifGallery Plugin.
  *
- * All errors extend ImageGalleryError for easy type checking.
+ * All errors extend ExifGalleryError for easy type checking.
  * Each error has a unique code for programmatic handling.
  *
  * @example
  * ```typescript
- * import { ImageGallery, InitializationRequiredError, NoPermissionError } from 'capacitor-image-gallery';
+ * import { ExifGallery, InitializationRequiredError, NoPermissionError } from 'capacitor-exif-gallery';
  *
  * try {
- *   const result = await ImageGallery.pick();
+ *   const result = await ExifGallery.pick();
  * } catch (error) {
  *   if (error instanceof InitializationRequiredError) {
  *     // Plugin not initialized - call initialize() first
- *     await ImageGallery.initialize();
+ *     await ExifGallery.initialize();
  *     // Retry pick()
- *     const result = await ImageGallery.pick();
+ *     const result = await ExifGallery.pick();
  *   } else if (error instanceof NoPermissionError) {
  *     // User denied permissions - show explanation and retry
  *     alert('Photo access required to select images');
@@ -230,20 +230,20 @@ class PolylineDecoder {
  * ```
  */
 /**
- * Base class for all Image Gallery Plugin errors.
+ * Base class for all ExifGallery Plugin errors.
  *
  * @example
  * ```typescript
  * try {
- *   await ImageGallery.pick();
+ *   await ExifGallery.pick();
  * } catch (error) {
- *   if (error instanceof ImageGalleryError) {
+ *   if (error instanceof ExifGalleryError) {
  *     console.error(`Plugin error [${error.code}]:`, error.message);
  *   }
  * }
  * ```
  */
-class ImageGalleryError extends Error {
+class ExifGalleryError extends Error {
     constructor(code, message) {
         super(message);
         this.code = code;
@@ -266,22 +266,22 @@ class ImageGalleryError extends Error {
  *
  * @example
  * ```typescript
- * import { ImageGallery, InitializationRequiredError } from 'capacitor-image-gallery';
+ * import { ExifGallery, InitializationRequiredError } from 'capacitor-exif-gallery';
  *
  * try {
  *   // ERROR: calling pick() without initialize()
- *   const result = await ImageGallery.pick();
+ *   const result = await ExifGallery.pick();
  * } catch (error) {
  *   if (error instanceof InitializationRequiredError) {
  *     // Fix: Initialize plugin first
- *     await ImageGallery.initialize();
+ *     await ExifGallery.initialize();
  *     // Retry pick()
- *     const result = await ImageGallery.pick();
+ *     const result = await ExifGallery.pick();
  *   }
  * }
  * ```
  */
-class InitializationRequiredError extends ImageGalleryError {
+class InitializationRequiredError extends ExifGalleryError {
     constructor(message = 'Plugin must be initialized before calling pick()') {
         super('initialization_required', message);
     }
@@ -293,7 +293,7 @@ class InitializationRequiredError extends ImageGalleryError {
  *
  * @example
  * ```typescript
- * import { ImageGallery, PickerInProgressError } from 'capacitor-image-gallery';
+ * import { ExifGallery, PickerInProgressError } from 'capacitor-exif-gallery';
  *
  * // Track picker state
  * let isPickerOpen = false;
@@ -306,7 +306,7 @@ class InitializationRequiredError extends ImageGalleryError {
  *
  *   try {
  *     isPickerOpen = true;
- *     const result = await ImageGallery.pick();
+ *     const result = await ExifGallery.pick();
  *     // Handle result...
  *   } catch (error) {
  *     if (error instanceof PickerInProgressError) {
@@ -318,7 +318,7 @@ class InitializationRequiredError extends ImageGalleryError {
  * }
  * ```
  */
-class PickerInProgressError extends ImageGalleryError {
+class PickerInProgressError extends ExifGalleryError {
     constructor(message = 'Cannot open picker while another picker is in progress') {
         super('picker_in_progress', message);
     }
@@ -334,10 +334,10 @@ class PickerInProgressError extends ImageGalleryError {
  *
  * @example
  * ```typescript
- * import { ImageGallery, NoPermissionError } from 'capacitor-image-gallery';
+ * import { ExifGallery, NoPermissionError } from 'capacitor-exif-gallery';
  *
  * try {
- *   const result = await ImageGallery.pick({
+ *   const result = await ExifGallery.pick({
  *     filter: {
  *       location: {
  *         coordinates: [{ lat: 48.8566, lng: 2.3522 }],
@@ -365,7 +365,7 @@ class PickerInProgressError extends ImageGalleryError {
  * }
  * ```
  */
-class NoPermissionError extends ImageGalleryError {
+class NoPermissionError extends ExifGalleryError {
     constructor(permissionType = 'photo_library', message) {
         const defaultMessage = permissionType === 'photo_library' ? 'Photo library permission denied' : 'Location permission denied';
         super('no_permission', message !== null && message !== void 0 ? message : defaultMessage);
@@ -387,10 +387,10 @@ class NoPermissionError extends ImageGalleryError {
  *
  * @example
  * ```typescript
- * import { ImageGallery, FilterError } from 'capacitor-image-gallery';
+ * import { ExifGallery, FilterError } from 'capacitor-exif-gallery';
  *
  * try {
- *   const result = await ImageGallery.pick({
+ *   const result = await ExifGallery.pick({
  *     filter: {
  *       location: {
  *         coordinates: [], // ERROR: empty array
@@ -404,7 +404,7 @@ class NoPermissionError extends ImageGalleryError {
  *     console.error('Invalid filter:', error.message);
  *
  *     // Fix and retry
- *     const result = await ImageGallery.pick({
+ *     const result = await ExifGallery.pick({
  *       filter: {
  *         location: {
  *           coordinates: [{ lat: 48.8566, lng: 2.3522 }], // Fixed
@@ -422,7 +422,7 @@ class NoPermissionError extends ImageGalleryError {
  * // - "timeRange.start must be before timeRange.end"
  * ```
  */
-class FilterError extends ImageGalleryError {
+class FilterError extends ExifGalleryError {
     constructor(message) {
         // Validate message parameter
         if (typeof message !== 'string') {
@@ -456,10 +456,10 @@ class FilterError extends ImageGalleryError {
  *
  * @example
  * ```typescript
- * import { ImageGallery, NativeError } from 'capacitor-image-gallery';
+ * import { ExifGallery, NativeError } from 'capacitor-exif-gallery';
  *
  * try {
- *   const result = await ImageGallery.pick();
+ *   const result = await ExifGallery.pick();
  * } catch (error) {
  *   if (error instanceof NativeError) {
  *     // Log platform-specific error for debugging
@@ -471,7 +471,7 @@ class FilterError extends ImageGalleryError {
  * }
  * ```
  */
-class NativeError extends ImageGalleryError {
+class NativeError extends ExifGalleryError {
     constructor(message = 'Native platform operation failed') {
         super('native_error', message);
     }
@@ -1280,7 +1280,7 @@ TranslationLoader.DEFAULT_TRANSLATIONS = {
 };
 
 /**
- * TypeScript implementation of ImageGalleryPlugin.
+ * TypeScript implementation of ExifGalleryPlugin.
  *
  * Handles:
  * - Translation loading and merging
@@ -1290,9 +1290,9 @@ TranslationLoader.DEFAULT_TRANSLATIONS = {
  *
  * @internal
  */
-class ImageGalleryImpl {
+class ExifGalleryImpl {
     /**
-     * Create ImageGalleryImpl instance with native bridge dependency.
+     * Create ExifGalleryImpl instance with native bridge dependency.
      *
      * @param nativePlugin - Native plugin instance from Capacitor Bridge
      */
@@ -1338,13 +1338,13 @@ class ImageGalleryImpl {
      * @example
      * ```typescript
      * // System language detection (navigator.language)
-     * await ImageGallery.initialize();
+     * await ExifGallery.initialize();
      *
      * // Explicit locale
-     * await ImageGallery.initialize({ locale: 'de' });
+     * await ExifGallery.initialize({ locale: 'de' });
      *
      * // Custom text overrides with system language detection
-     * await ImageGallery.initialize({
+     * await ExifGallery.initialize({
      *   customTexts: {
      *     galleryTitle: 'Pick Your Photos',
      *     confirmButton: 'Done',
@@ -1352,7 +1352,7 @@ class ImageGalleryImpl {
      * });
      *
      * // Explicit locale + custom overrides
-     * await ImageGallery.initialize({
+     * await ExifGallery.initialize({
      *   locale: 'en',
      *   customTexts: {
      *     galleryTitle: 'Choose Images',
@@ -1360,7 +1360,7 @@ class ImageGalleryImpl {
      * });
      *
      * // Request permissions upfront
-     * await ImageGallery.initialize({
+     * await ExifGallery.initialize({
      *   requestPermissionsUpfront: true,
      * });
      * ```
@@ -1412,10 +1412,10 @@ class ImageGalleryImpl {
      * @example
      * ```typescript
      * // Simple pick without filters
-     * const result = await ImageGallery.pick();
+     * const result = await ExifGallery.pick();
      *
      * // Location filter with coordinates
-     * const result = await ImageGallery.pick({
+     * const result = await ExifGallery.pick({
      *   filter: {
      *     location: {
      *       coordinates: [{ lat: 48.8566, lng: 2.3522 }], // Paris
@@ -1425,7 +1425,7 @@ class ImageGalleryImpl {
      * });
      *
      * // Time range filter
-     * const result = await ImageGallery.pick({
+     * const result = await ExifGallery.pick({
      *   filter: {
      *     timeRange: {
      *       start: new Date('2024-01-01'),
@@ -1435,7 +1435,7 @@ class ImageGalleryImpl {
      * });
      *
      * // Combined filters with custom options
-     * const result = await ImageGallery.pick({
+     * const result = await ExifGallery.pick({
      *   filter: {
      *     location: {
      *       polyline: [
@@ -1576,11 +1576,11 @@ class ImageGalleryImpl {
  *
  * @internal
  */
-const ImageGalleryNative = core.registerPlugin('ImageGalleryPlugin', {
-    web: () => Promise.resolve().then(function () { return web; }).then((m) => new m.ImageGalleryPluginWeb()),
+const ExifGalleryNative = core.registerPlugin('ExifGalleryPlugin', {
+    web: () => Promise.resolve().then(function () { return web; }).then((m) => new m.ExifGalleryPluginWeb()),
 });
 /**
- * ImageGallery Plugin Instance.
+ * ExifGallery Plugin Instance.
  *
  * This combines TypeScript-side logic (translation loading, validation)
  * with native platform calls via Capacitor Bridge.
@@ -1589,13 +1589,13 @@ const ImageGalleryNative = core.registerPlugin('ImageGalleryPlugin', {
  *
  * @example
  * ```typescript
- * import { ImageGallery } from 'capacitor-image-gallery';
+ * import { ExifGallery } from 'capacitor-exif-gallery';
  *
  * // Initialize plugin
- * await ImageGallery.initialize({ locale: 'de' });
+ * await ExifGallery.initialize({ locale: 'de' });
  *
  * // Pick images with location filter
- * const result = await ImageGallery.pick({
+ * const result = await ExifGallery.pick({
  *   filter: {
  *     location: {
  *       coordinates: [{ lat: 48.8566, lng: 2.3522 }],
@@ -1605,30 +1605,30 @@ const ImageGalleryNative = core.registerPlugin('ImageGalleryPlugin', {
  * });
  * ```
  */
-const ImageGallery = new ImageGalleryImpl(ImageGalleryNative);
+const ExifGallery = new ExifGalleryImpl(ExifGalleryNative);
 
-class ImageGalleryPluginWeb extends core.WebPlugin {
+class ExifGalleryPluginWeb extends core.WebPlugin {
     async initialize(config) {
-        console.log('ImageGallery.initialize() called on web', config);
+        console.log('ExifGallery.initialize() called on web', config);
         // Web implementation not supported
-        throw new Error('ImageGallery plugin is not supported on web platform');
+        throw new Error('ExifGallery plugin is not supported on web platform');
     }
     async pick(options) {
-        console.log('ImageGallery.pick() called on web', options);
+        console.log('ExifGallery.pick() called on web', options);
         // Web implementation not supported
-        throw new Error('ImageGallery plugin is not supported on web platform');
+        throw new Error('ExifGallery plugin is not supported on web platform');
     }
 }
 
 var web = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    ImageGalleryPluginWeb: ImageGalleryPluginWeb
+    ExifGalleryPluginWeb: ExifGalleryPluginWeb
 });
 
+exports.ExifGallery = ExifGallery;
+exports.ExifGalleryError = ExifGalleryError;
+exports.ExifGalleryNative = ExifGalleryNative;
 exports.FilterError = FilterError;
-exports.ImageGallery = ImageGallery;
-exports.ImageGalleryError = ImageGalleryError;
-exports.ImageGalleryNative = ImageGalleryNative;
 exports.InitializationRequiredError = InitializationRequiredError;
 exports.NativeError = NativeError;
 exports.NoPermissionError = NoPermissionError;

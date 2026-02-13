@@ -3,7 +3,7 @@ import { PluginState } from './PluginState';
 import { TranslationLoader } from './TranslationLoader';
 import { InitializationRequiredError, PickerInProgressError, FilterError } from './errors';
 /**
- * TypeScript implementation of ImageGalleryPlugin.
+ * TypeScript implementation of ExifGalleryPlugin.
  *
  * Handles:
  * - Translation loading and merging
@@ -13,9 +13,9 @@ import { InitializationRequiredError, PickerInProgressError, FilterError } from 
  *
  * @internal
  */
-export class ImageGalleryImpl {
+export class ExifGalleryImpl {
     /**
-     * Create ImageGalleryImpl instance with native bridge dependency.
+     * Create ExifGalleryImpl instance with native bridge dependency.
      *
      * @param nativePlugin - Native plugin instance from Capacitor Bridge
      */
@@ -61,13 +61,13 @@ export class ImageGalleryImpl {
      * @example
      * ```typescript
      * // System language detection (navigator.language)
-     * await ImageGallery.initialize();
+     * await ExifGallery.initialize();
      *
      * // Explicit locale
-     * await ImageGallery.initialize({ locale: 'de' });
+     * await ExifGallery.initialize({ locale: 'de' });
      *
      * // Custom text overrides with system language detection
-     * await ImageGallery.initialize({
+     * await ExifGallery.initialize({
      *   customTexts: {
      *     galleryTitle: 'Pick Your Photos',
      *     confirmButton: 'Done',
@@ -75,7 +75,7 @@ export class ImageGalleryImpl {
      * });
      *
      * // Explicit locale + custom overrides
-     * await ImageGallery.initialize({
+     * await ExifGallery.initialize({
      *   locale: 'en',
      *   customTexts: {
      *     galleryTitle: 'Choose Images',
@@ -83,7 +83,7 @@ export class ImageGalleryImpl {
      * });
      *
      * // Request permissions upfront
-     * await ImageGallery.initialize({
+     * await ExifGallery.initialize({
      *   requestPermissionsUpfront: true,
      * });
      * ```
@@ -135,10 +135,10 @@ export class ImageGalleryImpl {
      * @example
      * ```typescript
      * // Simple pick without filters
-     * const result = await ImageGallery.pick();
+     * const result = await ExifGallery.pick();
      *
      * // Location filter with coordinates
-     * const result = await ImageGallery.pick({
+     * const result = await ExifGallery.pick({
      *   filter: {
      *     location: {
      *       coordinates: [{ lat: 48.8566, lng: 2.3522 }], // Paris
@@ -148,7 +148,7 @@ export class ImageGalleryImpl {
      * });
      *
      * // Time range filter
-     * const result = await ImageGallery.pick({
+     * const result = await ExifGallery.pick({
      *   filter: {
      *     timeRange: {
      *       start: new Date('2024-01-01'),
@@ -158,7 +158,7 @@ export class ImageGalleryImpl {
      * });
      *
      * // Combined filters with custom options
-     * const result = await ImageGallery.pick({
+     * const result = await ExifGallery.pick({
      *   filter: {
      *     location: {
      *       polyline: [
@@ -292,4 +292,4 @@ export class ImageGalleryImpl {
         return hasLocationFilter || hasTimeFilter;
     }
 }
-//# sourceMappingURL=ImageGalleryImpl.js.map
+//# sourceMappingURL=ExifGalleryImpl.js.map

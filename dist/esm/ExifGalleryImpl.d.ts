@@ -1,6 +1,6 @@
-import type { ImageGalleryPlugin, InitConfig, PickOptions, PickResult } from './definitions';
+import type { ExifGalleryPlugin, InitConfig, PickOptions, PickResult } from './definitions';
 /**
- * TypeScript implementation of ImageGalleryPlugin.
+ * TypeScript implementation of ExifGalleryPlugin.
  *
  * Handles:
  * - Translation loading and merging
@@ -10,18 +10,18 @@ import type { ImageGalleryPlugin, InitConfig, PickOptions, PickResult } from './
  *
  * @internal
  */
-export declare class ImageGalleryImpl implements ImageGalleryPlugin {
+export declare class ExifGalleryImpl implements ExifGalleryPlugin {
     /**
      * Native plugin instance for Capacitor Bridge communication.
      * @private
      */
     private nativePlugin;
     /**
-     * Create ImageGalleryImpl instance with native bridge dependency.
+     * Create ExifGalleryImpl instance with native bridge dependency.
      *
      * @param nativePlugin - Native plugin instance from Capacitor Bridge
      */
-    constructor(nativePlugin: ImageGalleryPlugin);
+    constructor(nativePlugin: ExifGalleryPlugin);
     /**
      * Initialize the plugin with optional configuration.
      *
@@ -61,13 +61,13 @@ export declare class ImageGalleryImpl implements ImageGalleryPlugin {
      * @example
      * ```typescript
      * // System language detection (navigator.language)
-     * await ImageGallery.initialize();
+     * await ExifGallery.initialize();
      *
      * // Explicit locale
-     * await ImageGallery.initialize({ locale: 'de' });
+     * await ExifGallery.initialize({ locale: 'de' });
      *
      * // Custom text overrides with system language detection
-     * await ImageGallery.initialize({
+     * await ExifGallery.initialize({
      *   customTexts: {
      *     galleryTitle: 'Pick Your Photos',
      *     confirmButton: 'Done',
@@ -75,7 +75,7 @@ export declare class ImageGalleryImpl implements ImageGalleryPlugin {
      * });
      *
      * // Explicit locale + custom overrides
-     * await ImageGallery.initialize({
+     * await ExifGallery.initialize({
      *   locale: 'en',
      *   customTexts: {
      *     galleryTitle: 'Choose Images',
@@ -83,7 +83,7 @@ export declare class ImageGalleryImpl implements ImageGalleryPlugin {
      * });
      *
      * // Request permissions upfront
-     * await ImageGallery.initialize({
+     * await ExifGallery.initialize({
      *   requestPermissionsUpfront: true,
      * });
      * ```
@@ -118,10 +118,10 @@ export declare class ImageGalleryImpl implements ImageGalleryPlugin {
      * @example
      * ```typescript
      * // Simple pick without filters
-     * const result = await ImageGallery.pick();
+     * const result = await ExifGallery.pick();
      *
      * // Location filter with coordinates
-     * const result = await ImageGallery.pick({
+     * const result = await ExifGallery.pick({
      *   filter: {
      *     location: {
      *       coordinates: [{ lat: 48.8566, lng: 2.3522 }], // Paris
@@ -131,7 +131,7 @@ export declare class ImageGalleryImpl implements ImageGalleryPlugin {
      * });
      *
      * // Time range filter
-     * const result = await ImageGallery.pick({
+     * const result = await ExifGallery.pick({
      *   filter: {
      *     timeRange: {
      *       start: new Date('2024-01-01'),
@@ -141,7 +141,7 @@ export declare class ImageGalleryImpl implements ImageGalleryPlugin {
      * });
      *
      * // Combined filters with custom options
-     * const result = await ImageGallery.pick({
+     * const result = await ExifGallery.pick({
      *   filter: {
      *     location: {
      *       polyline: [

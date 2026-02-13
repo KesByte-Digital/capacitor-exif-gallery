@@ -1,0 +1,71 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.2.4 effective-5.10 (swiftlang-6.2.4.1.4 clang-1700.6.4.2)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name ExifGallery
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.4
+import Capacitor
+import CommonCrypto
+import CoreLocation
+import CryptoKit
+import Foundation
+import Photos
+import Security
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_inheritsConvenienceInitializers @objc public class ExifGalleryImpl : ObjectiveC.NSObject {
+  @objc public func echo(_ value: Swift.String) -> Swift.String
+  @objc public func setTranslations(_ translations: [Swift.String : Swift.String])
+  @objc public func getTranslations() -> [Swift.String : Swift.String]
+  @objc public func isPhotoLibraryPermissionRequested() -> Swift.Bool
+  @objc public func setPhotoLibraryPermissionRequested(_ requested: Swift.Bool)
+  @objc public func trySetPhotoLibraryPermissionRequested() -> Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(ExifGalleryPlugin) public class ExifGalleryPlugin : Capacitor.CAPPlugin, Capacitor.CAPBridgedPlugin {
+  @objc final public let identifier: Swift.String
+  @objc final public let jsName: Swift.String
+  @objc final public let pluginMethods: [Capacitor.CAPPluginMethod]
+  @available(*, deprecated, message: "This initializer is deprecated and is not suggested for use. Any data set through this init method will be overridden when it is loaded on the bridge.")
+  @objc override dynamic public init(bridge: any Capacitor.CAPBridgeProtocol, pluginId: Swift.String, pluginName: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum LicenseError : Swift.Error, Foundation.LocalizedError {
+  case missingLicense
+  case invalidFormat
+  case missingFields
+  case bundleIdMismatch
+  case platformMismatch
+  case invalidSignature
+  case expired(Foundation.Date)
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var errorDescription: Swift.String? {
+    get
+  }
+  #endif
+  public var errorCode: Swift.String {
+    get
+  }
+}
+public struct LicenseKey {
+  public let bundleId: Swift.String
+  public let platforms: [Swift.String]
+  public let expiresAt: Foundation.Date?
+  public let features: [Swift.String]
+  public let version: Swift.String
+  public let signature: Swift.String
+  public static func decode(from base64String: Swift.String) throws -> ExifGallery.LicenseKey
+}
+@_hasMissingDesignatedInitializers public class LicenseValidator {
+  public static func validate() throws -> Swift.Bool
+  public static func clearCache()
+  @objc deinit
+}
+public enum SecurityHelper {
+  public static func assemblePublicKey() -> Swift.String
+  public static func verifySignature(payload: Swift.String, signature: Swift.String, publicKey: Swift.String) -> Swift.Bool
+  public static func verifyIntegrity() -> Swift.Bool
+}
