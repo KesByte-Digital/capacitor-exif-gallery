@@ -51,12 +51,6 @@ Open your `ios/App/App/Info.plist` and add:
 <string>YOUR_LICENSE_KEY_HERE</string>
 ```
 
-**Example:**
-```xml
-<key>KesByteExifGalleryLicense</key>
-<string>eyJidW5kbGVJZCI6ImNvbS5leGFtcGxlLmFwcCIsInBsYXRmb3JtcyI6WyJpb3MiXX0=</string>
-```
-
 #### Android Configuration (AndroidManifest.xml)
 
 Open your `android/app/src/main/AndroidManifest.xml` and add inside the `<application>` tag:
@@ -69,15 +63,6 @@ Open your `android/app/src/main/AndroidManifest.xml` and add inside the `<applic
         android:name="com.kesbytedigital.exifgallery.LICENSE_KEY"
         android:value="YOUR_LICENSE_KEY_HERE" />
 
-</application>
-```
-
-**Example:**
-```xml
-<application>
-    <meta-data
-        android:name="com.kesbytedigital.exifgallery.LICENSE_KEY"
-        android:value="eyJidW5kbGVJZCI6ImNvbS5leGFtcGxlLmFwcCIsInBsYXRmb3JtcyI6WyJhbmRyb2lkIl19" />
 </application>
 ```
 
