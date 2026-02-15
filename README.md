@@ -69,10 +69,12 @@ Open your `android/app/src/main/AndroidManifest.xml` and add inside the `<applic
 #### Validation Behavior
 
 - **Debug Builds:** License validation is skipped - full functionality available for testing
-- **Production Builds:** License is validated on `initialize()` call
-  - ✅ Valid license: Plugin works normally
-  - ❌ Invalid/missing license: `initialize()` throws an error
-  - Error codes: `LICENSE_MISSING`, `LICENSE_INVALID`, `LICENSE_EXPIRED`
+- **Production Builds:** License is validated when `pick()` is called
+  - ✅ Valid license: Gallery opens normally
+  - ❌ Invalid/missing license: `pick()` throws an error immediately
+  - Error codes: `LICENSE_MISSING`, `LICENSE_INVALID`, `LICENSE_EXPIRED`, `LICENSE_BUNDLE_MISMATCH`
+
+**Note:** The license is validated at the moment you call `pick()`, not during `initialize()`. This ensures fast app startup while still enforcing licensing before the plugin is actually used.
 
 #### Troubleshooting
 
