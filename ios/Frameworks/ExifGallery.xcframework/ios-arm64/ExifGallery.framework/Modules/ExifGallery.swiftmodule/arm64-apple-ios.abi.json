@@ -2608,14 +2608,14 @@
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/License\/LicenseValidator.swift",
       "kind": "StringLiteral",
-      "offset": 1695,
-      "length": 24,
-      "value": "\"CodewaveGalleryLicense\""
+      "offset": 1698,
+      "length": 27,
+      "value": "\"KesByteExifGalleryLicense\""
     },
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/License\/LicenseValidator.swift",
       "kind": "StringLiteral",
-      "offset": 1808,
+      "offset": 1814,
       "length": 5,
       "value": "\"ios\""
     },

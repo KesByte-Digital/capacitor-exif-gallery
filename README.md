@@ -47,13 +47,13 @@ Purchase your license key at **[exif-gallery.kesbyte-digital.com](https://exif-g
 Open your `ios/App/App/Info.plist` and add:
 
 ```xml
-<key>CodewaveGalleryLicense</key>
+<key>KesByteExifGalleryLicense</key>
 <string>YOUR_LICENSE_KEY_HERE</string>
 ```
 
 **Example:**
 ```xml
-<key>CodewaveGalleryLicense</key>
+<key>KesByteExifGalleryLicense</key>
 <string>eyJidW5kbGVJZCI6ImNvbS5leGFtcGxlLmFwcCIsInBsYXRmb3JtcyI6WyJpb3MiXX0=</string>
 ```
 
@@ -92,7 +92,7 @@ Open your `android/app/src/main/AndroidManifest.xml` and add inside the `<applic
 #### Troubleshooting
 
 **"License key not found" error:**
-- Verify the key name matches exactly: `CodewaveGalleryLicense` (iOS) or `com.kesbytedigital.exifgallery.LICENSE_KEY` (Android)
+- Verify the key name matches exactly: `KesByteExifGalleryLicense` (iOS) or `com.kesbytedigital.exifgallery.LICENSE_KEY` (Android)
 - Ensure you ran `npx cap sync` after adding the license
 - Check that the license key has no extra whitespace or line breaks
 
@@ -277,15 +277,29 @@ npx cap sync
 <string>This app uses your location to enhance image filtering capabilities</string>
 ```
 
+**Permission Details:**
+- `NSPhotoLibraryUsageDescription`: Required for reading photos from the library
+- `NSLocationWhenInUseUsageDescription`: Required for location-based filtering (only when app is in use)
+
 ### Step 3: Android Configuration
 
 **Add permissions to `android/app/src/main/AndroidManifest.xml`:**
 
 ```xml
+<!-- Photo Library Permissions -->
 <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+
+<!-- Location Permissions -->
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 ```
+
+**Permission Details:**
+- `READ_MEDIA_IMAGES`: For Android 13+ (API 33+), granular image access
+- `READ_EXTERNAL_STORAGE`: For Android 12 and below (API ≤32), legacy storage access
+- `ACCESS_FINE_LOCATION`: Required for precise location-based filtering
+- `ACCESS_COARSE_LOCATION`: Optional, improves location accuracy
 
 ## Usage Examples
 
