@@ -4,7 +4,7 @@ Filter and select images by location and time using EXIF metadata with this powe
 
 [![npm version](https://img.shields.io/npm/v/capacitor-exif-gallery.svg)](https://www.npmjs.com/package/capacitor-exif-gallery)
 [![npm downloads](https://img.shields.io/npm/dm/capacitor-exif-gallery.svg)](https://www.npmjs.com/package/capacitor-exif-gallery)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: Commercial](https://img.shields.io/badge/License-Commercial-red.svg)](https://exif-gallery.kesbyte-digital.com)
 
 ## Overview
 
@@ -716,11 +716,36 @@ type SupportedLocale = 'en' | 'de' | 'fr' | 'es';
 
 ## License
 
-MIT License - See LICENSE file for details
+**Commercial License - License Key Required for Production Use**
 
-Copyright (c) 2025 KesByte Digital
+Copyright (c) 2025 KesByte Digital. All rights reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software.
+This is a **commercial plugin** that requires a valid license key for production builds.
+
+### Debug Builds (Free for Testing)
+- ✅ **No license key required** for debug/development builds
+- ✅ Full functionality available for integration and testing
+- ✅ Integrate the plugin into your app and test all features freely
+
+### Production Builds (License Required)
+- ⚠️ **License key REQUIRED** for production/release builds
+- ⚠️ Production builds will **fail validation** without a valid license
+- ✅ Purchase a license at: **[exif-gallery.kesbyte-digital.com](https://exif-gallery.kesbyte-digital.com)**
+
+### How It Works
+1. **Development:** Install and test the plugin freely in debug builds
+2. **Production:** Purchase a license key before releasing your app
+3. **Integration:** Add the license key to your app configuration
+4. **Build:** Production builds validate the license automatically
+
+### License Purchase
+Visit **[exif-gallery.kesbyte-digital.com](https://exif-gallery.kesbyte-digital.com)** to:
+- Purchase a license for your project
+- View licensing options and pricing
+- Access your license dashboard
+- Get support and documentation
+
+**Important:** This plugin is NOT open source. The source code is proprietary and protected. Only compiled binaries are distributed via npm.
 
 ## Support
 
