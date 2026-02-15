@@ -36,7 +36,73 @@ npm install capacitor-exif-gallery
 npx cap sync
 ```
 
-### 2. Initialize (once at app startup)
+### 2. Configure License Key (Production Only)
+
+**⚠️ Required for production builds only** - Debug builds work without a license for testing.
+
+Purchase your license key at **[exif-gallery.kesbyte-digital.com](https://exif-gallery.kesbyte-digital.com)**, then add it to your app configuration:
+
+#### iOS Configuration (Info.plist)
+
+Open your `ios/App/App/Info.plist` and add:
+
+```xml
+<key>CodewaveGalleryLicense</key>
+<string>YOUR_LICENSE_KEY_HERE</string>
+```
+
+**Example:**
+```xml
+<key>CodewaveGalleryLicense</key>
+<string>eyJidW5kbGVJZCI6ImNvbS5leGFtcGxlLmFwcCIsInBsYXRmb3JtcyI6WyJpb3MiXX0=</string>
+```
+
+#### Android Configuration (AndroidManifest.xml)
+
+Open your `android/app/src/main/AndroidManifest.xml` and add inside the `<application>` tag:
+
+```xml
+<application>
+    <!-- Other configuration... -->
+
+    <meta-data
+        android:name="com.kesbytedigital.exifgallery.LICENSE_KEY"
+        android:value="YOUR_LICENSE_KEY_HERE" />
+
+</application>
+```
+
+**Example:**
+```xml
+<application>
+    <meta-data
+        android:name="com.kesbytedigital.exifgallery.LICENSE_KEY"
+        android:value="eyJidW5kbGVJZCI6ImNvbS5leGFtcGxlLmFwcCIsInBsYXRmb3JtcyI6WyJhbmRyb2lkIl19" />
+</application>
+```
+
+#### Validation Behavior
+
+- **Debug Builds:** License validation is skipped - full functionality available for testing
+- **Production Builds:** License is validated on `initialize()` call
+  - ✅ Valid license: Plugin works normally
+  - ❌ Invalid/missing license: `initialize()` throws an error
+  - Error codes: `LICENSE_MISSING`, `LICENSE_INVALID`, `LICENSE_EXPIRED`
+
+#### Troubleshooting
+
+**"License key not found" error:**
+- Verify the key name matches exactly: `CodewaveGalleryLicense` (iOS) or `com.kesbytedigital.exifgallery.LICENSE_KEY` (Android)
+- Ensure you ran `npx cap sync` after adding the license
+- Check that the license key has no extra whitespace or line breaks
+
+**"Bundle ID mismatch" error:**
+- Your license is tied to a specific bundle ID (e.g., `com.example.myapp`)
+- Verify your app's bundle ID matches the license
+- iOS: Check `CFBundleIdentifier` in Info.plist
+- Android: Check `applicationId` in `build.gradle`
+
+### 3. Initialize (once at app startup)
 
 ```typescript
 import { ExifGallery } from 'capacitor-exif-gallery';
