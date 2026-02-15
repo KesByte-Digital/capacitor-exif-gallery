@@ -362,6 +362,15 @@ export interface ImageResult {
      */
     uri: string;
     /**
+     * Web-safe path for displaying the image in a WebView.
+     * This is the Capacitor-converted URL (capacitor://localhost/_capacitor_file_/...).
+     *
+     * Use this for <img src> tags - no manual Capacitor.convertFileSrc() needed.
+     *
+     * @since 1.2.0
+     */
+    webPath?: string;
+    /**
      * EXIF metadata if available.
      * May be undefined if image has no EXIF data.
      */

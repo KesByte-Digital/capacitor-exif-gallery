@@ -2524,7 +2524,7 @@
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/ImageFilterCoordinator.swift",
       "kind": "IntegerLiteral",
-      "offset": 3411,
+      "offset": 3502,
       "length": 1,
       "value": "5"
     },
@@ -2558,38 +2558,52 @@
     },
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/ImageGalleryViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1802,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/ImageGalleryViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2386,
+      "offset": 2571,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/ImageGalleryViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2508,
+      "offset": 2693,
       "length": 3,
       "value": "200"
     },
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/ImageGalleryViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2521,
+      "offset": 2706,
       "length": 3,
       "value": "200"
     },
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/ImageGalleryViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4021,
+      "offset": 4206,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/ImageGalleryViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4060,
+      "offset": 4245,
       "length": 5,
       "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/ImageGalleryViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4306,
+      "length": 1,
+      "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/License\/LicenseValidator.swift",
