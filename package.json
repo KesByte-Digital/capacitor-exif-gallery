@@ -1,6 +1,6 @@
 {
   "name": "capacitor-exif-gallery",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Capacitor plugin for filtering and selecting images by location and time using EXIF data",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -21,11 +21,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KesByte-Digital/capacitor-image-gallery.git"
+    "url": "git+https://github.com/KesByte-Digital/capacitor-exif-gallery.git"
   },
   "bugs": {
-    "url": "https://github.com/KesByte-Digital/capacitor-image-gallery/issues"
+    "url": "https://github.com/KesByte-Digital/capacitor-exif-gallery/issues"
   },
+  "homepage": "https://github.com/KesByte-Digital/capacitor-exif-gallery#readme",
   "keywords": [
     "capacitor",
     "plugin",
