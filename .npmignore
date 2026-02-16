@@ -1,0 +1,14 @@
+# Exclude documentation assets from npm package
+  docs/
+  *.md
+  !README.md
+
+# Development files
+  .github/
+  .vscode/
+  .editorconfig
+  .gitignore
+
+# Build artifacts
+  *.log
+  .DS_Store
