@@ -1,4 +1,4 @@
-import * as polyline from 'polyline';
+import * as polyline from '@mapbox/polyline';
 /**
  * Decodes Google's Encoded Polyline format to coordinate array.
  *
