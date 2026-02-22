@@ -3,12 +3,10 @@
 // swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name ExifGallery
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.4
 import Capacitor
-import CommonCrypto
 import CoreLocation
 import CryptoKit
 import Foundation
 import Photos
-import Security
 import Swift
 import UIKit
 import _Concurrency
@@ -38,6 +36,7 @@ public enum LicenseError : Swift.Error, Foundation.LocalizedError {
   case invalidFormat
   case missingFields
   case bundleIdMismatch
+  case invalidPlugin
   case platformMismatch
   case invalidSignature
   case expired(Foundation.Date)
@@ -52,6 +51,8 @@ public enum LicenseError : Swift.Error, Foundation.LocalizedError {
 }
 public struct LicenseKey {
   public let bundleId: Swift.String
+  public let pluginId: Swift.String
+  public let tier: Swift.String
   public let platforms: [Swift.String]
   public let expiresAt: Foundation.Date?
   public let features: [Swift.String]

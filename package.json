@@ -1,6 +1,6 @@
 {
   "name": "capacitor-exif-gallery",
-  "version": "0.0.10",
+  "version": "1.0.0",
   "description": "Capacitor plugin for filtering and selecting images by location and time using EXIF data",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -86,6 +86,7 @@
     "@types/mapbox__polyline": "^1.0.5",
     "canvas": "3.0.0",
     "eslint": "^8.57.1",
+    "fast-json-stable-stringify": "^2.1.0",
     "jest": "^30.2.0",
     "jest-environment-jsdom": "^30.2.0",
     "piexifjs": "1.0.6",
@@ -114,6 +115,7 @@
     }
   },
   "dependencies": {
+    "@capacitor/device": "^8.0.1",
     "@mapbox/polyline": "^1.2.1"
   }
 }

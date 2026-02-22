@@ -946,6 +946,46 @@
           },
           {
             "kind": "Var",
+            "name": "invalidPlugin",
+            "printedName": "invalidPlugin",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ExifGallery.LicenseError.Type) -> ExifGallery.LicenseError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LicenseError",
+                    "printedName": "ExifGallery.LicenseError",
+                    "usr": "s:11ExifGallery12LicenseErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ExifGallery.LicenseError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LicenseError",
+                        "printedName": "ExifGallery.LicenseError",
+                        "usr": "s:11ExifGallery12LicenseErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ExifGallery12LicenseErrorO13invalidPluginyA2CmF",
+            "mangledName": "$s11ExifGallery12LicenseErrorO13invalidPluginyA2CmF",
+            "moduleName": "ExifGallery",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "platformMismatch",
             "printedName": "platformMismatch",
             "children": [
@@ -1278,6 +1318,96 @@
                 "declKind": "Accessor",
                 "usr": "s:11ExifGallery10LicenseKeyV8bundleIdSSvg",
                 "mangledName": "$s11ExifGallery10LicenseKeyV8bundleIdSSvg",
+                "moduleName": "ExifGallery",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "pluginId",
+            "printedName": "pluginId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExifGallery10LicenseKeyV8pluginIdSSvp",
+            "mangledName": "$s11ExifGallery10LicenseKeyV8pluginIdSSvp",
+            "moduleName": "ExifGallery",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExifGallery10LicenseKeyV8pluginIdSSvg",
+                "mangledName": "$s11ExifGallery10LicenseKeyV8pluginIdSSvg",
+                "moduleName": "ExifGallery",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "tier",
+            "printedName": "tier",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExifGallery10LicenseKeyV4tierSSvp",
+            "mangledName": "$s11ExifGallery10LicenseKeyV4tierSSvp",
+            "moduleName": "ExifGallery",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExifGallery10LicenseKeyV4tierSSvg",
+                "mangledName": "$s11ExifGallery10LicenseKeyV4tierSSvg",
                 "moduleName": "ExifGallery",
                 "implicit": true,
                 "accessorKind": "get"
@@ -1709,22 +1839,8 @@
       },
       {
         "kind": "Import",
-        "name": "CommonCrypto",
-        "printedName": "CommonCrypto",
-        "declKind": "Import",
-        "moduleName": "ExifGallery"
-      },
-      {
-        "kind": "Import",
         "name": "CryptoKit",
         "printedName": "CryptoKit",
-        "declKind": "Import",
-        "moduleName": "ExifGallery"
-      },
-      {
-        "kind": "Import",
-        "name": "Security",
-        "printedName": "Security",
         "declKind": "Import",
         "moduleName": "ExifGallery"
       },
@@ -2608,44 +2724,30 @@
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/License\/LicenseValidator.swift",
       "kind": "StringLiteral",
-      "offset": 1698,
-      "length": 27,
-      "value": "\"KesByteExifGalleryLicense\""
+      "offset": 1812,
+      "length": 22,
+      "value": "\"KBExifGalleryLicense\""
     },
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/License\/LicenseValidator.swift",
       "kind": "StringLiteral",
-      "offset": 1814,
+      "offset": 1913,
+      "length": 14,
+      "value": "\"exif-gallery\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/License\/LicenseValidator.swift",
+      "kind": "StringLiteral",
+      "offset": 2016,
       "length": 5,
       "value": "\"ios\""
     },
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/License\/SecurityHelper.swift",
       "kind": "StringLiteral",
-      "offset": 976,
-      "length": 18,
-      "value": "\"f84f221203e91955\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/License\/SecurityHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 1097,
-      "length": 18,
-      "value": "\"b7689d00a36fdeca\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/License\/SecurityHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 1217,
-      "length": 18,
-      "value": "\"7477bdef664b7a2e\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/License\/SecurityHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 1338,
-      "length": 18,
-      "value": "\"7efcf7a7fca4a118\""
+      "offset": 1258,
+      "length": 185,
+      "value": "\"-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEcGp61bTSMoWsIHtoaFA4ES60gVhI\nvA7PsHsJvnLN+aysDLbeKf9IeAIUwYSoYlOYe1dtnsGX+Ka0kJnNQq1J+Q==\n-----END PUBLIC KEY-----\""
     },
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/LoadingOverlayView.swift",

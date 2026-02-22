@@ -1,16 +1,47 @@
-# capacitor-exif-gallery
+# Exif Gallery for Capacitor
 
-Filter and select images by location and time using EXIF metadata with this powerful Capacitor plugin.
+**The intelligent photo picker for location-aware and time-based image selection.**
+
+Turn massive photo libraries into precisely filtered galleries. Exif Gallery for Capacitor enables your iOS and Android apps to filter images by GPS location, travel routes, and time ranges—all using EXIF metadata. Perfect for travel apps, photo journals, event documentation, and any application that needs smart image selection based on where and when photos were taken.
 
 [![npm version](https://img.shields.io/npm/v/capacitor-exif-gallery.svg)](https://www.npmjs.com/package/capacitor-exif-gallery)
 [![npm downloads](https://img.shields.io/npm/dm/capacitor-exif-gallery.svg)](https://www.npmjs.com/package/capacitor-exif-gallery)
 [![License: Commercial](https://img.shields.io/badge/License-Commercial-red.svg)](https://exif-gallery.kesbyte-digital.com)
 
-## Overview
+## Sample App
 
-**capacitor-exif-gallery** is a native Capacitor plugin that provides intelligent image filtering capabilities based on GPS location and timestamp metadata. Perfect for applications that need to narrow down image selection from large photo libraries using location-based or time-based criteria.
+A complete working example is available in the source repository at `/sample-app`. This Ionic Angular application demonstrates:
 
-### Key Features
+- Interactive location and time filtering
+- Route-based image filtering using polylines
+- EXIF metadata display
+- Multi-language UI
+- Real-world integration patterns
+
+<p align="center">
+  <img src="docs/images/01_onboarding.png" width="250" alt="Onboarding and welcome screen" />
+  <img src="docs/images/02_filters.png" width="250" alt="Location and time filters" />
+  <img src="docs/images/03_code.png" width="250" alt="Code examples and integration" />
+</p>
+
+### Running the Sample App
+
+```bash
+git clone https://github.com/KesByte-Digital/capacitor-exif-gallery.git
+cd capacitor-exif-gallery/sample-app
+npm install
+npx cap sync
+
+# Run on iOS
+ionic cap run ios
+
+# Run on Android
+ionic cap run android
+```
+
+**Note:** The sample app is in the source repository and demonstrates plugin functionality. It is not included in the npm package.
+
+## Key Features
 
 - **Location-based filtering** - Filter images within a geographic radius using GPS EXIF data
 - **Encoded polyline support** - Use Google Maps polyline format for route-based filtering
@@ -22,10 +53,10 @@ Filter and select images by location and time using EXIF metadata with this powe
 - **Automatic permissions** - Handles photo library and location permission requests seamlessly
 - **Custom UI text** - Override default labels and messages in any language
 
-### Platform Support
+## Platform Support
 
-- **iOS:** 14.0+ (Swift)
-- **Android:** 10+ (API 29+, Kotlin)
+- **iOS:** 15.0+ (Swift)
+- **Android:** 7.0+ (API 24+, Kotlin)
 
 ## Quick Start
 
@@ -47,7 +78,7 @@ Purchase your license key at **[exif-gallery.kesbyte-digital.com](https://exif-g
 Open your `ios/App/App/Info.plist` and add:
 
 ```xml
-<key>KesByteExifGalleryLicense</key>
+<key>KBExifGalleryLicense</key>
 <string>YOUR_LICENSE_KEY_HERE</string>
 ```
 
@@ -72,14 +103,14 @@ Open your `android/app/src/main/AndroidManifest.xml` and add inside the `<applic
 - **Production Builds:** License is validated when `pick()` is called
   - ✅ Valid license: Gallery opens normally
   - ❌ Invalid/missing license: `pick()` throws an error immediately
-  - Error codes: `LICENSE_MISSING`, `LICENSE_INVALID`, `LICENSE_EXPIRED`, `LICENSE_BUNDLE_MISMATCH`
+  - Error codes: `LICENSE_MISSING`, `LICENSE_INVALID`, `LICENSE_BUNDLE_MISMATCH`
 
 **Note:** The license is validated at the moment you call `pick()`, not during `initialize()`. This ensures fast app startup while still enforcing licensing before the plugin is actually used.
 
 #### Troubleshooting
 
 **"License key not found" error:**
-- Verify the key name matches exactly: `KesByteExifGalleryLicense` (iOS) or `com.kesbytedigital.exifgallery.LICENSE_KEY` (Android)
+- Verify the key name matches exactly: `KBExifGalleryLicense` (iOS) or `com.kesbytedigital.exifgallery.LICENSE_KEY` (Android)
 - Ensure you ran `npx cap sync` after adding the license
 - Check that the license key has no extra whitespace or line breaks
 
@@ -89,7 +120,43 @@ Open your `android/app/src/main/AndroidManifest.xml` and add inside the `<applic
 - iOS: Check `CFBundleIdentifier` in Info.plist
 - Android: Check `applicationId` in `build.gradle`
 
-### 3. Initialize (once at app startup)
+### 3. Configure Permissions
+
+#### iOS Permissions (Info.plist)
+
+Add the following to your `ios/App/App/Info.plist`:
+
+```xml
+<key>NSPhotoLibraryUsageDescription</key>
+<string>This app needs access to your photo library to filter and select images</string>
+
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>This app uses your location to enhance image filtering capabilities</string>
+```
+
+**Permission Details:**
+- `NSPhotoLibraryUsageDescription`: Required for reading photos from the library
+- `NSLocationWhenInUseUsageDescription`: Required for location-based filtering (only when app is in use)
+
+#### Android Permissions (AndroidManifest.xml)
+
+Add the following to your `android/app/src/main/AndroidManifest.xml`:
+
+```xml
+<!-- Photo Library Permissions -->
+<uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+
+<!-- Location Permission -->
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+```
+
+**Permission Details:**
+- `READ_MEDIA_IMAGES`: For Android 13+ (API 33+), granular image access
+- `READ_EXTERNAL_STORAGE`: For Android 12 and below (API ≤32), legacy storage access
+- `ACCESS_FINE_LOCATION`: Required for location-based filtering
+
+### 4. Initialize (once at app startup)
 
 ```typescript
 import { ExifGallery } from 'capacitor-exif-gallery';
@@ -98,7 +165,7 @@ import { ExifGallery } from 'capacitor-exif-gallery';
 await ExifGallery.initialize();
 ```
 
-### 3. Open gallery with filters
+### 5. Open gallery with filters
 
 ```typescript
 const result = await ExifGallery.pick({
@@ -243,51 +310,6 @@ await ExifGallery.initialize({
 });
 ```
 
-## Installation
-
-### Step 1: Install Package
-
-```bash
-npm install capacitor-exif-gallery
-npx cap sync
-```
-
-### Step 2: iOS Configuration
-
-**Add permissions to `ios/App/App/Info.plist`:**
-
-```xml
-<key>NSPhotoLibraryUsageDescription</key>
-<string>This app needs access to your photo library to filter and select images</string>
-
-<key>NSLocationWhenInUseUsageDescription</key>
-<string>This app uses your location to enhance image filtering capabilities</string>
-```
-
-**Permission Details:**
-- `NSPhotoLibraryUsageDescription`: Required for reading photos from the library
-- `NSLocationWhenInUseUsageDescription`: Required for location-based filtering (only when app is in use)
-
-### Step 3: Android Configuration
-
-**Add permissions to `android/app/src/main/AndroidManifest.xml`:**
-
-```xml
-<!-- Photo Library Permissions -->
-<uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
-
-<!-- Location Permissions -->
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-```
-
-**Permission Details:**
-- `READ_MEDIA_IMAGES`: For Android 13+ (API 33+), granular image access
-- `READ_EXTERNAL_STORAGE`: For Android 12 and below (API ≤32), legacy storage access
-- `ACCESS_FINE_LOCATION`: Required for precise location-based filtering
-- `ACCESS_COARSE_LOCATION`: Optional, improves location accuracy
-
 ## Usage Examples
 
 ### Basic Gallery
@@ -394,36 +416,6 @@ const result = await ExifGallery.pick({
 
 console.log(`Found ${result.images.length} photos along your route`);
 ```
-
-## Sample App
-
-A complete working example is available in the source repository at `/sample-app`. This Ionic Angular application demonstrates:
-
-- Interactive location and time filtering
-- Polyline route visualization
-- EXIF metadata display
-- Multi-language UI
-- Real-world integration patterns
-
-### Running the Sample App
-
-```bash
-git clone https://github.com/KesByte-Digital/capacitor-exif-gallery.git
-cd capacitor-exif-gallery/sample-app
-npm install
-npx cap sync
-
-# Run in browser
-npm start
-
-# Run on iOS
-ionic cap run ios
-
-# Run on Android
-ionic cap run android
-```
-
-**Note:** The sample app is in the source repository and demonstrates plugin functionality. It is not included in the npm package.
 
 ## API Documentation
 
@@ -760,23 +752,23 @@ type SupportedLocale = 'en' | 'de' | 'fr' | 'es';
 
 ### iOS
 
-- **Minimum Version:** iOS 14.0
+- **Minimum Version:** iOS 15.0
 - **Language:** Swift 5.5+
 - **Framework:** Capacitor 8.0+
 
 **Tested on:**
-- iOS 14.x, 15.x, 16.x, 17.x
+- iOS 15.x, 16.x, 17.x, 18.x
 - iPhone SE, iPhone 14, iPhone 15 Pro Max
 - iPad (all sizes)
 
 ### Android
 
-- **Minimum Version:** Android 10 (API 29)
+- **Minimum Version:** Android 7.0 (API 24)
 - **Language:** Kotlin 1.9+
 - **Framework:** Capacitor 8.0+
 
 **Tested on:**
-- Android 10, 11, 12, 13, 14
+- Android 7.0+, 10, 11, 12, 13, 14
 - Pixel 4, Pixel 5, Pixel 6, Pixel 7
 - Samsung Galaxy S21, Galaxy S22
 - Galaxy Tab S8

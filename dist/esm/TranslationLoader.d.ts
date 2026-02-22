@@ -40,7 +40,7 @@ export declare class TranslationLoader {
      * detectSystemLanguage(); // 'en' (fallback)
      * ```
      */
-    static detectSystemLanguage(): SupportedLocale;
+    static detectSystemLanguage(): Promise<SupportedLocale>;
     /**
      * Load default translations for a given locale.
      *
@@ -136,5 +136,5 @@ export declare class TranslationLoader {
      * });
      * ```
      */
-    static loadTranslations(locale?: SupportedLocale, customTexts?: Partial<TranslationSet>): TranslationSet;
+    static loadTranslations(locale?: SupportedLocale, customTexts?: Partial<TranslationSet>): Promise<TranslationSet>;
 }

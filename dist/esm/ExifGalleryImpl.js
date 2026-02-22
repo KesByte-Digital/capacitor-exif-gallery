@@ -91,8 +91,8 @@ export class ExifGalleryImpl {
     async initialize(config) {
         var _a;
         const state = PluginState.getInstance();
-        // Load and merge translations
-        const mergedTranslations = TranslationLoader.loadTranslations(config === null || config === void 0 ? void 0 : config.locale, config === null || config === void 0 ? void 0 : config.customTexts);
+        // Load and merge translations (async: detects device language)
+        const mergedTranslations = await TranslationLoader.loadTranslations(config === null || config === void 0 ? void 0 : config.locale, config === null || config === void 0 ? void 0 : config.customTexts);
         const requestPermissionsUpfront = (_a = config === null || config === void 0 ? void 0 : config.requestPermissionsUpfront) !== null && _a !== void 0 ? _a : false;
         // Call native layer FIRST (before updating state)
         // If native call fails, state remains unchanged

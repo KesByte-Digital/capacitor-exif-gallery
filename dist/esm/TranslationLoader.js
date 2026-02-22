@@ -1,3 +1,4 @@
+import { Device } from '@capacitor/device';
 // Import translation files
 import deTranslations from './translations/de.json';
 import enTranslations from './translations/en.json';
@@ -35,12 +36,17 @@ export class TranslationLoader {
      * detectSystemLanguage(); // 'en' (fallback)
      * ```
      */
-    static detectSystemLanguage() {
-        const browserLang = navigator.language || 'en';
-        const langCode = browserLang.split('-')[0].toLowerCase();
-        const supportedLocales = ['en', 'de', 'fr', 'es'];
-        if (supportedLocales.includes(langCode)) {
-            return langCode;
+    static async detectSystemLanguage() {
+        try {
+            const deviceInfo = await Device.getLanguageCode();
+            const langCode = deviceInfo.value.split('-')[0].toLowerCase();
+            const supportedLocales = ['en', 'de', 'fr', 'es'];
+            if (supportedLocales.includes(langCode)) {
+                return langCode;
+            }
+        }
+        catch (error) {
+            console.warn('[TranslationLoader] Failed to detect device language, falling back to English:', error);
         }
         return 'en'; // Fallback to English
     }
@@ -156,7 +162,7 @@ export class TranslationLoader {
      * });
      * ```
      */
-    static loadTranslations(locale, customTexts) {
+    static async loadTranslations(locale, customTexts) {
         // Determine locale to use
         let targetLocale;
         if (locale !== undefined) {
@@ -164,7 +170,7 @@ export class TranslationLoader {
             targetLocale = locale;
         }
         else {
-            targetLocale = this.detectSystemLanguage();
+            targetLocale = await this.detectSystemLanguage();
         }
         // Load default translations
         const defaults = this.loadDefaults(targetLocale);
