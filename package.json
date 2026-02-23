@@ -18,7 +18,7 @@
     "CapacitorExifGallery.podspec"
   ],
   "author": "Dennis",
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KesByte-Digital/capacitor-exif-gallery.git"
