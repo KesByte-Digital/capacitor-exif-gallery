@@ -217,7 +217,7 @@ class PolylineDecoder {
  *
  * @example
  * ```typescript
- * import { ExifGallery, InitializationRequiredError, NoPermissionError } from 'capacitor-exif-gallery';
+ * import { ExifGallery, InitializationRequiredError, NoPermissionError } from '@kesbyte/capacitor-exif-gallery';
  *
  * try {
  *   const result = await ExifGallery.pick();
@@ -274,7 +274,7 @@ class ExifGalleryError extends Error {
  *
  * @example
  * ```typescript
- * import { ExifGallery, InitializationRequiredError } from 'capacitor-exif-gallery';
+ * import { ExifGallery, InitializationRequiredError } from '@kesbyte/capacitor-exif-gallery';
  *
  * try {
  *   // ERROR: calling pick() without initialize()
@@ -301,7 +301,7 @@ class InitializationRequiredError extends ExifGalleryError {
  *
  * @example
  * ```typescript
- * import { ExifGallery, PickerInProgressError } from 'capacitor-exif-gallery';
+ * import { ExifGallery, PickerInProgressError } from '@kesbyte/capacitor-exif-gallery';
  *
  * // Track picker state
  * let isPickerOpen = false;
@@ -342,7 +342,7 @@ class PickerInProgressError extends ExifGalleryError {
  *
  * @example
  * ```typescript
- * import { ExifGallery, NoPermissionError } from 'capacitor-exif-gallery';
+ * import { ExifGallery, NoPermissionError } from '@kesbyte/capacitor-exif-gallery';
  *
  * try {
  *   const result = await ExifGallery.pick({
@@ -395,7 +395,7 @@ class NoPermissionError extends ExifGalleryError {
  *
  * @example
  * ```typescript
- * import { ExifGallery, FilterError } from 'capacitor-exif-gallery';
+ * import { ExifGallery, FilterError } from '@kesbyte/capacitor-exif-gallery';
  *
  * try {
  *   const result = await ExifGallery.pick({
@@ -464,7 +464,7 @@ class FilterError extends ExifGalleryError {
  *
  * @example
  * ```typescript
- * import { ExifGallery, NativeError } from 'capacitor-exif-gallery';
+ * import { ExifGallery, NativeError } from '@kesbyte/capacitor-exif-gallery';
  *
  * try {
  *   const result = await ExifGallery.pick();
@@ -1605,7 +1605,7 @@ const ExifGalleryNative = core.registerPlugin('ExifGalleryPlugin', {
  *
  * @example
  * ```typescript
- * import { ExifGallery } from 'capacitor-exif-gallery';
+ * import { ExifGallery } from '@kesbyte/capacitor-exif-gallery';
  *
  * // Initialize plugin
  * await ExifGallery.initialize({ locale: 'de' });

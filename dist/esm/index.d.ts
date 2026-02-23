@@ -17,7 +17,7 @@ export declare const ExifGalleryNative: ExifGalleryPlugin;
  *
  * @example
  * ```typescript
- * import { ExifGallery } from 'capacitor-exif-gallery';
+ * import { ExifGallery } from '@kesbyte/capacitor-exif-gallery';
  *
  * // Initialize plugin
  * await ExifGallery.initialize({ locale: 'de' });

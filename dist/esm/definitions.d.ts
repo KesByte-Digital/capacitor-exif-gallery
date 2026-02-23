@@ -402,7 +402,7 @@ export interface PickResult {
  *
  * @example
  * ```typescript
- * import { ExifGallery } from 'capacitor-exif-gallery';
+ * import { ExifGallery } from '@kesbyte/capacitor-exif-gallery';
  *
  * // Initialize plugin (once at app startup)
  * await ExifGallery.initialize({

@@ -4,8 +4,8 @@
 
 Turn massive photo libraries into precisely filtered galleries. Exif Gallery for Capacitor enables your iOS and Android apps to filter images by GPS location, travel routes, and time ranges—all using EXIF metadata. Perfect for travel apps, photo journals, event documentation, and any application that needs smart image selection based on where and when photos were taken.
 
-[![npm version](https://img.shields.io/npm/v/capacitor-exif-gallery.svg)](https://www.npmjs.com/package/capacitor-exif-gallery)
-[![npm downloads](https://img.shields.io/npm/dm/capacitor-exif-gallery.svg)](https://www.npmjs.com/package/capacitor-exif-gallery)
+[![npm version](https://img.shields.io/npm/v/@kesbyte/capacitor-exif-gallery.svg)](https://www.npmjs.com/package/@kesbyte/capacitor-exif-gallery)
+[![npm downloads](https://img.shields.io/npm/dm/@kesbyte/capacitor-exif-gallery.svg)](https://www.npmjs.com/package/@kesbyte/capacitor-exif-gallery)
 [![License: Commercial](https://img.shields.io/badge/License-Commercial-red.svg)](https://exif-gallery.kesbyte-digital.com)
 
 ## Sample App
@@ -63,7 +63,7 @@ ionic cap run android
 ### 1. Install
 
 ```bash
-npm install capacitor-exif-gallery
+npm install @kesbyte/capacitor-exif-gallery
 npx cap sync
 ```
 
@@ -159,7 +159,7 @@ Add the following to your `android/app/src/main/AndroidManifest.xml`:
 ### 4. Initialize (once at app startup)
 
 ```typescript
-import { ExifGallery } from 'capacitor-exif-gallery';
+import { ExifGallery } from '@kesbyte/capacitor-exif-gallery';
 
 // During app initialization
 await ExifGallery.initialize();
@@ -317,7 +317,7 @@ await ExifGallery.initialize({
 Open gallery without filters - user can manually select images.
 
 ```typescript
-import { ExifGallery } from 'capacitor-exif-gallery';
+import { ExifGallery } from '@kesbyte/capacitor-exif-gallery';
 
 const result = await ExifGallery.pick();
 

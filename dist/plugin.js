@@ -216,7 +216,7 @@ var capacitorExifGalleryPlugin = (function (exports, core) {
      *
      * @example
      * ```typescript
-     * import { ExifGallery, InitializationRequiredError, NoPermissionError } from 'capacitor-exif-gallery';
+     * import { ExifGallery, InitializationRequiredError, NoPermissionError } from '@kesbyte/capacitor-exif-gallery';
      *
      * try {
      *   const result = await ExifGallery.pick();
@@ -273,7 +273,7 @@ var capacitorExifGalleryPlugin = (function (exports, core) {
      *
      * @example
      * ```typescript
-     * import { ExifGallery, InitializationRequiredError } from 'capacitor-exif-gallery';
+     * import { ExifGallery, InitializationRequiredError } from '@kesbyte/capacitor-exif-gallery';
      *
      * try {
      *   // ERROR: calling pick() without initialize()
@@ -300,7 +300,7 @@ var capacitorExifGalleryPlugin = (function (exports, core) {
      *
      * @example
      * ```typescript
-     * import { ExifGallery, PickerInProgressError } from 'capacitor-exif-gallery';
+     * import { ExifGallery, PickerInProgressError } from '@kesbyte/capacitor-exif-gallery';
      *
      * // Track picker state
      * let isPickerOpen = false;
@@ -341,7 +341,7 @@ var capacitorExifGalleryPlugin = (function (exports, core) {
      *
      * @example
      * ```typescript
-     * import { ExifGallery, NoPermissionError } from 'capacitor-exif-gallery';
+     * import { ExifGallery, NoPermissionError } from '@kesbyte/capacitor-exif-gallery';
      *
      * try {
      *   const result = await ExifGallery.pick({
@@ -394,7 +394,7 @@ var capacitorExifGalleryPlugin = (function (exports, core) {
      *
      * @example
      * ```typescript
-     * import { ExifGallery, FilterError } from 'capacitor-exif-gallery';
+     * import { ExifGallery, FilterError } from '@kesbyte/capacitor-exif-gallery';
      *
      * try {
      *   const result = await ExifGallery.pick({
@@ -463,7 +463,7 @@ var capacitorExifGalleryPlugin = (function (exports, core) {
      *
      * @example
      * ```typescript
-     * import { ExifGallery, NativeError } from 'capacitor-exif-gallery';
+     * import { ExifGallery, NativeError } from '@kesbyte/capacitor-exif-gallery';
      *
      * try {
      *   const result = await ExifGallery.pick();
@@ -1604,7 +1604,7 @@ var capacitorExifGalleryPlugin = (function (exports, core) {
      *
      * @example
      * ```typescript
-     * import { ExifGallery } from 'capacitor-exif-gallery';
+     * import { ExifGallery } from '@kesbyte/capacitor-exif-gallery';
      *
      * // Initialize plugin
      * await ExifGallery.initialize({ locale: 'de' });
