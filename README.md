@@ -1,12 +1,42 @@
 # Exif Gallery for Capacitor
 
-**The intelligent photo picker for location-aware and time-based image selection.**
-
-Turn massive photo libraries into precisely filtered galleries. Exif Gallery for Capacitor enables your iOS and Android apps to filter images by GPS location, travel routes, and time ranges—all using EXIF metadata. Perfect for travel apps, photo journals, event documentation, and any application that needs smart image selection based on where and when photos were taken.
+A Capacitor plugin for filtering and picking images by GPS location, route polylines, and time range using EXIF metadata. The native iOS & Android image picker that turns massive photo libraries into precisely filtered galleries — perfect for travel apps, photo journals, event documentation, and any application that needs smart image selection based on where and when photos were taken.
 
 [![npm version](https://img.shields.io/npm/v/@kesbyte/capacitor-exif-gallery.svg)](https://www.npmjs.com/package/@kesbyte/capacitor-exif-gallery)
 [![npm downloads](https://img.shields.io/npm/dm/@kesbyte/capacitor-exif-gallery.svg)](https://www.npmjs.com/package/@kesbyte/capacitor-exif-gallery)
-[![License: Commercial](https://img.shields.io/badge/License-Commercial-red.svg)](https://exif-gallery.kesbyte-digital.com)
+[![License: Commercial](https://img.shields.io/badge/License-Commercial-red.svg)](https://plugins.kesbyte-digital.com/exif-gallery)
+[![Capacitor 8](https://img.shields.io/badge/Capacitor-8-blue.svg)](https://capacitorjs.com)
+[![Platform: iOS | Android](https://img.shields.io/badge/Platform-iOS%20%7C%20Android-lightgrey.svg)]()
+[![npm provenance](https://img.shields.io/badge/npm-provenance-green.svg)](https://docs.npmjs.com/generating-provenance-statements)
+
+## Why Exif Gallery?
+
+The standard `@capacitor/camera` plugin lets users pick photos — but it can't
+filter them. Exif Gallery adds native GPS and time-based filtering *before*
+the user selects images:
+
+| Feature                        | @capacitor/camera | @capacitor-community/media | Exif Gallery |
+|--------------------------------|:-----------------:|:--------------------------:|:------------:|
+| Pick images from gallery       | ✅                | ✅                         | ✅           |
+| Read EXIF metadata             | Partial           | ❌                         | ✅           |
+| Filter by GPS location         | ❌                | ❌                         | ✅           |
+| Filter by time range           | ❌                | ❌                         | ✅           |
+| Route/polyline corridor filter | ❌                | ❌                         | ✅           |
+| Multi-language native UI       | ❌                | ❌                         | ✅           |
+| Intelligent fallback logic     | ❌                | ❌                         | ✅           |
+
+## At a Glance
+
+- ✅ Filter photos by GPS radius or route polyline
+- ✅ Filter by date/time range
+- ✅ Combine location + time filters (AND logic)
+- ✅ Extract EXIF metadata (GPS, timestamps)
+- ✅ Intelligent fallback when too few results
+- ✅ Native UI in English, German, French, Spanish
+- ✅ Custom UI text overrides
+- ✅ iOS 15+ & Android 7.0+ (API 24)
+- ✅ Capacitor 8 compatible
+- ✅ Free for debug builds — license required for production
 
 ## Sample App
 
@@ -39,7 +69,7 @@ ionic cap run ios
 ionic cap run android
 ```
 
-**Note:** The sample app is in the source repository and demonstrates plugin functionality. It is not included in the npm package.
+**Note:** The sample app demonstrates plugin functionality and is available in the [GitHub repository](https://github.com/KesByte-Digital/capacitor-exif-gallery). It is not included in the npm package.
 
 ## Key Features
 
@@ -71,7 +101,7 @@ npx cap sync
 
 **⚠️ Required for production builds only** - Debug builds work without a license for testing.
 
-Purchase your license key at **[exif-gallery.kesbyte-digital.com](https://exif-gallery.kesbyte-digital.com)**, then add it to your app configuration:
+Purchase your license key at **[plugins.kesbyte-digital.com/exif-gallery](https://plugins.kesbyte-digital.com/exif-gallery)**, then add it to your app configuration:
 
 #### iOS Configuration (Info.plist)
 
@@ -789,7 +819,7 @@ This is a **commercial plugin** that requires a valid license key for production
 ### Production Builds (License Required)
 - ⚠️ **License key REQUIRED** for production/release builds
 - ⚠️ Production builds will **fail validation** without a valid license
-- ✅ Purchase a license at: **[exif-gallery.kesbyte-digital.com](https://exif-gallery.kesbyte-digital.com)**
+- ✅ Purchase a license at: **[plugins.kesbyte-digital.com/exif-gallery](https://plugins.kesbyte-digital.com/exif-gallery)**
 
 ### How It Works
 1. **Development:** Install and test the plugin freely in debug builds
@@ -798,7 +828,7 @@ This is a **commercial plugin** that requires a valid license key for production
 4. **Build:** Production builds validate the license automatically
 
 ### License Purchase
-Visit **[exif-gallery.kesbyte-digital.com](https://exif-gallery.kesbyte-digital.com)** to:
+Visit **[plugins.kesbyte-digital.com/exif-gallery](https://plugins.kesbyte-digital.com/exif-gallery)** to:
 - Purchase a license for your project
 - View licensing options and pricing
 - Access your license dashboard

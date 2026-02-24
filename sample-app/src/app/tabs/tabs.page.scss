@@ -1,0 +1,15 @@
+ion-tab-bar {
+  --background: var(--ion-color-step-50, #f7f7f7);
+  --color: var(--ion-color-medium);
+  --color-selected: var(--ion-color-secondary);
+
+  border-top: 1px solid var(--ion-border-color, #d7d7d7);
+}
+
+:host-context(.ios) ion-tab-bar {
+  --background: var(--ion-tab-bar-background, var(--ion-background-color, #fff));
+}
+
+:host-context(.md) ion-tab-bar {
+  --background: var(--ion-tab-bar-background, var(--ion-background-color, #fff));
+}

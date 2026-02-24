@@ -1,0 +1,148 @@
+{
+  "version": "1.0.0",
+  "generated": "2026-02-14T02:35:28.487Z",
+  "totalImages": 10,
+  "totalSizeKB": "508.90",
+  "images": [
+    {
+      "filename": "berlin-2025-01-15.jpg",
+      "city": "Berlin",
+      "lat": 52.52,
+      "lon": 13.405,
+      "date": "2025-01-15T14:30:00",
+      "orientation": "landscape",
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "sizeBytes": 48981,
+      "sha256": "50dfef99562e8115c14757c4ceeeeee8479e53d801982e483b13e527ceaad859"
+    },
+    {
+      "filename": "münchen-2025-02-20.jpg",
+      "city": "München",
+      "lat": 48.1351,
+      "lon": 11.582,
+      "date": "2025-02-20T09:15:00",
+      "orientation": "portrait",
+      "dimensions": {
+        "width": 1080,
+        "height": 1920
+      },
+      "sizeBytes": 53606,
+      "sha256": "135afaccfcef2813a5f642bf865d331e2393aeee1e28bb5894482af06ecfd04b"
+    },
+    {
+      "filename": "hamburg-2025-03-10.jpg",
+      "city": "Hamburg",
+      "lat": 53.5511,
+      "lon": 9.9937,
+      "date": "2025-03-10T16:45:00",
+      "orientation": "landscape",
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "sizeBytes": 51956,
+      "sha256": "1e218c3767474b04c74046dd3b3a5b0d06e65e12cd5d1b710a46e983a80cb2db"
+    },
+    {
+      "filename": "köln-2025-04-05.jpg",
+      "city": "Köln",
+      "lat": 50.9375,
+      "lon": 6.9603,
+      "date": "2025-04-05T11:20:00",
+      "orientation": "portrait",
+      "dimensions": {
+        "width": 1080,
+        "height": 1920
+      },
+      "sizeBytes": 46502,
+      "sha256": "33d934f28db8d3190e381965ad8c5ad8fd631ef03dd25b9327476d668f9814c4"
+    },
+    {
+      "filename": "frankfurt-2025-05-12.jpg",
+      "city": "Frankfurt",
+      "lat": 50.1109,
+      "lon": 8.6821,
+      "date": "2025-05-12T18:00:00",
+      "orientation": "landscape",
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "sizeBytes": 51773,
+      "sha256": "6a1f34dca1ab78548077cf80285db0ce34301dd906fc059e474b3385a371c976"
+    },
+    {
+      "filename": "stuttgart-2025-06-22.jpg",
+      "city": "Stuttgart",
+      "lat": 48.7758,
+      "lon": 9.1829,
+      "date": "2025-06-22T13:10:00",
+      "orientation": "portrait",
+      "dimensions": {
+        "width": 1080,
+        "height": 1920
+      },
+      "sizeBytes": 52699,
+      "sha256": "ca6df9228b88450989e1accc17f8b1d587ecc05f03439199db004de5c6d6b2e6"
+    },
+    {
+      "filename": "düsseldorf-2025-07-28.jpg",
+      "city": "Düsseldorf",
+      "lat": 51.2277,
+      "lon": 6.7735,
+      "date": "2025-07-28T10:00:00",
+      "orientation": "landscape",
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "sizeBytes": 54669,
+      "sha256": "c8b07ff895ee74f99d60c00cb8933ae6109cd5f51be81652392130877f5851b3"
+    },
+    {
+      "filename": "leipzig-2025-08-18.jpg",
+      "city": "Leipzig",
+      "lat": 51.3397,
+      "lon": 12.3731,
+      "date": "2025-08-18T15:30:00",
+      "orientation": "portrait",
+      "dimensions": {
+        "width": 1080,
+        "height": 1920
+      },
+      "sizeBytes": 51722,
+      "sha256": "1f2508418a3fd797ad102cec0e34b3b6c6c77da7c6e09b72e91a5db42b578873"
+    },
+    {
+      "filename": "dresden-2025-09-25.jpg",
+      "city": "Dresden",
+      "lat": 51.0504,
+      "lon": 13.7373,
+      "date": "2025-09-25T12:00:00",
+      "orientation": "landscape",
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "sizeBytes": 54745,
+      "sha256": "fc2b0bcbdf5de14c7ceb7c45fdb2141edaf90d23cc072e27538e02ae7416abe8"
+    },
+    {
+      "filename": "nürnberg-2025-10-08.jpg",
+      "city": "Nürnberg",
+      "lat": 49.4521,
+      "lon": 11.0767,
+      "date": "2025-10-08T14:45:00",
+      "orientation": "portrait",
+      "dimensions": {
+        "width": 1080,
+        "height": 1920
+      },
+      "sizeBytes": 54463,
+      "sha256": "68c5bfe059c07e0792d3f7a18980bd1f85ebca8e9d5a8aa69c78e25c563278be"
+    }
+  ]
+}

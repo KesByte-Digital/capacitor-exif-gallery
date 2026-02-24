@@ -1,0 +1,230 @@
+<ion-content class="filters-tab">
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="hero-icon">
+      <ion-icon name="funnel"></ion-icon>
+    </div>
+    <h1 class="hero-title">Filters</h1>
+    <p class="hero-subtitle">Test location, polyline, and time range filters with adjustable parameters</p>
+  </div>
+
+  <!-- Location Filter Card -->
+  <div class="filter-card filter-card-location">
+    <div class="filter-card-header">
+      <div class="filter-icon-wrapper icon-teal">
+        <ion-icon name="location-outline"></ion-icon>
+      </div>
+      <h3>Location Filter</h3>
+    </div>
+
+    <div class="filter-parameters">
+      <!-- Use My Location Button -->
+      <button class="use-location-button" (click)="useMyLocation()" [disabled]="isLoadingLocation">
+        <ion-icon name="navigate"></ion-icon>
+        <span *ngIf="!isLoadingLocation">Use My Location</span>
+        <span *ngIf="isLoadingLocation">Getting Location...</span>
+      </button>
+
+      <!-- Location Coordinates -->
+      <div class="location-inputs">
+        <div class="location-input-group">
+          <label>Latitude</label>
+          <input
+            type="number"
+            class="location-input-field"
+            [(ngModel)]="locationLatitude"
+            step="0.0001"
+            placeholder="e.g., 52.5200"
+          />
+        </div>
+        <div class="location-input-group">
+          <label>Longitude</label>
+          <input
+            type="number"
+            class="location-input-field"
+            [(ngModel)]="locationLongitude"
+            step="0.0001"
+            placeholder="e.g., 13.4050"
+          />
+        </div>
+      </div>
+
+      <!-- Radius Slider -->
+      <div class="filter-param-row">
+        <label>Radius</label>
+        <span class="param-value">{{ radiusKm }} km</span>
+      </div>
+      <ion-range
+        [min]="1"
+        [max]="50"
+        [value]="radiusKm"
+        [pin]="true"
+        class="filter-slider"
+        (ionChange)="onRadiusChange($event)"
+      >
+      </ion-range>
+    </div>
+
+    <div class="filter-actions">
+      <button class="filter-run-button btn-teal" (click)="runLocationFilter()">
+        <ion-icon name="play"></ion-icon>
+        Run
+      </button>
+      <button class="filter-code-button" (click)="viewLocationCode()">
+        <ion-icon name="code-slash-outline"></ion-icon>
+      </button>
+    </div>
+  </div>
+
+  <!-- Polyline Filter Card -->
+  <div class="filter-card filter-card-polyline">
+    <div class="filter-card-header">
+      <div class="filter-icon-wrapper icon-purple">
+        <ion-icon name="git-network-outline"></ion-icon>
+      </div>
+      <h3>Polyline Filter</h3>
+    </div>
+
+    <div class="filter-parameters">
+      <div class="filter-param-row">
+        <label>Tolerance</label>
+        <span class="param-value">{{ toleranceKm }} km</span>
+      </div>
+      <ion-range
+        [min]="1"
+        [max]="50"
+        [value]="toleranceKm"
+        [pin]="true"
+        class="filter-slider"
+        (ionChange)="onToleranceChange($event)"
+      >
+      </ion-range>
+
+      <!-- Route Selector -->
+      <div class="route-selector-section">
+        <div class="route-selector-label">SELECT ROUTE</div>
+        <button class="route-selector-trigger" (click)="openRouteSelector()">
+          <span class="route-selector-trigger-text">{{ selectedRoute?.name || 'Select a route' }}</span>
+          <ion-icon name="chevron-down-outline"></ion-icon>
+        </button>
+      </div>
+
+      <!-- Route Points Display -->
+      <div class="route-points-section" *ngIf="selectedRoute">
+        <div class="route-points-label">ROUTE POINTS</div>
+        <div class="route-points-list">
+          <div class="route-point" *ngFor="let point of selectedRoute.points; let i = index">
+            <div class="route-point-number">{{ i + 1 }}</div>
+            <span class="route-point-name">{{ point.label }}</span>
+            <span class="route-point-coords">{{ point.lat.toFixed(2) }}, {{ point.lng.toFixed(2) }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="filter-actions">
+      <button class="filter-run-button btn-purple" (click)="runPolylineFilter()">
+        <ion-icon name="play"></ion-icon>
+        Run
+      </button>
+      <button class="filter-code-button" (click)="viewPolylineCode()">
+        <ion-icon name="code-slash-outline"></ion-icon>
+      </button>
+    </div>
+  </div>
+
+  <!-- Time Range Filter Card -->
+  <div class="filter-card filter-card-time">
+    <div class="filter-card-header">
+      <div class="filter-icon-wrapper icon-orange">
+        <ion-icon name="time-outline"></ion-icon>
+      </div>
+      <h3>Time Range Filter</h3>
+    </div>
+
+    <div class="filter-parameters">
+      <div class="date-range-section">
+        <div class="date-button-wrapper">
+          <label>FROM</label>
+          <ion-button expand="block" fill="outline" id="start-date-button" class="date-picker-button">
+            <ion-icon slot="start" name="calendar-outline"></ion-icon>
+            <span class="date-display">{{ formatDateForDisplay(startDate) }}</span>
+          </ion-button>
+          <ion-popover trigger="start-date-button" show-backdrop="false">
+            <ng-template>
+              <ion-datetime presentation="date" [(ngModel)]="startDate" [max]="endDate || undefined"></ion-datetime>
+            </ng-template>
+          </ion-popover>
+        </div>
+
+        <div class="date-button-wrapper">
+          <label>TO</label>
+          <ion-button expand="block" fill="outline" id="end-date-button" class="date-picker-button">
+            <ion-icon slot="start" name="calendar-outline"></ion-icon>
+            <span class="date-display">{{ formatDateForDisplay(endDate) }}</span>
+          </ion-button>
+          <ion-popover trigger="end-date-button" show-backdrop="false">
+            <ng-template>
+              <ion-datetime presentation="date" [(ngModel)]="endDate" [min]="startDate || undefined"></ion-datetime>
+            </ng-template>
+          </ion-popover>
+        </div>
+      </div>
+    </div>
+
+    <div class="filter-actions">
+      <button class="filter-run-button btn-orange" (click)="runTimeRangeFilter()">
+        <ion-icon name="play"></ion-icon>
+        Run
+      </button>
+      <button class="filter-code-button" (click)="viewTimeRangeCode()">
+        <ion-icon name="code-slash-outline"></ion-icon>
+      </button>
+    </div>
+  </div>
+
+  <!-- Results Card -->
+  <ion-card *ngIf="showResults" class="filters-results-card" id="results-section">
+    <ion-card-header>
+      <ion-card-title>Results</ion-card-title>
+      <ion-button slot="end" fill="clear" (click)="clearResults()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-card-header>
+
+    <ion-card-content>
+      <!-- Statistics -->
+      <div class="filters-result-stats">
+        <div class="filters-stat-item">
+          <ion-icon name="image-outline"></ion-icon>
+          <span><strong>{{ resultCount }}</strong> images</span>
+        </div>
+        <div class="filters-stat-item">
+          <ion-icon name="time-outline"></ion-icon>
+          <span><strong>{{ resultTime }}</strong>ms</span>
+        </div>
+        <div class="filters-stat-item">
+          <ion-icon name="funnel-outline"></ion-icon>
+          <span>{{ resultFilterName }}</span>
+        </div>
+      </div>
+
+      <!-- Image Grid -->
+      <div *ngIf="resultCount > 0" class="filters-image-grid">
+        <button *ngFor="let image of resultImages.slice(0, 12)" class="grid-item" (click)="previewImage(image)">
+          <img [src]="getImageSrc(image)" alt="Gallery Image" loading="lazy" />
+        </button>
+      </div>
+
+      <!-- More Results Info -->
+      <p *ngIf="resultCount > 12" class="more-results-info">Showing first 12 of {{ resultCount }} images</p>
+
+      <!-- Empty State -->
+      <div *ngIf="resultCount === 0" class="filters-empty-state">
+        <ion-icon name="images-outline"></ion-icon>
+        <h3>No Images Found</h3>
+        <p>Make sure you have photos with GPS/EXIF data on your device.</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

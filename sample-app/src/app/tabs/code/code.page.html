@@ -1,0 +1,76 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Code Examples</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="code-content">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Code Examples</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="content-wrapper">
+    <!-- Hero Header Section -->
+    <div class="hero-section">
+      <div class="hero-icon">
+        <ion-icon name="code-slash"></ion-icon>
+      </div>
+      <h1 class="hero-title">Code Examples</h1>
+      <p class="hero-subtitle">Ready-to-use examples for integrating ExifGallery into your Capacitor app</p>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-section">
+      <ion-searchbar
+        [(ngModel)]="searchTerm"
+        (ionInput)="onSearchChange($event)"
+        (ionClear)="clearSearch()"
+        placeholder="Search examples..."
+        debounce="300"
+        mode="md"
+      ></ion-searchbar>
+    </div>
+
+    <!-- Category Filter -->
+    <div class="filter-section">
+      <ion-segment [(ngModel)]="selectedCategory" (ionChange)="onCategoryChange($event)" scrollable mode="md">
+        <ion-segment-button *ngFor="let cat of categories" [value]="cat.value">
+          <ion-label>{{ cat.label }}</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+
+    <!-- Examples List -->
+    <div class="examples-container">
+      <ion-card class="code-card" *ngFor="let example of filteredExamples">
+        <ion-card-header>
+          <div class="code-header">
+            <ion-icon [name]="example.icon" color="primary"></ion-icon>
+            <ion-card-title>{{ example.title }}</ion-card-title>
+          </div>
+          <ion-card-subtitle>{{ example.description }}</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content>
+          <div class="code-block-container">
+            <pre class="code-block"><code>{{ example.code }}</code></pre>
+          </div>
+
+          <ion-button expand="block" fill="outline" (click)="copyCode(example.code, example.title)">
+            <ion-icon slot="start" name="copy-outline"></ion-icon>
+            Copy Code
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+
+      <!-- No Results Message -->
+      <div class="no-results" *ngIf="filteredExamples.length === 0">
+        <ion-icon name="search-outline"></ion-icon>
+        <h2>No examples found</h2>
+        <p>Try adjusting your search or filter</p>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,92 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="home-content">
+  <!-- Large Title -->
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Home</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="content-wrapper">
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <div class="hero-icon">
+        <ion-icon name="images"></ion-icon>
+      </div>
+      <h1 class="hero-title">Capacitor ExifGallery Demo</h1>
+      <p class="hero-subtitle">
+        Powerful photo filtering based on location, routes, and time with EXIF metadata extraction.
+      </p>
+    </div>
+
+    <!-- Feature Cards -->
+    <div class="features-section">
+      <h2 class="section-title">Key Features</h2>
+
+      <ion-card *ngFor="let feature of features" class="feature-card">
+        <ion-card-content>
+          <div class="feature-icon-wrapper">
+            <ion-icon [name]="feature.icon" [color]="feature.color"></ion-icon>
+          </div>
+          <h3 class="feature-title">{{ feature.title }}</h3>
+          <p class="feature-description">{{ feature.description }}</p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <!-- How to Use Section -->
+    <div class="how-to-section">
+      <h2 class="section-title">How to Use</h2>
+
+      <ion-card class="info-card">
+        <ion-card-content>
+          <div class="info-steps">
+            <div class="info-step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h4>Navigate to Filters Tab</h4>
+                <p>Use the tab bar to access the Filters page</p>
+              </div>
+            </div>
+
+            <div class="info-step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h4>Choose Your Filter Type</h4>
+                <p>Select location-based, route corridor, or time range filtering</p>
+              </div>
+            </div>
+
+            <div class="info-step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h4>View Filtered Results</h4>
+                <p>Browse photos with extracted EXIF metadata</p>
+              </div>
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="cta-section">
+      <ion-card class="cta-card">
+        <ion-card-content>
+          <ion-icon name="funnel" color="primary"></ion-icon>
+          <h3>Ready to Get Started?</h3>
+          <p>Try the Filters tab to see the plugin in action!</p>
+          <ion-button expand="block" routerLink="/tabs/filters" color="primary">
+            <ion-icon slot="start" name="arrow-forward"></ion-icon>
+            Open Filters
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

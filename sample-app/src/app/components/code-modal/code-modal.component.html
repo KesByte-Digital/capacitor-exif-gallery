@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ title }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="code-modal-content">
+    <div class="code-block-container">
+      <pre class="code-block"><code>{{ code }}</code></pre>
+    </div>
+
+    <ion-button expand="block" fill="solid" color="primary" (click)="copyCode()" class="copy-button">
+      <ion-icon slot="start" name="copy-outline"></ion-icon>
+      Copy Code
+    </ion-button>
+  </div>
+</ion-content>

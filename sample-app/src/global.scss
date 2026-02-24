@@ -1,0 +1,804 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Global styles for the entire app, including component overrides and theming
+ * Based on example-app component themes (Story 9.16)
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import '@ionic/angular/css/core.css';
+
+/* Basic CSS for apps built with Ionic */
+@import '@ionic/angular/css/normalize.css';
+@import '@ionic/angular/css/structure.css';
+@import '@ionic/angular/css/typography.css';
+@import '@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import '@ionic/angular/css/padding.css';
+@import '@ionic/angular/css/float-elements.css';
+@import '@ionic/angular/css/text-alignment.css';
+@import '@ionic/angular/css/text-transformation.css';
+@import '@ionic/angular/css/flex-utils.css';
+
+/* Syntax highlighting theme */
+@import 'highlight.js/styles/github-dark.css';
+
+/* ========================================
+   CARDS
+   ======================================== */
+
+ion-card {
+  border-radius: var(--ion-card-border-radius);
+  border: 1px solid var(--mock-border);
+  box-shadow: var(--shadow-sm);
+  margin: var(--spacing-md);
+  background: var(--mock-card);
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+@media (hover: hover) {
+  ion-card:hover {
+    background: var(--mock-card-hover);
+    transform: translateY(-2px);
+  }
+}
+
+ion-card:active {
+  transform: scale(0.99);
+  transition: transform 0.1s var(--ease-standard);
+}
+
+ion-card-header {
+  padding: var(--card-padding-md);
+}
+
+ion-card-content {
+  padding: var(--card-padding-md);
+  line-height: var(--line-height-body);
+}
+
+ion-card.compact ion-card-content {
+  padding: var(--spacing-md);
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+ion-button {
+  --border-radius: var(--border-radius-sm);
+  --padding-start: var(--button-padding-h);
+  --padding-end: var(--button-padding-h);
+  --padding-top: var(--button-padding-v);
+  --padding-bottom: var(--button-padding-v);
+  min-height: var(--touch-target-min);
+  font-weight: var(--font-weight-medium);
+  text-transform: none;
+  letter-spacing: 0.5px;
+  transition: all var(--transition-base-standard);
+}
+
+ion-button::part(native) {
+  transition: all var(--transition-base-standard);
+  min-height: var(--touch-target-min);
+}
+
+@media (hover: hover) {
+  ion-button:hover::part(native) {
+    transform: translateY(-1px);
+    box-shadow: var(--button-hover-shadow);
+    transition: all 0.2s var(--ease-standard);
+  }
+}
+
+ion-button:active::part(native) {
+  transform: scale(0.98);
+  transition: transform 0.1s var(--ease-standard);
+}
+
+ion-button {
+  position: relative;
+  overflow: hidden;
+}
+
+ion-button::part(native) {
+  transition:
+    background-color 0.25s var(--ease-standard),
+    color 0.25s var(--ease-standard),
+    transform 0.2s var(--ease-standard),
+    box-shadow 0.2s var(--ease-standard);
+}
+
+ion-button[color='primary'] {
+  --background: var(--ion-color-primary);
+  --background-hover: var(--ion-color-primary-shade);
+  --background-activated: var(--ion-color-primary-shade);
+  --color: var(--ion-color-primary-contrast);
+}
+
+ion-button[fill='outline'] {
+  --border-width: 1.5px;
+  --border-style: solid;
+  --border-color: var(--mock-border);
+  --background: transparent;
+  --background-hover: var(--mock-card-hover);
+  --background-activated: var(--mock-surface);
+  --color: var(--mock-text);
+}
+
+ion-button[fill='clear'] {
+  --padding-start: var(--spacing-sm);
+  --padding-end: var(--spacing-sm);
+  min-height: var(--touch-target-min);
+  min-width: var(--touch-target-min);
+}
+
+ion-button[size='small'] {
+  --padding-start: var(--spacing-md);
+  --padding-end: var(--spacing-md);
+  --padding-top: var(--spacing-xs);
+  --padding-bottom: var(--spacing-xs);
+  min-height: var(--touch-target-min);
+  font-size: var(--font-size-small);
+}
+
+ion-button[size='large'] {
+  --padding-start: var(--spacing-xl);
+  --padding-end: var(--spacing-xl);
+  --padding-top: var(--spacing-md);
+  --padding-bottom: var(--spacing-md);
+  min-height: var(--touch-target-md);
+  font-size: var(--font-size-h5);
+}
+
+ion-button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ========================================
+   TAB BAR
+   ======================================== */
+
+ion-tab-bar {
+  --background: var(--mock-surface);
+  border-top: 1px solid var(--mock-border);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+  padding-top: 4px;
+  padding-bottom: calc(4px + var(--safe-area-inset-bottom));
+  min-height: 64px;
+  backdrop-filter: blur(20px);
+}
+
+@media (prefers-color-scheme: dark) {
+  ion-tab-bar {
+    background: rgba(18, 24, 37, 0.95);
+  }
+}
+
+ion-tab-button {
+  --color: var(--mock-text-dim);
+  --color-selected: var(--ion-color-primary);
+  --ripple-color: var(--mock-accent-glow);
+  min-height: var(--touch-target-min);
+  position: relative;
+  transition: all var(--transition-base-standard);
+}
+
+ion-tab-button::part(native) {
+  transition: all var(--transition-base-standard);
+}
+
+ion-tab-button::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--ion-color-primary);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+ion-tab-button.tab-selected::after {
+  opacity: 1;
+}
+
+ion-tab-button.tab-selected {
+  font-weight: 600;
+  --color-selected: var(--ion-color-primary);
+}
+
+ion-tab-button ion-icon {
+  font-size: 24px;
+  transition:
+    transform 0.2s var(--ease-standard),
+    color 0.2s var(--ease-standard);
+}
+
+ion-tab-button.tab-selected ion-icon {
+  transform: scale(1.05);
+}
+
+ion-tab-button:active ion-icon {
+  transform: scale(0.95);
+  transition: transform 0.1s var(--ease-standard);
+}
+
+ion-tab-button ion-label {
+  font-size: var(--font-size-caption);
+  margin-top: 4px;
+  font-weight: inherit;
+}
+
+/* ========================================
+   LISTS & ITEMS
+   ======================================== */
+
+ion-list {
+  background: transparent;
+  padding: 0;
+}
+
+ion-item {
+  --border-color: var(--border-light);
+  --padding-start: var(--spacing-md);
+  --padding-end: var(--spacing-md);
+  --inner-padding-end: var(--spacing-md);
+  --background: var(--ion-item-background);
+  --min-height: var(--touch-target-md);
+  transition: background-color var(--transition-base-standard);
+}
+
+ion-item::part(native) {
+  transition: background-color var(--transition-base-standard);
+  min-height: var(--touch-target-md);
+}
+
+@media (hover: hover) {
+  ion-item[button]:hover {
+    --background: var(--mock-card-hover);
+    cursor: pointer;
+    transition: background-color 0.2s var(--ease-standard);
+  }
+}
+
+ion-item[button]:active {
+  --background: var(--mock-surface);
+  transition: background-color 0.1s var(--ease-standard);
+}
+
+ion-item-divider {
+  --background: var(--ion-background-color);
+  --color: var(--text-secondary);
+  --padding-start: var(--spacing-md);
+  --padding-end: var(--spacing-md);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-height: 40px;
+}
+
+/* ========================================
+   TOOLBAR
+   ======================================== */
+
+ion-toolbar {
+  --background: var(--ion-toolbar-background);
+  --color: var(--ion-toolbar-color);
+  --border-color: var(--ion-toolbar-border-color);
+  --padding-start: var(--spacing-md);
+  --padding-end: var(--spacing-md);
+  --min-height: 56px;
+  padding-left: var(--safe-area-inset-left);
+  padding-right: var(--safe-area-inset-right);
+}
+
+ion-header ion-toolbar {
+  padding-top: var(--safe-area-inset-top);
+}
+
+ion-toolbar ion-title {
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ========================================
+   CONTENT
+   ======================================== */
+
+ion-content {
+  --background: var(--ion-background-color);
+  --color: var(--ion-text-color);
+}
+
+ion-content::part(scroll) {
+  padding-bottom: var(--spacing-md);
+}
+
+/* ========================================
+   CHIPS
+   ======================================== */
+
+ion-chip {
+  border-radius: var(--border-radius-full);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  min-height: var(--touch-target-min);
+  height: auto;
+  padding: 8px var(--spacing-md);
+  transition: background-color var(--transition-base-standard);
+}
+
+ion-chip ion-icon {
+  font-size: 18px;
+}
+
+@media (hover: hover) {
+  ion-chip[button]:hover {
+    opacity: 0.85;
+    cursor: pointer;
+    transform: translateY(-1px);
+    transition:
+      opacity 0.2s var(--ease-standard),
+      transform 0.2s var(--ease-standard);
+  }
+}
+
+ion-chip[button]:active {
+  transform: scale(0.98);
+  transition: transform 0.1s var(--ease-standard);
+}
+
+/* ========================================
+   BADGES
+   ======================================== */
+
+ion-badge {
+  border-radius: var(--border-radius-full);
+  font-size: var(--font-size-tiny);
+  font-weight: 600;
+  padding: 4px 8px;
+  min-width: 24px;
+  text-align: center;
+}
+
+/* ========================================
+   MODALS
+   ======================================== */
+
+ion-modal {
+  --border-radius: var(--ion-card-border-radius);
+  --box-shadow: var(--ion-card-box-shadow);
+}
+
+ion-modal::part(backdrop) {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+ion-modal ion-content {
+  --padding-top: calc(var(--padding-top, 0px) + var(--safe-area-inset-top));
+  --padding-bottom: calc(var(--padding-bottom, 0px) + var(--safe-area-inset-bottom));
+}
+
+ion-modal ion-header ion-toolbar {
+  padding-top: var(--safe-area-inset-top);
+}
+
+ion-modal ion-footer ion-toolbar {
+  padding-bottom: var(--safe-area-inset-bottom);
+}
+
+/* ========================================
+   ALERTS
+   ======================================== */
+
+ion-alert {
+  --background: var(--mock-card);
+  --backdrop-opacity: 0.6;
+}
+
+ion-alert .alert-wrapper {
+  background: var(--mock-card) !important;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+ion-alert .alert-head {
+  padding: 20px 20px 0;
+}
+
+ion-alert .alert-title {
+  color: var(--mock-text) !important;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+ion-alert .alert-message {
+  color: var(--mock-text-muted) !important;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 12px 20px 20px;
+}
+
+ion-alert .alert-button-group {
+  padding: 0;
+  border-top: 1px solid var(--mock-border);
+}
+
+ion-alert button.alert-button {
+  color: var(--ion-color-primary) !important;
+  font-size: 15px;
+  font-weight: 600;
+  height: 48px;
+  border: none;
+  background: transparent;
+  transition: background-color 0.2s ease;
+}
+
+ion-alert button.alert-button:hover {
+  background: var(--mock-surface) !important;
+}
+
+ion-alert button.alert-button:active {
+  background: var(--mock-border) !important;
+}
+
+ion-alert button.alert-button.alert-button-role-cancel {
+  color: var(--mock-text-muted) !important;
+}
+
+/* ========================================
+   ICONS
+   ======================================== */
+
+ion-icon {
+  color: inherit;
+  transition:
+    color var(--transition-base),
+    transform var(--transition-base);
+}
+
+ion-icon[size='small'] {
+  font-size: 16px;
+}
+
+ion-icon[size='large'] {
+  font-size: 32px;
+}
+
+/* ========================================
+   LOADING SPINNER
+   ======================================== */
+
+ion-spinner {
+  color: var(--ion-color-primary);
+}
+
+/* ========================================
+   TOAST
+   ======================================== */
+
+ion-toast {
+  --border-radius: var(--ion-border-radius);
+  font-size: var(--font-size-small);
+}
+
+/* ========================================
+   FOCUS STATES (ACCESSIBILITY)
+   ======================================== */
+
+ion-button:focus-visible,
+ion-tab-button:focus-visible,
+ion-item[button]:focus-visible,
+ion-select:focus-visible,
+ion-input:focus-visible {
+  outline: 2px solid var(--ion-color-primary);
+  outline-offset: 2px;
+  border-radius: var(--ion-border-radius);
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+  ion-card {
+    margin: var(--spacing-sm);
+  }
+
+  ion-card-header,
+  ion-card-content {
+    padding: var(--spacing-sm);
+  }
+}
+
+/* ========================================
+   ACTION SHEET - ROUTE SELECTOR
+   ======================================== */
+
+/**
+ * Comprehensive styling for the Route Selector Action Sheet
+ * Features:
+ * - Purple theme integration (#6C63FF)
+ * - Smooth animations and transitions
+ * - Dark mode support
+ * - Accessibility-compliant touch targets
+ * - Visual feedback for all interaction states
+ * - iOS safe area support
+ */
+
+.route-selector-action-sheet {
+  /* Container Styling */
+  --background: var(--mock-card);
+  --backdrop-opacity: 0.65;
+  --width: 92%;
+  --max-width: 500px;
+
+  /* Button States - Default */
+  --button-background: transparent;
+  --button-color: var(--mock-text);
+
+  /* Button States - Hover (Desktop) */
+  --button-background-hover: rgba(108, 99, 255, 0.08);
+  --button-color-hover: var(--ion-color-primary);
+
+  /* Button States - Selected (Current Route) */
+  --button-background-selected: rgba(108, 99, 255, 0.15);
+  --button-color-selected: var(--ion-color-primary);
+
+  /* Button States - Activated (Pressed) */
+  --button-background-activated: rgba(108, 99, 255, 0.12);
+  --button-color-activated: var(--ion-color-primary);
+
+  /* Button States - Focused (Keyboard Navigation) */
+  --button-background-focused: rgba(108, 99, 255, 0.1);
+  --button-color-focused: var(--ion-color-primary);
+}
+
+/* Group Container - Enhanced Shadow & Rounded Corners */
+.route-selector-action-sheet .action-sheet-group {
+  background: var(--mock-card);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--mock-border);
+
+  /* Smooth slide-up animation */
+  animation: slideUpActionSheet 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Slide-up animation keyframes */
+@keyframes slideUpActionSheet {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Individual Button Styling */
+.route-selector-action-sheet .action-sheet-button {
+  min-height: 56px; /* WCAG touch target compliance */
+  font-size: 15px;
+  font-weight: 500;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.1s ease;
+  position: relative;
+
+  /* Button text styling */
+  .action-sheet-button-inner {
+    transition: color 0.2s ease;
+  }
+}
+
+/* Button Icon Styling */
+.route-selector-action-sheet .action-sheet-icon {
+  color: var(--ion-color-primary);
+  font-size: 24px;
+  margin-right: 12px;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+/* Selected Route - Additional Visual Indicators */
+.route-selector-action-sheet .action-sheet-button.action-sheet-selected {
+  font-weight: 600;
+
+  /* Left border accent */
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--ion-color-primary);
+    border-radius: 0 2px 2px 0;
+  }
+
+  /* Icon animation for selected item */
+  .action-sheet-icon {
+    transform: scale(1.1);
+    color: var(--ion-color-primary);
+  }
+}
+
+/* Cancel Button - Distinct Styling */
+.route-selector-action-sheet .action-sheet-button.action-sheet-cancel {
+  border-top: 1px solid var(--mock-border);
+  margin-top: 8px;
+  font-weight: 600;
+  --button-color: var(--mock-text-muted);
+  --button-color-hover: var(--mock-text);
+
+  /* Extra padding for safe area (iPhone home indicator) */
+  padding-bottom: calc(12px + var(--safe-area-inset-bottom));
+}
+
+/* Hover States (Desktop Only) */
+@media (hover: hover) and (pointer: fine) {
+  .route-selector-action-sheet .action-sheet-button:hover {
+    cursor: pointer;
+
+    .action-sheet-icon {
+      transform: scale(1.05);
+    }
+  }
+
+  /* Selected item hover - slightly different */
+  .route-selector-action-sheet .action-sheet-button.action-sheet-selected:hover {
+    .action-sheet-icon {
+      transform: scale(1.15);
+    }
+  }
+}
+
+/* Active/Pressed State - Scale Effect */
+.route-selector-action-sheet .action-sheet-button:active {
+  transform: scale(0.98);
+  transition: transform 0.1s ease;
+}
+
+/* Focus State - Accessibility (Keyboard Navigation) */
+.route-selector-action-sheet .action-sheet-button:focus-visible {
+  outline: 2px solid var(--ion-color-primary);
+  outline-offset: -2px;
+  z-index: 1;
+}
+
+/* Header Styling (if present) */
+.route-selector-action-sheet .action-sheet-title {
+  color: var(--mock-text);
+  font-size: 18px;
+  font-weight: 600;
+  padding: 20px 20px 12px;
+  border-bottom: 1px solid var(--mock-border);
+}
+
+/* Subheader Styling (if present) */
+.route-selector-action-sheet .action-sheet-sub-title {
+  color: var(--mock-text-muted);
+  font-size: 13px;
+  font-weight: 400;
+  padding: 0 20px 16px;
+}
+
+/* Dark Mode Specific Enhancements */
+@media (prefers-color-scheme: dark) {
+  .route-selector-action-sheet {
+    --background: var(--mock-card);
+
+    .action-sheet-group {
+      box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.6),
+        0 0 0 1px var(--mock-border);
+    }
+  }
+}
+
+/* Light Mode Overrides */
+@media (prefers-color-scheme: light) {
+  .route-selector-action-sheet {
+    --background: #ffffff;
+
+    /* Adjusted hover states for light mode */
+    --button-background-hover: rgba(108, 99, 255, 0.06);
+    --button-background-selected: rgba(108, 99, 255, 0.12);
+    --button-background-activated: rgba(108, 99, 255, 0.1);
+
+    .action-sheet-group {
+      box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(0, 0, 0, 0.08);
+      background: #ffffff;
+    }
+
+    .action-sheet-title {
+      color: #1f2937;
+      border-bottom-color: #e5e7eb;
+    }
+
+    .action-sheet-sub-title {
+      color: #6b7280;
+    }
+
+    .action-sheet-button {
+      --button-color: #1f2937;
+    }
+
+    .action-sheet-button.action-sheet-cancel {
+      --button-color: #6b7280;
+      --button-color-hover: #1f2937;
+      border-top-color: #e5e7eb;
+    }
+  }
+}
+
+/* Reduced Motion - Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .route-selector-action-sheet .action-sheet-group {
+    animation: none !important;
+  }
+
+  .route-selector-action-sheet .action-sheet-button,
+  .route-selector-action-sheet .action-sheet-icon {
+    transition: none !important;
+    transform: none !important;
+  }
+
+  /* Keep visual feedback without motion */
+  .route-selector-action-sheet .action-sheet-button:hover {
+    background-color: rgba(108, 99, 255, 0.08);
+  }
+
+  .route-selector-action-sheet .action-sheet-button.action-sheet-selected {
+    background-color: rgba(108, 99, 255, 0.15);
+  }
+}
+
+/* Safe Area Support for iOS Devices */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .route-selector-action-sheet {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .route-selector-action-sheet .action-sheet-button.action-sheet-cancel {
+    padding-bottom: calc(12px + env(safe-area-inset-bottom));
+  }
+}
+
+/* High Contrast Mode - Additional Accessibility */
+@media (prefers-contrast: high) {
+  .route-selector-action-sheet {
+    .action-sheet-group {
+      border: 2px solid var(--ion-color-primary);
+    }
+
+    .action-sheet-button {
+      --button-color: var(--mock-text);
+      border-bottom: 1px solid var(--mock-border);
+    }
+
+    .action-sheet-button.action-sheet-selected {
+      border: 2px solid var(--ion-color-primary);
+      border-radius: 4px;
+      margin: 2px;
+    }
+  }
+}

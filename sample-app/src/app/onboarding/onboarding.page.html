@@ -1,0 +1,54 @@
+<ion-content [fullscreen]="true" class="onboarding-content">
+  <!-- Single Permission-Focused Screen -->
+  <div class="permission-screen">
+    <div class="permission-content">
+      <!-- Icon -->
+      <div class="icon-wrapper">
+        <ion-icon name="images" class="main-icon"></ion-icon>
+      </div>
+
+      <!-- Header -->
+      <h1 class="title">Permissions Required</h1>
+
+      <!-- Explanation -->
+      <p class="description">
+        This app needs access to your photo library and location to filter images by GPS data and find photos near you.
+      </p>
+      <p class="description">Your photos are processed locally and never leave your device.</p>
+
+      <!-- Permission List -->
+      <div class="permission-list">
+        <div class="permission-item">
+          <ion-icon name="checkmark-circle" color="success"></ion-icon>
+          <div class="permission-text">
+            <strong>Photo Library Access</strong>
+            <span>(erforderlich) Read and display your photos</span>
+          </div>
+        </div>
+
+        <div class="permission-item">
+          <ion-icon name="checkmark-circle" color="medium"></ion-icon>
+          <div class="permission-text">
+            <strong>Location Services</strong>
+            <span>(empfohlen) Find photos near your current location</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Privacy Note -->
+      <div class="privacy-note">
+        <ion-icon name="lock-closed"></ion-icon>
+        <span>All processing happens on your device. Your privacy is protected.</span>
+      </div>
+
+      <!-- Primary Button -->
+      <ion-button expand="block" size="large" class="grant-button" (click)="requestPermissions()">
+        <ion-icon slot="start" name="shield-checkmark"></ion-icon>
+        Grant Permission
+      </ion-button>
+
+      <!-- Secondary Button -->
+      <ion-button expand="block" fill="clear" class="skip-button" (click)="skipOnboarding()"> Skip for now </ion-button>
+    </div>
+  </div>
+</ion-content>

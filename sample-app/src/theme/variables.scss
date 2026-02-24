@@ -1,0 +1,442 @@
+/**
+ * Ionic Theme Variables
+ * Based on example-app theme (Story 9.16)
+ * Migrated to SCSS for sample-app Angular application
+ */
+
+:root {
+  /* ========================================
+     CUSTOM COLOR PALETTE - Dark Theme Primary
+     ======================================== */
+
+  /* Background Layers */
+  --mock-bg: #0a0e17; /* Deep dark background */
+  --mock-surface: #121825; /* Surface/elevated background */
+  --mock-card: #1a2035; /* Card background */
+  --mock-card-hover: #1e2640; /* Card hover state */
+
+  /* Brand Colors */
+  --mock-accent: #00d4aa; /* Primary accent (teal) */
+  --mock-accent-dim: #00d4aa22; /* Accent with 13% opacity */
+  --mock-accent-glow: #00d4aa44; /* Accent glow (27% opacity) */
+  --mock-secondary: #6c63ff; /* Secondary accent (purple) */
+  --mock-secondary-dim: #6c63ff22; /* Secondary with 13% opacity */
+
+  /* Text Hierarchy */
+  --mock-text: #e8ecf4; /* Primary text */
+  --mock-text-muted: #7a8299; /* Muted text */
+  --mock-text-dim: #4a5268; /* Dim text */
+
+  /* UI Elements */
+  --mock-border: #1e2a3e; /* Border color */
+  --mock-danger: #ff6b6b; /* Error/danger */
+  --mock-warning: #ffb84d; /* Warning */
+  --mock-success: #00d4aa; /* Success (same as accent) */
+
+  /* ========================================
+     IONIC COLOR PALETTE
+     Purple Primary (#6C63FF) - As requested
+     ======================================== */
+
+  /* Primary = Purple (as requested in requirements) */
+  --ion-color-primary: #6c63ff;
+  --ion-color-primary-rgb: 108, 99, 255;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #5f57e0;
+  --ion-color-primary-tint: #7b73ff;
+
+  /* Secondary = Teal Accent */
+  --ion-color-secondary: #00d4aa;
+  --ion-color-secondary-rgb: 0, 212, 170;
+  --ion-color-secondary-contrast: #0a0e17;
+  --ion-color-secondary-contrast-rgb: 10, 14, 23;
+  --ion-color-secondary-shade: #00bf98;
+  --ion-color-secondary-tint: #1addb5;
+
+  /* Tertiary = Purple variant */
+  --ion-color-tertiary: #7044ff;
+  --ion-color-tertiary-rgb: 112, 68, 255;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  --ion-color-tertiary-shade: #633ce0;
+  --ion-color-tertiary-tint: #7e57ff;
+
+  /* Success = Teal */
+  --ion-color-success: #00d4aa;
+  --ion-color-success-rgb: 0, 212, 170;
+  --ion-color-success-contrast: #0a0e17;
+  --ion-color-success-contrast-rgb: 10, 14, 23;
+  --ion-color-success-shade: #00bf98;
+  --ion-color-success-tint: #1addb5;
+
+  /* Warning = Amber */
+  --ion-color-warning: #ffb84d;
+  --ion-color-warning-rgb: 255, 184, 77;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0, 0, 0;
+  --ion-color-warning-shade: #e0a344;
+  --ion-color-warning-tint: #ffc366;
+
+  /* Danger = Red */
+  --ion-color-danger: #ff6b6b;
+  --ion-color-danger-rgb: 255, 107, 107;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #e05e5e;
+  --ion-color-danger-tint: #ff7a7a;
+
+  /* Info = Teal */
+  --ion-color-info: #00d4aa;
+  --ion-color-info-rgb: 0, 212, 170;
+  --ion-color-info-contrast: #0a0e17;
+  --ion-color-info-contrast-rgb: 10, 14, 23;
+  --ion-color-info-shade: #00bf98;
+  --ion-color-info-tint: #1addb5;
+
+  /* Dark = Light Text */
+  --ion-color-dark: #e8ecf4;
+  --ion-color-dark-rgb: 232, 236, 244;
+  --ion-color-dark-contrast: #0a0e17;
+  --ion-color-dark-contrast-rgb: 10, 14, 23;
+  --ion-color-dark-shade: #cdd1d7;
+  --ion-color-dark-tint: #eaf0f6;
+
+  /* Medium = Muted Text */
+  --ion-color-medium: #7a8299;
+  --ion-color-medium-rgb: 122, 130, 153;
+  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-contrast-rgb: 255, 255, 255;
+  --ion-color-medium-shade: #6b7387;
+  --ion-color-medium-tint: #8791a3;
+
+  /* Light = Card Background */
+  --ion-color-light: #1a2035;
+  --ion-color-light-rgb: 26, 32, 53;
+  --ion-color-light-contrast: #e8ecf4;
+  --ion-color-light-contrast-rgb: 232, 236, 244;
+  --ion-color-light-shade: #171c2f;
+  --ion-color-light-tint: #313749;
+
+  /* ========================================
+     TYPOGRAPHY
+     ======================================== */
+
+  /* Font Family - DM Sans */
+  --ion-font-family: 'DM Sans', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Font Sizes */
+  --font-size-h1: 24px;
+  --font-size-h2: 20px;
+  --font-size-h3: 18px;
+  --font-size-h4: 16px;
+  --font-size-h5: 14px;
+  --font-size-h6: 13px;
+  --font-size-body: 14px;
+  --font-size-small: 13px;
+  --font-size-tiny: 11px;
+  --font-size-caption: 10px;
+
+  /* Line Heights */
+  --line-height-h1: 1.2;
+  --line-height-h2: 1.3;
+  --line-height-h3: 1.4;
+  --line-height-heading: 1.2;
+  --line-height-body: 1.6;
+  --line-height-compact: 1.4;
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ========================================
+     SPACING SYSTEM (8px base grid)
+     ======================================== */
+
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+
+  /* Legacy aliases */
+  --space-xxs: 4px;
+  --space-sm: 12px;
+
+  /* Component-specific spacing */
+  --card-padding: 16px;
+  --card-padding-sm: 12px;
+  --card-padding-md: 16px;
+  --card-padding-lg: 20px;
+
+  --button-padding-v: 10px;
+  --button-padding-h: 16px;
+  --button-padding: var(--spacing-sm) var(--spacing-md);
+
+  --section-margin: var(--spacing-lg);
+  --section-gap: var(--spacing-xl);
+
+  --icon-gap: var(--spacing-xs);
+  --icon-gap-sm: var(--spacing-xxs);
+
+  /* ========================================
+     BORDER RADIUS
+     ======================================== */
+
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 14px;
+  --border-radius-full: 20px;
+
+  /* Ionic-specific */
+  --ion-border-radius: 12px;
+  --ion-card-border-radius: 12px;
+
+  /* ========================================
+     TRANSITIONS & EASING
+     ======================================== */
+
+  /* Timing durations */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.3s ease;
+
+  /* Material Design easing functions */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-decelerate: cubic-bezier(0, 0, 0.2, 1);
+  --ease-accelerate: cubic-bezier(0.4, 0, 1, 1);
+  --ease-sharp: cubic-bezier(0.4, 0, 0.6, 1);
+
+  /* Combined transition tokens */
+  --transition-fast-standard: 0.15s var(--ease-standard);
+  --transition-base-standard: 0.2s var(--ease-standard);
+  --transition-slow-standard: 0.3s var(--ease-standard);
+
+  /* ========================================
+     Z-INDEX SCALE
+     ======================================== */
+
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-modal: 1000;
+  --z-toast: 1100;
+  --z-tooltip: 1200;
+
+  /* ========================================
+     TEXT COLOR HIERARCHY
+     ======================================== */
+
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --text-tertiary: #9ca3af;
+
+  /* ========================================
+     BORDER COLOR HIERARCHY
+     ======================================== */
+
+  --border-light: #e5e7eb;
+  --border-medium: #d1d5db;
+  --border-dark: #9ca3af;
+
+  /* ========================================
+     SHADOW SYSTEM
+     ======================================== */
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+
+  /* ========================================
+     TOUCH TARGET SIZES (ACCESSIBILITY)
+     ======================================== */
+
+  --touch-target-min: 44px;
+  --touch-target-md: 48px;
+  --touch-target-lg: 56px;
+
+  /* ========================================
+     SAFE AREA INSETS
+     ======================================== */
+
+  --safe-area-inset-top: env(safe-area-inset-top, 0px);
+  --safe-area-inset-right: env(safe-area-inset-right, 0px);
+  --safe-area-inset-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-area-inset-left: env(safe-area-inset-left, 0px);
+}
+
+/* ========================================
+   LIGHT MODE OVERRIDES
+   ======================================== */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Background Layers */
+    --mock-bg: #f8f9fa;
+    --mock-surface: #ffffff;
+    --mock-card: #ffffff;
+    --mock-card-hover: #f3f4f6;
+
+    /* Text Hierarchy */
+    --mock-text: #1f2937;
+    --mock-text-muted: #6b7280;
+    --mock-text-dim: #9ca3af;
+
+    /* UI Elements */
+    --mock-border: #e5e7eb;
+
+    /* Ionic Overrides */
+    --ion-background-color: #f8f9fa;
+    --ion-background-color-rgb: 248, 249, 250;
+
+    --ion-text-color: #000000;
+    --ion-text-color-rgb: 0, 0, 0;
+
+    --ion-card-background: #ffffff;
+    --ion-item-background: #ffffff;
+    --ion-toolbar-background: #ffffff;
+
+    --ion-border-color: #e5e7eb;
+    --ion-item-border-color: #e5e7eb;
+
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --text-tertiary: #9ca3af;
+
+    /* Shadows */
+    --ion-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --ion-card-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --ion-toolbar-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --button-hover-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+
+    --ion-toolbar-color: #000000;
+    --ion-toolbar-border-color: #e0e0e0;
+
+    --ion-padding: 16px;
+    --ion-margin: 16px;
+  }
+
+  body,
+  ion-app {
+    background-color: var(--ion-background-color);
+  }
+
+  ion-content {
+    --padding-top: var(--safe-area-inset-top);
+    --padding-bottom: var(--safe-area-inset-bottom);
+  }
+
+  .bg-surface-primary {
+    background-color: #ffffff;
+  }
+
+  .bg-surface-secondary {
+    background-color: #f8f9fa;
+  }
+
+  .bg-surface-tertiary {
+    background-color: #f3f4f6;
+  }
+}
+
+/* ========================================
+   DARK MODE OVERRIDES (Default)
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Background Layers */
+    --mock-bg: #0a0e17;
+    --mock-surface: #121825;
+    --mock-card: #1a2035;
+    --mock-card-hover: #1e2640;
+
+    /* Text Hierarchy */
+    --mock-text: #e8ecf4;
+    --mock-text-muted: #7a8299;
+    --mock-text-dim: #4a5268;
+
+    /* UI Elements */
+    --mock-border: #1e2a3e;
+
+    /* Ionic Overrides */
+    --ion-background-color: var(--mock-bg);
+    --ion-background-color-rgb: 10, 14, 23;
+
+    --ion-text-color: var(--mock-text);
+    --ion-text-color-rgb: 232, 236, 244;
+
+    --ion-card-background: var(--mock-card);
+    --ion-toolbar-background: var(--mock-surface);
+    --ion-toolbar-border-color: var(--mock-border);
+    --ion-toolbar-color: var(--mock-text);
+
+    --ion-item-background: var(--mock-card);
+    --ion-item-border-color: var(--mock-border);
+
+    --ion-tab-bar-background: var(--mock-surface);
+    --ion-tab-bar-border-color: var(--mock-border);
+
+    /* Text hierarchy */
+    --text-primary: var(--mock-text);
+    --text-secondary: var(--mock-text-muted);
+    --text-tertiary: var(--mock-text-dim);
+
+    /* Border hierarchy */
+    --border-light: var(--mock-border);
+    --border-medium: var(--mock-border);
+    --border-dark: var(--mock-text-dim);
+
+    /* Shadows for dark theme */
+    --ion-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    --ion-card-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --ion-toolbar-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    --button-hover-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.5);
+  }
+
+  ion-app {
+    background-color: var(--mock-bg);
+  }
+
+  ion-content {
+    --padding-top: var(--safe-area-inset-top);
+    --padding-bottom: var(--safe-area-inset-bottom);
+  }
+
+  pre,
+  code {
+    background-color: var(--mock-surface);
+    border-color: var(--mock-border);
+    color: var(--mock-text);
+  }
+
+  .bg-surface-primary {
+    background-color: var(--mock-card);
+  }
+
+  .bg-surface-secondary {
+    background-color: var(--mock-surface);
+  }
+
+  .bg-surface-tertiary {
+    background-color: var(--mock-bg);
+  }
+}
