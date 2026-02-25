@@ -1,0 +1,67 @@
+name: Documentation
+description: Report an issue with the documentation or suggest an improvement
+title: "[Docs]: "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Help us improve the documentation! Please describe what's missing, incorrect, or could be improved.
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Documentation Issue Type
+      description: What kind of documentation issue is this?
+      options:
+        - Incorrect / outdated information
+        - Missing documentation
+        - Unclear / confusing explanation
+        - Typo or formatting issue
+        - Missing code example
+        - Translation issue
+    validations:
+      required: true
+
+  - type: dropdown
+    id: section
+    attributes:
+      label: Documentation Section
+      description: Which section of the documentation is affected?
+      options:
+        - README - Installation & Setup
+        - README - Configuration
+        - README - API Reference
+        - README - Usage Examples
+        - README - Permissions
+        - README - Troubleshooting
+        - README - License / Commercial
+        - API generated docs
+        - Sample App
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe what is incorrect, missing, or could be improved.
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested Improvement
+      description: If possible, describe how the documentation should be changed or what should be added.
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Add any other context, links, or screenshots.
+    validations:
+      required: false
