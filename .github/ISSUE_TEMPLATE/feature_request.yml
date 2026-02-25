@@ -1,0 +1,84 @@
+name: Feature Request
+description: Suggest a new feature or improvement for the plugin
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for your feature suggestion! Please describe what you'd like to see added or improved.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Feature Area
+      description: Which area of the plugin does this relate to?
+      options:
+        - Filtering (location, time, polyline)
+        - Image picking / Gallery UI
+        - EXIF metadata
+        - Permissions handling
+        - Localization / Translations
+        - API / TypeScript interface
+        - Platform support
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Target Platform
+      description: Which platform(s) should this feature apply to?
+      multiple: true
+      options:
+        - iOS
+        - Android
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: Describe the problem or limitation you are facing. What use case is not covered?
+      placeholder: "I'm trying to ... but currently ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe the solution or feature you'd like to see.
+    validations:
+      required: true
+
+  - type: textarea
+    id: api
+    attributes:
+      label: Suggested API
+      description: If applicable, describe what the API could look like.
+      render: typescript
+      placeholder: |
+        const result = await ExifGallery.pick({
+          // your suggested options...
+        });
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Describe any alternative solutions or workarounds you've considered.
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Add any other context, mockups, or references about the feature request.
+    validations:
+      required: false

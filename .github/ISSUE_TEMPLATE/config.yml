@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Plugin Documentation
+    url: https://plugins.kesbyte-digital.com/exif-gallery
+    about: Read the full plugin documentation and purchase a license
+  - name: Sample App
+    url: https://github.com/KesByte-Digital/capacitor-exif-gallery/tree/main/sample-app
+    about: Check out the sample app for usage examples
