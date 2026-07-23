@@ -1,19 +1,16 @@
 {
   "name": "@kesbyte/capacitor-exif-gallery",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Capacitor EXIF gallery plugin — filter and select photos by GPS location, route polylines, and time range. Native iOS & Android image picker with EXIF metadata extraction.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
   "unpkg": "dist/plugin.js",
   "files": [
-    "android/src/main/",
     "android/build.gradle",
-    "android/gradle.properties",
-    "android/proguard-rules.pro",
-    "android/settings.gradle",
+    "android/libs/",
     "dist/",
-    "ios/Sources",
+    "ios/Frameworks/",
     "Package.swift",
     "CapacitorExifGallery.podspec"
   ],

@@ -1,0 +1,55 @@
+// Public-release variant: wraps the prebuilt exifgallery-release.aar instead of
+// compiling android/src/main directly (no Kotlin source ships in the public repo).
+// The CI release workflow copies this file to the public repo as `android/build.gradle`,
+// alongside the .aar under `android/libs/`.
+//
+// The runtime dependencies below must be kept in sync with android/build.gradle
+// (the private, source-compiling module) — a local .aar consumed via flatDir carries
+// no POM metadata, so transitive dependencies are not resolved automatically and have
+// to be re-declared here for the final app to receive them on its runtime classpath.
+
+buildscript {
+    ext.kotlin_version = '2.0.21'
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.10.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    namespace = "com.kesbytedigital.exifgallery"
+    compileSdk = project.hasProperty('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 36
+    defaultConfig {
+        minSdkVersion project.hasProperty('minSdkVersion') ? rootProject.ext.minSdkVersion : 24
+        targetSdkVersion project.hasProperty('targetSdkVersion') ? rootProject.ext.targetSdkVersion : 34
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
+    }
+}
+
+repositories {
+    google()
+    mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation(name: 'exifgallery-release', ext: 'aar')
+    implementation project(':capacitor-android')
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "androidx.appcompat:appcompat:1.7.1"
+    implementation "androidx.recyclerview:recyclerview:1.3.2"
+    implementation "com.google.android.material:material:1.11.0"
+    implementation "io.coil-kt:coil:2.5.0"
+}

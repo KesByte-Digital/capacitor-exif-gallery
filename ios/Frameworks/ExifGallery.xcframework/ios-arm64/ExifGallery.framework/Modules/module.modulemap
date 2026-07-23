@@ -1,4 +1,3 @@
 framework module ExifGallery {
   header "ExifGallery-Swift.h"
-  requires objc
 }

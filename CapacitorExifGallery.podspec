@@ -2,16 +2,18 @@ require 'json'
 
 package = JSON.parse(File.read(File.join(__dir__, 'package.json')))
 
+# Public-release variant: vendors the prebuilt ExifGallery.xcframework instead of
+# compiling ios/Sources directly. The CI release workflow copies this file to the
+# public repo as `CapacitorExifGallery.podspec`.
 Pod::Spec.new do |s|
-  s.name = 'CapacitorExifGallery'
+  s.name = 'KesbyteCapacitorExifGallery'
   s.version = package['version']
   s.summary = package['description']
   s.license = package['license']
   s.homepage = package['repository']['url']
   s.author = package['author']
   s.source = { :git => package['repository']['url'], :tag => s.version.to_s }
-  s.source_files = 'ios/Sources/**/*.{swift,h,m,c,cc,mm,cpp}'
+  s.ios.vendored_frameworks = 'ios/Frameworks/ExifGallery.xcframework'
   s.ios.deployment_target = '15.0'
   s.dependency 'Capacitor'
-  s.swift_version = '5.1'
 end
