@@ -129,8 +129,10 @@ Open your `android/app/src/main/AndroidManifest.xml` and add inside the `<applic
 
 #### Validation Behavior
 
-- **Debug Builds:** License validation is skipped - full functionality available for testing
-- **Production Builds:** License is validated when `pick()` is called
+License validation is based on the app's **distribution channel** (detected at runtime), not the Xcode build configuration:
+
+- **Xcode Debug/Release runs and TestFlight:** License validation is skipped - full functionality available for testing, including beta testing with real users before you buy a license
+- **App Store production installs:** License is validated when `pick()` is called
   - ✅ Valid license: Gallery opens normally
   - ❌ Invalid/missing license: `pick()` throws an error immediately
   - Error codes: `LICENSE_MISSING`, `LICENSE_INVALID`, `LICENSE_BUNDLE_MISMATCH`
@@ -811,21 +813,21 @@ Copyright (c) 2025 KesByte Digital. All rights reserved.
 
 This is a **commercial plugin** that requires a valid license key for production builds.
 
-### Debug Builds (Free for Testing)
-- ✅ **No license key required** for debug/development builds
-- ✅ Full functionality available for integration and testing
-- ✅ Integrate the plugin into your app and test all features freely
+### Free for Testing (Debug, TestFlight, Ad-Hoc)
+- ✅ **No license key required** to develop, integrate, or beta-test
+- ✅ Full functionality available in Xcode Debug/Release runs and TestFlight
+- ✅ Integrate the plugin into your app and test all features freely, including with real beta testers, before you buy anything
 
-### Production Builds (License Required)
-- ⚠️ **License key REQUIRED** for production/release builds
-- ⚠️ Production builds will **fail validation** without a valid license
+### App Store Production (License Required)
+- ⚠️ **License key REQUIRED** once your app is live on the App Store
+- ⚠️ App Store production installs will **fail validation** without a valid license
 - ✅ Purchase a license at: **[plugins.kesbyte-digital.com/exif-gallery](https://plugins.kesbyte-digital.com/exif-gallery)**
 
 ### How It Works
-1. **Development:** Install and test the plugin freely in debug builds
-2. **Production:** Purchase a license key before releasing your app
+1. **Development & Beta:** Install and test the plugin freely in Xcode and TestFlight, no license needed
+2. **Production:** Purchase a license key before your App Store release
 3. **Integration:** Add the license key to your app configuration
-4. **Build:** Production builds validate the license automatically
+4. **Runtime detection:** the plugin checks the App Store receipt at runtime (not the build configuration) to tell a real App Store install apart from Debug/TestFlight, so it works correctly even though this package ships as a precompiled binary
 
 ### License Purchase
 Visit **[plugins.kesbyte-digital.com/exif-gallery](https://plugins.kesbyte-digital.com/exif-gallery)** to:

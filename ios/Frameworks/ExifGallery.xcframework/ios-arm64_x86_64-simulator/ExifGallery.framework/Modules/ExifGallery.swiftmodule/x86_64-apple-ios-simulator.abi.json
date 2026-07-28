@@ -781,6 +781,87 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "BuildEnvironment",
+        "printedName": "BuildEnvironment",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "isProductionAppStoreBuild",
+            "printedName": "isProductionAppStoreBuild",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ExifGallery16BuildEnvironmentO020isProductionAppStoreC0SbvpZ",
+            "mangledName": "$s11ExifGallery16BuildEnvironmentO020isProductionAppStoreC0SbvpZ",
+            "moduleName": "ExifGallery",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ExifGallery16BuildEnvironmentO020isProductionAppStoreC0SbvgZ",
+                "mangledName": "$s11ExifGallery16BuildEnvironmentO020isProductionAppStoreC0SbvgZ",
+                "moduleName": "ExifGallery",
+                "static": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:11ExifGallery16BuildEnvironmentO",
+        "mangledName": "$s11ExifGallery16BuildEnvironmentO",
+        "moduleName": "ExifGallery",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ExifGallery"
+      },
+      {
+        "kind": "TypeDecl",
         "name": "LicenseError",
         "printedName": "LicenseError",
         "children": [
