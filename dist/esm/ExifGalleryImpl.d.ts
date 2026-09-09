@@ -110,6 +110,7 @@ export declare class ExifGalleryImpl implements ExifGalleryPlugin {
      * - allowManualAdjustment: Allow user to adjust filters (default: true)
      * - outputFormat: 'jpeg' (default) or 'original' (default guarantees JPEG output, fixing HEIC uploads)
      * - jpegQuality: 1-100, only used when outputFormat is 'jpeg' (default: 80, upload-optimized)
+     * - maxSelection: -1 (default, no limit) or a positive number capping how many images can be selected
      *
      * @param options - Optional picker configuration
      * @returns Promise<PickResult> with selected images array and cancelled flag

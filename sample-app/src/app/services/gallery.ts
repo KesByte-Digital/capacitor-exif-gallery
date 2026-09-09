@@ -38,6 +38,7 @@ export interface PickOptions {
   distanceStep?: number;
   outputFormat?: 'original' | 'jpeg'; // @since 1.1.0
   jpegQuality?: number; // @since 1.1.0
+  maxSelection?: number; // @since 1.2.0 - Default: -1 (no limit)
 }
 
 @Injectable({
@@ -143,8 +144,15 @@ export class Gallery {
       converted: false,
     }));
 
+    // Simulate maxSelection (@since 1.2.0): the native gallery would cap the user's selection,
+    // so the mock returns at most maxSelection images too (-1 or undefined = no limit).
+    const cappedImages =
+      options.maxSelection !== undefined && options.maxSelection >= 0
+        ? imagesWithFormat.slice(0, options.maxSelection)
+        : imagesWithFormat;
+
     return {
-      images: imagesWithFormat,
+      images: cappedImages,
       cancelled: false,
       filterExecutionTimeMs: Math.random() * 500 + 50, // Mock: 50-550ms
     };
@@ -166,6 +174,7 @@ export class Gallery {
     radiusKm: number,
     outputFormat: 'original' | 'jpeg' = 'jpeg',
     jpegQuality = 80,
+    maxSelection = -1,
   ): Promise<PickResult> {
     if (this.isWebPlatform()) {
       return this.getMockImages({
@@ -175,6 +184,7 @@ export class Gallery {
             radius: radiusKm * 1000,
           },
         },
+        maxSelection,
       });
     }
 
@@ -189,6 +199,7 @@ export class Gallery {
       distanceStep: 5,
       outputFormat,
       jpegQuality,
+      maxSelection,
     });
   }
 
@@ -200,6 +211,7 @@ export class Gallery {
     toleranceKm: number,
     outputFormat: 'original' | 'jpeg' = 'jpeg',
     jpegQuality = 80,
+    maxSelection = -1,
   ): Promise<PickResult> {
     if (this.isWebPlatform()) {
       return this.getMockImages({
@@ -209,6 +221,7 @@ export class Gallery {
             radius: toleranceKm * 1000,
           },
         },
+        maxSelection,
       });
     }
 
@@ -223,6 +236,7 @@ export class Gallery {
       distanceStep: 5,
       outputFormat,
       jpegQuality,
+      maxSelection,
     });
   }
 
@@ -234,6 +248,7 @@ export class Gallery {
     endDate: Date,
     outputFormat: 'original' | 'jpeg' = 'jpeg',
     jpegQuality = 80,
+    maxSelection = -1,
   ): Promise<PickResult> {
     if (this.isWebPlatform()) {
       return this.getMockImages({
@@ -243,6 +258,7 @@ export class Gallery {
             end: endDate,
           },
         },
+        maxSelection,
       });
     }
 
@@ -257,6 +273,7 @@ export class Gallery {
       distanceStep: 5,
       outputFormat,
       jpegQuality,
+      maxSelection,
     });
   }
 

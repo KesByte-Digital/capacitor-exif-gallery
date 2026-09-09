@@ -354,6 +354,20 @@ bytes (e.g. you handle HEIC server-side already), set `outputFormat: 'original'`
 changed from "return original bytes" to "guarantee JPEG" to fix HEIC uploads for everyone else
 without requiring a code change.
 
+### Limiting the Selection Count
+
+By default, users can select as many images as they like — with large batches, that can overload
+your app's upload mechanism. Set `maxSelection` to cap it:
+
+```typescript
+// User can select at most 10 images. Once reached, further taps are blocked and
+// TranslationSet.selectionLimitMessage is shown (with the {max} placeholder substituted).
+const result = await ExifGallery.pick({ maxSelection: 10 });
+```
+
+`maxSelection` defaults to `-1` (no limit). "Select All" respects the limit too, selecting only up
+to the remaining capacity instead of every image.
+
 ### Custom UI Text
 
 Override default translations with custom text in any language.
@@ -585,6 +599,7 @@ Options for the `pick()` method.
 | **allowManualAdjustment** | `boolean` | Allow user to manually adjust filters in the gallery UI. Default: `true`. Set to `false` to enforce the provided filter configuration. |
 | **outputFormat** | `'original' \| 'jpeg'` | Format of the returned files. `'jpeg'` (default) guarantees JPEG output, transcoding non-JPEG sources such as HEIC. `'original'` returns the file bytes as-is, with an extension matching the actual content. *Since 1.1.0.* |
 | **jpegQuality** | `number` | JPEG quality 1-100, used only when `outputFormat` is `'jpeg'` and the source needs transcoding. Default: `80` (upload-optimized). *Since 1.1.0.* |
+| **maxSelection** | `number` | Maximum number of images the user can select. `-1` (default) means no limit; otherwise 1-10,000. Protects your app's upload mechanism from being overloaded. When reached, `TranslationSet.selectionLimitMessage` is shown. *Since 1.2.0.* |
 
 **Example:**
 ```typescript
@@ -598,7 +613,8 @@ const options: PickOptions = {
   fallbackThreshold: 10,
   allowManualAdjustment: true,
   outputFormat: 'jpeg',
-  jpegQuality: 80
+  jpegQuality: 80,
+  maxSelection: 10
 };
 
 const result = await ExifGallery.pick(options);
@@ -796,6 +812,7 @@ Complete set of UI text keys used by the plugin. All keys are available for cust
 | `errorMessage` | "An error occurred" message |
 | `retryButton` | "Retry" button text |
 | `exportingMessage` | Progress message shown while exporting/converting images (supports `{count}` and `{total}` placeholders). *Since 1.1.0.* |
+| `selectionLimitMessage` | Message shown when the user tries to select more images than `PickOptions.maxSelection` allows (supports the `{max}` placeholder). *Since 1.2.0.* |
 | `initializationError` | "Plugin not initialized" error |
 | `permissionError` | "Permission denied" error |
 | `filterError` | "Invalid filter parameters" error |

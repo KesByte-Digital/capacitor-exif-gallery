@@ -15,6 +15,7 @@
     "errorMessage": "Ocurrió un error",
     "retryButton": "Reintentar",
     "exportingMessage": "Preparando imagen {count} de {total}...",
+    "selectionLimitMessage": "Puedes seleccionar hasta {max} imágenes",
     "initializationError": "Plugin no inicializado. Llame primero a initialize().",
     "permissionError": "Permiso denegado. Por favor, conceda acceso a su biblioteca de fotos.",
     "filterError": "Parámetros de filtro inválidos. Por favor, verifique su configuración."

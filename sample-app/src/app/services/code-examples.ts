@@ -246,7 +246,8 @@ async function pickImagesAdvanced() {
     fallbackThreshold: 5,
     allowManualAdjustment: true,
     outputFormat: 'jpeg', // Default: guarantees JPEG output, fixes HEIC uploads
-    jpegQuality: 80
+    jpegQuality: 80,
+    maxSelection: 10 // Cap selection to protect your upload mechanism (-1 = no limit)
   });
 
   if (result.cancelled) {
@@ -296,6 +297,7 @@ interface PickOptions {
   distanceStep?: number;
   outputFormat?: 'original' | 'jpeg';  // Default: 'jpeg' (fixes HEIC uploads)
   jpegQuality?: number;                // Default: 80, only used when transcoding
+  maxSelection?: number;               // Default: -1 (no limit), otherwise 1-10000
 }
 
 // Filter configuration
@@ -346,6 +348,7 @@ interface ImageExif {
     radiusKm: number,
     outputFormat: 'original' | 'jpeg' = 'jpeg',
     jpegQuality = 80,
+    maxSelection = -1,
   ): string {
     return `import { ExifGallery } from '@kesbyte/capacitor-exif-gallery';
 
@@ -362,7 +365,8 @@ async function pickNearbyImages() {
     distanceUnit: 'kilometers',
     distanceStep: 5,
     outputFormat: '${outputFormat}', // 'jpeg' (default) fixes HEIC uploads automatically
-    jpegQuality: ${jpegQuality}
+    jpegQuality: ${jpegQuality},
+    maxSelection: ${maxSelection} // ${maxSelection === -1 ? 'No limit' : `Max ${maxSelection} images`}
   });
 
   return result.images;
@@ -380,6 +384,7 @@ pickNearbyImages();`;
     toleranceKm: number,
     outputFormat: 'original' | 'jpeg' = 'jpeg',
     jpegQuality = 80,
+    maxSelection = -1,
   ): string {
     const pointsCode = points
       .map(
@@ -404,7 +409,8 @@ ${pointsCode}
     distanceUnit: 'kilometers',
     distanceStep: 5,
     outputFormat: '${outputFormat}', // 'jpeg' (default) fixes HEIC uploads automatically
-    jpegQuality: ${jpegQuality}
+    jpegQuality: ${jpegQuality},
+    maxSelection: ${maxSelection} // ${maxSelection === -1 ? 'No limit' : `Max ${maxSelection} images`}
   });
 
   return result.images;
@@ -467,6 +473,7 @@ pickWithEncodedPolyline();`;
     endDate: Date,
     outputFormat: 'original' | 'jpeg' = 'jpeg',
     jpegQuality = 80,
+    maxSelection = -1,
   ): string {
     const startStr = startDate.toISOString().split('T')[0];
     const endStr = endDate.toISOString().split('T')[0];
@@ -484,7 +491,8 @@ async function pickImagesByDate() {
     distanceUnit: 'kilometers',
     distanceStep: 5,
     outputFormat: '${outputFormat}', // 'jpeg' (default) fixes HEIC uploads automatically
-    jpegQuality: ${jpegQuality}
+    jpegQuality: ${jpegQuality},
+    maxSelection: ${maxSelection} // ${maxSelection === -1 ? 'No limit' : `Max ${maxSelection} images`}
   });
 
   return result.images;

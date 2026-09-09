@@ -2136,6 +2136,13 @@
       },
       {
         "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "ExifGallery"
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -2804,52 +2811,66 @@
     },
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/ImageGalleryViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2076,
+      "length": 2,
+      "value": "-1"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/ImageGalleryViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2897,
+      "offset": 3070,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/ImageGalleryViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 3019,
+      "offset": 3192,
       "length": 3,
       "value": "200"
     },
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/ImageGalleryViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 3032,
+      "offset": 3205,
       "length": 3,
       "value": "200"
     },
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/ImageGalleryViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4532,
+      "offset": 4705,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/ImageGalleryViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4571,
+      "offset": 4744,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/ImageGalleryViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 4632,
+      "offset": 4805,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/ImageGalleryViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 4770,
+      "offset": 4943,
       "length": 2,
       "value": "80"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/ImageGalleryViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4992,
+      "length": 2,
+      "value": "-1"
     },
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/License\/LicenseValidator.swift",
@@ -2948,6 +2969,27 @@
       "offset": 2370,
       "length": 3,
       "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/SelectionLimitToastView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 764,
+      "length": 2,
+      "value": "15"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/SelectionLimitToastView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 853,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/SelectionLimitToastView.swift",
+      "kind": "FloatLiteral",
+      "offset": 2488,
+      "length": 3,
+      "value": "2.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/SelectionManager.swift",

@@ -43,6 +43,10 @@ export class FiltersPage implements OnInit {
   outputFormat: 'jpeg' | 'original' = 'jpeg';
   jpegQuality = 80;
 
+  // Max selection state (@since 1.2.0) - applies to all three filters below
+  maxSelectionEnabled = false;
+  maxSelection = 10;
+
   // Results state
   showResults = false;
   resultImages: Array<{ uri: string; mimeType?: string; converted?: boolean }> = [];
@@ -144,6 +148,22 @@ export class FiltersPage implements OnInit {
   }
 
   /**
+   * Update max selection value display (@since 1.2.0)
+   */
+  onMaxSelectionChange(event: any) {
+    this.maxSelection = event.detail.value;
+  }
+
+  /**
+   * Effective maxSelection value passed to pick() (@since 1.2.0).
+   *
+   * -1 (unlimited) when the toggle is off, otherwise the configured limit.
+   */
+  get effectiveMaxSelection(): number {
+    return this.maxSelectionEnabled ? this.maxSelection : -1;
+  }
+
+  /**
    * Run location filter
    */
   async runLocationFilter() {
@@ -160,6 +180,7 @@ export class FiltersPage implements OnInit {
         this.radiusKm,
         this.outputFormat,
         this.jpegQuality,
+        this.effectiveMaxSelection,
       );
 
       if (result.cancelled) {
@@ -212,6 +233,7 @@ export class FiltersPage implements OnInit {
         this.toleranceKm,
         this.outputFormat,
         this.jpegQuality,
+        this.effectiveMaxSelection,
       );
 
       if (result.cancelled) {
@@ -255,7 +277,13 @@ export class FiltersPage implements OnInit {
       const end = new Date(this.endDate);
 
       // Native gallery opens (has its own loading indicator)
-      const result = await this.galleryService.pickWithTimeRangeFilter(start, end, this.outputFormat, this.jpegQuality);
+      const result = await this.galleryService.pickWithTimeRangeFilter(
+        start,
+        end,
+        this.outputFormat,
+        this.jpegQuality,
+        this.effectiveMaxSelection,
+      );
 
       if (result.cancelled) {
         return;
@@ -346,6 +374,7 @@ export class FiltersPage implements OnInit {
       this.radiusKm,
       this.outputFormat,
       this.jpegQuality,
+      this.effectiveMaxSelection,
     );
     await this.showCodeModal('Location Filter', code);
   }
@@ -365,6 +394,7 @@ export class FiltersPage implements OnInit {
       this.toleranceKm,
       this.outputFormat,
       this.jpegQuality,
+      this.effectiveMaxSelection,
     );
     await this.showCodeModal('Polyline Filter', code);
   }
@@ -376,7 +406,13 @@ export class FiltersPage implements OnInit {
     const start = new Date(this.startDate);
     const end = new Date(this.endDate);
 
-    const code = this.codeExamplesService.getTimeRangeFilterExample(start, end, this.outputFormat, this.jpegQuality);
+    const code = this.codeExamplesService.getTimeRangeFilterExample(
+      start,
+      end,
+      this.outputFormat,
+      this.jpegQuality,
+      this.effectiveMaxSelection,
+    );
     await this.showCodeModal('Time Range Filter', code);
   }
 

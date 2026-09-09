@@ -127,6 +127,7 @@ export class ExifGalleryImpl {
      * - allowManualAdjustment: Allow user to adjust filters (default: true)
      * - outputFormat: 'jpeg' (default) or 'original' (default guarantees JPEG output, fixing HEIC uploads)
      * - jpegQuality: 1-100, only used when outputFormat is 'jpeg' (default: 80, upload-optimized)
+     * - maxSelection: -1 (default, no limit) or a positive number capping how many images can be selected
      *
      * @param options - Optional picker configuration
      * @returns Promise<PickResult> with selected images array and cancelled flag
@@ -180,7 +181,7 @@ export class ExifGalleryImpl {
      * ```
      */
     async pick(options) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         const state = PluginState.getInstance();
         // 1. Verify plugin is initialized
         if (!state.isInitialized()) {
@@ -205,6 +206,7 @@ export class ExifGalleryImpl {
                 distanceStep: (_d = options === null || options === void 0 ? void 0 : options.distanceStep) !== null && _d !== void 0 ? _d : 5,
                 outputFormat: (_e = options === null || options === void 0 ? void 0 : options.outputFormat) !== null && _e !== void 0 ? _e : 'jpeg',
                 jpegQuality: (_f = options === null || options === void 0 ? void 0 : options.jpegQuality) !== null && _f !== void 0 ? _f : 80,
+                maxSelection: (_g = options === null || options === void 0 ? void 0 : options.maxSelection) !== null && _g !== void 0 ? _g : -1,
             };
             // Convert filter configuration for native bridge
             if (options === null || options === void 0 ? void 0 : options.filter) {
@@ -276,6 +278,18 @@ export class ExifGalleryImpl {
                 }
                 if (pickOptions.jpegQuality > 100) {
                     throw new FilterError('jpegQuality must not exceed 100');
+                }
+            }
+            // Validate maxSelection
+            if (pickOptions.maxSelection !== undefined) {
+                if (typeof pickOptions.maxSelection !== 'number' || !isFinite(pickOptions.maxSelection)) {
+                    throw new FilterError('maxSelection must be a finite number');
+                }
+                if (pickOptions.maxSelection !== -1 && pickOptions.maxSelection < 1) {
+                    throw new FilterError('maxSelection must be -1 (no limit) or at least 1');
+                }
+                if (pickOptions.maxSelection > 10000) {
+                    throw new FilterError('maxSelection must not exceed 10,000');
                 }
             }
             // 5. Call native layer via Capacitor Bridge

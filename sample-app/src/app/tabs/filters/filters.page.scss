@@ -134,6 +134,13 @@
   }
 }
 
+.icon-pink {
+  background: rgba(255, 71, 133, 0.1);
+  ion-icon {
+    color: #ff4785;
+  }
+}
+
 /* Parameters */
 .filter-parameters {
   margin-bottom: 12px;
@@ -170,6 +177,19 @@
 
 .filter-card-output .param-value {
   color: #3880ff;
+}
+
+.filter-card-limit .param-value {
+  color: #ff4785;
+}
+
+.filter-card-limit ion-range::part(knob) {
+  background: #ff4785;
+  box-shadow: 0 0 8px rgba(255, 71, 133, 0.3);
+}
+
+.filter-card-limit ion-range::part(bar-active) {
+  background: #ff4785;
 }
 
 .output-format-segment {

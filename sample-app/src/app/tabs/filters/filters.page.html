@@ -56,6 +56,38 @@
     </div>
   </div>
 
+  <!-- Selection Limit Card (@since 1.2.0) - applies to all filters below -->
+  <div class="filter-card filter-card-limit">
+    <div class="filter-card-header">
+      <div class="filter-icon-wrapper icon-pink">
+        <ion-icon name="layers-outline"></ion-icon>
+      </div>
+      <h3>Selection Limit</h3>
+      <ion-toggle [(ngModel)]="maxSelectionEnabled"></ion-toggle>
+    </div>
+
+    <div class="filter-parameters" *ngIf="maxSelectionEnabled">
+      <div class="filter-param-row">
+        <label>Max Images</label>
+        <span class="param-value">{{ maxSelection }}</span>
+      </div>
+      <ion-range
+        [min]="1"
+        [max]="50"
+        [value]="maxSelection"
+        [pin]="true"
+        class="filter-slider"
+        (ionChange)="onMaxSelectionChange($event)"
+      >
+      </ion-range>
+    </div>
+
+    <p class="output-format-hint" *ngIf="!maxSelectionEnabled">
+      No limit - the user can select as many images as they like. Enable this to cap selection and protect your app's
+      upload mechanism from being overloaded.
+    </p>
+  </div>
+
   <!-- Location Filter Card -->
   <div class="filter-card filter-card-location">
     <div class="filter-card-header">

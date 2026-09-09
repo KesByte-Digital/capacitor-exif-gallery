@@ -53,6 +53,8 @@ export interface TranslationSet {
     retryButton: string;
     /** Progress message shown while images are being exported/converted. Placeholders: {count}, {total} */
     exportingMessage: string;
+    /** Message shown when the user tries to select more than `PickOptions.maxSelection` images. Placeholder: {max} */
+    selectionLimitMessage: string;
     /** "Plugin not initialized" error */
     initializationError: string;
     /** "Permission denied" error */
@@ -401,6 +403,31 @@ export interface PickOptions {
      * ```
      */
     jpegQuality?: number;
+    /**
+     * Maximum number of images the user can select in the gallery.
+     *
+     * Once the limit is reached, tapping further (unselected) images is blocked and a
+     * translated message is shown (`TranslationSet.selectionLimitMessage`). "Select All"
+     * selects only up to the limit instead of every image.
+     *
+     * **Why:** without a cap, a user can select far more images than a consuming app's own
+     * upload mechanism is designed to handle in one batch.
+     *
+     * **Default:** `-1` — no limit (every matching image can be selected).
+     *
+     * @default -1
+     * @since 1.2.0
+     *
+     * @example
+     * ```typescript
+     * // Cap the selection at 10 images
+     * await ExifGallery.pick({ maxSelection: 10 });
+     *
+     * // No limit (default)
+     * await ExifGallery.pick();
+     * ```
+     */
+    maxSelection?: number;
 }
 /**
  * EXIF metadata extracted from an image.
