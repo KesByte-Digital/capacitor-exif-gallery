@@ -125,6 +125,8 @@ export class ExifGalleryImpl {
      * - filter.timeRange.end: End date/time (must be after start)
      * - fallbackThreshold: Minimum images to show filter UI (default: 5)
      * - allowManualAdjustment: Allow user to adjust filters (default: true)
+     * - outputFormat: 'jpeg' (default) or 'original' (default guarantees JPEG output, fixing HEIC uploads)
+     * - jpegQuality: 1-100, only used when outputFormat is 'jpeg' (default: 80, upload-optimized)
      *
      * @param options - Optional picker configuration
      * @returns Promise<PickResult> with selected images array and cancelled flag
@@ -178,7 +180,7 @@ export class ExifGalleryImpl {
      * ```
      */
     async pick(options) {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e, _f;
         const state = PluginState.getInstance();
         // 1. Verify plugin is initialized
         if (!state.isInitialized()) {
@@ -201,6 +203,8 @@ export class ExifGalleryImpl {
                 hasActiveFilters: this.hasActiveFilters(options), // Story 8.2: Detect active filters
                 distanceUnit: (_c = options === null || options === void 0 ? void 0 : options.distanceUnit) !== null && _c !== void 0 ? _c : 'kilometers',
                 distanceStep: (_d = options === null || options === void 0 ? void 0 : options.distanceStep) !== null && _d !== void 0 ? _d : 5,
+                outputFormat: (_e = options === null || options === void 0 ? void 0 : options.outputFormat) !== null && _e !== void 0 ? _e : 'jpeg',
+                jpegQuality: (_f = options === null || options === void 0 ? void 0 : options.jpegQuality) !== null && _f !== void 0 ? _f : 80,
             };
             // Convert filter configuration for native bridge
             if (options === null || options === void 0 ? void 0 : options.filter) {
@@ -253,6 +257,25 @@ export class ExifGalleryImpl {
                 }
                 if (pickOptions.distanceStep > 25) {
                     throw new FilterError('distanceStep must not exceed 25 km');
+                }
+            }
+            // Validate outputFormat
+            if (pickOptions.outputFormat !== undefined) {
+                const validFormats = ['original', 'jpeg'];
+                if (!validFormats.includes(pickOptions.outputFormat)) {
+                    throw new FilterError(`outputFormat must be one of: ${validFormats.join(', ')}`);
+                }
+            }
+            // Validate jpegQuality
+            if (pickOptions.jpegQuality !== undefined) {
+                if (typeof pickOptions.jpegQuality !== 'number' || !isFinite(pickOptions.jpegQuality)) {
+                    throw new FilterError('jpegQuality must be a finite number');
+                }
+                if (pickOptions.jpegQuality < 1) {
+                    throw new FilterError('jpegQuality must be at least 1');
+                }
+                if (pickOptions.jpegQuality > 100) {
+                    throw new FilterError('jpegQuality must not exceed 100');
                 }
             }
             // 5. Call native layer via Capacitor Bridge

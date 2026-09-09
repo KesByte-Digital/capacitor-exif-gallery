@@ -941,6 +941,7 @@ var capacitorExifGalleryPlugin = (function (exports, core) {
     var emptyMessage$3 = "Keine Bilder gefunden";
     var errorMessage$3 = "Ein Fehler ist aufgetreten";
     var retryButton$3 = "Erneut versuchen";
+    var exportingMessage$3 = "Bild {count} von {total} wird vorbereitet...";
     var initializationError$3 = "Plugin nicht initialisiert. Rufen Sie zuerst initialize() auf.";
     var permissionError$3 = "Berechtigung verweigert. Bitte gewähren Sie Zugriff auf Ihre Fotobibliothek.";
     var filterError$3 = "Ungültige Filter-Parameter. Bitte überprüfen Sie Ihre Konfiguration.";
@@ -960,6 +961,7 @@ var capacitorExifGalleryPlugin = (function (exports, core) {
     	emptyMessage: emptyMessage$3,
     	errorMessage: errorMessage$3,
     	retryButton: retryButton$3,
+    	exportingMessage: exportingMessage$3,
     	initializationError: initializationError$3,
     	permissionError: permissionError$3,
     	filterError: filterError$3
@@ -980,6 +982,7 @@ var capacitorExifGalleryPlugin = (function (exports, core) {
     var emptyMessage$2 = "No images found";
     var errorMessage$2 = "An error occurred";
     var retryButton$2 = "Retry";
+    var exportingMessage$2 = "Preparing image {count} of {total}...";
     var initializationError$2 = "Plugin not initialized. Call initialize() first.";
     var permissionError$2 = "Permission denied. Please grant access to your photo library.";
     var filterError$2 = "Invalid filter parameters. Please check your configuration.";
@@ -999,6 +1002,7 @@ var capacitorExifGalleryPlugin = (function (exports, core) {
     	emptyMessage: emptyMessage$2,
     	errorMessage: errorMessage$2,
     	retryButton: retryButton$2,
+    	exportingMessage: exportingMessage$2,
     	initializationError: initializationError$2,
     	permissionError: permissionError$2,
     	filterError: filterError$2
@@ -1019,6 +1023,7 @@ var capacitorExifGalleryPlugin = (function (exports, core) {
     var emptyMessage$1 = "No se encontraron imágenes";
     var errorMessage$1 = "Ocurrió un error";
     var retryButton$1 = "Reintentar";
+    var exportingMessage$1 = "Preparando imagen {count} de {total}...";
     var initializationError$1 = "Plugin no inicializado. Llame primero a initialize().";
     var permissionError$1 = "Permiso denegado. Por favor, conceda acceso a su biblioteca de fotos.";
     var filterError$1 = "Parámetros de filtro inválidos. Por favor, verifique su configuración.";
@@ -1038,6 +1043,7 @@ var capacitorExifGalleryPlugin = (function (exports, core) {
     	emptyMessage: emptyMessage$1,
     	errorMessage: errorMessage$1,
     	retryButton: retryButton$1,
+    	exportingMessage: exportingMessage$1,
     	initializationError: initializationError$1,
     	permissionError: permissionError$1,
     	filterError: filterError$1
@@ -1058,6 +1064,7 @@ var capacitorExifGalleryPlugin = (function (exports, core) {
     var emptyMessage = "Aucune image trouvée";
     var errorMessage = "Une erreur s'est produite";
     var retryButton = "Réessayer";
+    var exportingMessage = "Préparation de l'image {count} sur {total}...";
     var initializationError = "Plugin non initialisé. Appelez d'abord initialize().";
     var permissionError = "Permission refusée. Veuillez autoriser l'accès à votre photothèque.";
     var filterError = "Paramètres de filtre invalides. Veuillez vérifier votre configuration.";
@@ -1077,6 +1084,7 @@ var capacitorExifGalleryPlugin = (function (exports, core) {
     	emptyMessage: emptyMessage,
     	errorMessage: errorMessage,
     	retryButton: retryButton,
+    	exportingMessage: exportingMessage,
     	initializationError: initializationError,
     	permissionError: permissionError,
     	filterError: filterError
@@ -1280,6 +1288,7 @@ var capacitorExifGalleryPlugin = (function (exports, core) {
         'emptyMessage',
         'errorMessage',
         'retryButton',
+        'exportingMessage',
         'initializationError',
         'permissionError',
         'filterError',
@@ -1417,6 +1426,8 @@ var capacitorExifGalleryPlugin = (function (exports, core) {
          * - filter.timeRange.end: End date/time (must be after start)
          * - fallbackThreshold: Minimum images to show filter UI (default: 5)
          * - allowManualAdjustment: Allow user to adjust filters (default: true)
+         * - outputFormat: 'jpeg' (default) or 'original' (default guarantees JPEG output, fixing HEIC uploads)
+         * - jpegQuality: 1-100, only used when outputFormat is 'jpeg' (default: 80, upload-optimized)
          *
          * @param options - Optional picker configuration
          * @returns Promise<PickResult> with selected images array and cancelled flag
@@ -1470,7 +1481,7 @@ var capacitorExifGalleryPlugin = (function (exports, core) {
          * ```
          */
         async pick(options) {
-            var _a, _b, _c, _d;
+            var _a, _b, _c, _d, _e, _f;
             const state = PluginState.getInstance();
             // 1. Verify plugin is initialized
             if (!state.isInitialized()) {
@@ -1493,6 +1504,8 @@ var capacitorExifGalleryPlugin = (function (exports, core) {
                     hasActiveFilters: this.hasActiveFilters(options), // Story 8.2: Detect active filters
                     distanceUnit: (_c = options === null || options === void 0 ? void 0 : options.distanceUnit) !== null && _c !== void 0 ? _c : 'kilometers',
                     distanceStep: (_d = options === null || options === void 0 ? void 0 : options.distanceStep) !== null && _d !== void 0 ? _d : 5,
+                    outputFormat: (_e = options === null || options === void 0 ? void 0 : options.outputFormat) !== null && _e !== void 0 ? _e : 'jpeg',
+                    jpegQuality: (_f = options === null || options === void 0 ? void 0 : options.jpegQuality) !== null && _f !== void 0 ? _f : 80,
                 };
                 // Convert filter configuration for native bridge
                 if (options === null || options === void 0 ? void 0 : options.filter) {
@@ -1545,6 +1558,25 @@ var capacitorExifGalleryPlugin = (function (exports, core) {
                     }
                     if (pickOptions.distanceStep > 25) {
                         throw new FilterError('distanceStep must not exceed 25 km');
+                    }
+                }
+                // Validate outputFormat
+                if (pickOptions.outputFormat !== undefined) {
+                    const validFormats = ['original', 'jpeg'];
+                    if (!validFormats.includes(pickOptions.outputFormat)) {
+                        throw new FilterError(`outputFormat must be one of: ${validFormats.join(', ')}`);
+                    }
+                }
+                // Validate jpegQuality
+                if (pickOptions.jpegQuality !== undefined) {
+                    if (typeof pickOptions.jpegQuality !== 'number' || !isFinite(pickOptions.jpegQuality)) {
+                        throw new FilterError('jpegQuality must be a finite number');
+                    }
+                    if (pickOptions.jpegQuality < 1) {
+                        throw new FilterError('jpegQuality must be at least 1');
+                    }
+                    if (pickOptions.jpegQuality > 100) {
+                        throw new FilterError('jpegQuality must not exceed 100');
                     }
                 }
                 // 5. Call native layer via Capacitor Bridge

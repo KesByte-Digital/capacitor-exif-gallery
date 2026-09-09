@@ -31,6 +31,7 @@ the user selects images:
 - ✅ Filter by date/time range
 - ✅ Combine location + time filters (AND logic)
 - ✅ Extract EXIF metadata (GPS, timestamps)
+- ✅ Guaranteed JPEG output by default (fixes HEIC upload failures automatically)
 - ✅ Intelligent fallback when too few results
 - ✅ Native UI in English, German, French, Spanish
 - ✅ Custom UI text overrides
@@ -315,6 +316,44 @@ result.images.forEach(image => {
 });
 ```
 
+### Output Format (HEIC vs. JPEG)
+
+iPhone cameras record photos as HEIC by default since iOS 11. Many upload backends and image
+libraries can't process HEIC, which causes uploads to fail. By default, Exif Gallery guarantees
+JPEG output — no extra code required:
+
+```typescript
+// Default: any non-JPEG source (e.g. HEIC) is transcoded to JPEG automatically.
+// Already-JPEG sources are passed through unchanged (no re-encoding, no extra cost).
+const result = await ExifGallery.pick();
+
+result.images.forEach(image => {
+  console.log(`MIME type: ${image.mimeType}`);   // always 'image/jpeg' with the default
+  console.log(`Converted: ${image.converted}`);   // true if this file was transcoded
+});
+```
+
+Opt out to receive the original file bytes untouched (e.g. for lossless archival), and tune
+the JPEG quality when you do transcode:
+
+```typescript
+// Keep original bytes (HEIC, PNG, DNG, ...) - no conversion cost.
+// The file extension always matches the actual content.
+const original = await ExifGallery.pick({ outputFormat: 'original' });
+
+// Transcode to JPEG with higher quality than the upload-optimized default (80).
+const highQuality = await ExifGallery.pick({ outputFormat: 'jpeg', jpegQuality: 90 });
+```
+
+**Performance note:** Transcoding HEIC to JPEG has a real per-image cost (roughly 150ms-1s
+depending on resolution and device) and produces larger files than HEIC. For selections larger
+than a few images, the gallery shows a native progress indicator during export.
+
+**Migrating from an earlier version?** If your app relies on receiving the untouched original
+bytes (e.g. you handle HEIC server-side already), set `outputFormat: 'original'` — the default
+changed from "return original bytes" to "guarantee JPEG" to fix HEIC uploads for everyone else
+without requiring a code change.
+
 ### Custom UI Text
 
 Override default translations with custom text in any language.
@@ -544,6 +583,8 @@ Options for the `pick()` method.
 | **filter** | `FilterConfig` | Optional filter configuration to pre-configure the gallery. If not provided, user can manually set filters in the gallery UI. |
 | **fallbackThreshold** | `number` | Minimum number of results before automatic fallback to time filter. If location filter returns fewer images, plugin switches to time-based filtering. Default: `5` |
 | **allowManualAdjustment** | `boolean` | Allow user to manually adjust filters in the gallery UI. Default: `true`. Set to `false` to enforce the provided filter configuration. |
+| **outputFormat** | `'original' \| 'jpeg'` | Format of the returned files. `'jpeg'` (default) guarantees JPEG output, transcoding non-JPEG sources such as HEIC. `'original'` returns the file bytes as-is, with an extension matching the actual content. *Since 1.1.0.* |
+| **jpegQuality** | `number` | JPEG quality 1-100, used only when `outputFormat` is `'jpeg'` and the source needs transcoding. Default: `80` (upload-optimized). *Since 1.1.0.* |
 
 **Example:**
 ```typescript
@@ -555,7 +596,9 @@ const options: PickOptions = {
     }
   },
   fallbackThreshold: 10,
-  allowManualAdjustment: true
+  allowManualAdjustment: true,
+  outputFormat: 'jpeg',
+  jpegQuality: 80
 };
 
 const result = await ExifGallery.pick(options);
@@ -597,6 +640,8 @@ Single image result from `pick()`.
 | **uri** | `string` | File URI for the image (`file://` path). Can be used to display or upload the image. |
 | **exif** | `ImageExif \| undefined` | EXIF metadata if available. May be undefined if image has no EXIF data. |
 | **filteredBy** | `'time' \| 'location'` | How this image was filtered: `'location'` = matched location filter, `'time'` = matched time filter (or fallback from location filter). |
+| **mimeType** | `string \| undefined` | MIME type of the file at `uri` (e.g. `'image/jpeg'`, `'image/heic'`), always reflecting the actual file content regardless of `outputFormat`. *Since 1.1.0.* |
+| **converted** | `boolean \| undefined` | `true` if this file was transcoded by the plugin, `false` if byte-identical to the source. *Since 1.1.0.* |
 
 **Example:**
 ```typescript
@@ -750,6 +795,7 @@ Complete set of UI text keys used by the plugin. All keys are available for cust
 | `emptyMessage` | "No images found" message |
 | `errorMessage` | "An error occurred" message |
 | `retryButton` | "Retry" button text |
+| `exportingMessage` | Progress message shown while exporting/converting images (supports `{count}` and `{total}` placeholders). *Since 1.1.0.* |
 | `initializationError` | "Plugin not initialized" error |
 | `permissionError` | "Permission denied" error |
 | `filterError` | "Invalid filter parameters" error |
@@ -776,6 +822,14 @@ Supported languages for built-in translations.
 
 ```typescript
 type SupportedLocale = 'en' | 'de' | 'fr' | 'es';
+```
+
+#### OutputFormat
+
+Output format for returned image files. *Since 1.1.0.*
+
+```typescript
+type OutputFormat = 'original' | 'jpeg';
 ```
 
 ---

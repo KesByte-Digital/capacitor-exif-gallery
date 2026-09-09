@@ -14,6 +14,7 @@
     "emptyMessage": "No images found",
     "errorMessage": "An error occurred",
     "retryButton": "Retry",
+    "exportingMessage": "Preparing image {count} of {total}...",
     "initializationError": "Plugin not initialized. Call initialize() first.",
     "permissionError": "Permission denied. Please grant access to your photo library.",
     "filterError": "Invalid filter parameters. Please check your configuration."

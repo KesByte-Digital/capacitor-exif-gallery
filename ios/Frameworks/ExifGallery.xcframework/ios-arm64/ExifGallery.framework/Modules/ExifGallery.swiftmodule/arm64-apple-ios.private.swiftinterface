@@ -6,9 +6,11 @@ import Capacitor
 import CoreLocation
 import CryptoKit
 import Foundation
+import ImageIO
 import Photos
 import Swift
 import UIKit
+import UniformTypeIdentifiers
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims

@@ -10,6 +10,8 @@ export interface PickResult {
       lng?: number;
       timestamp?: Date;
     };
+    mimeType?: string; // Actual MIME type of the file, e.g. 'image/jpeg', 'image/heic' (@since 1.1.0)
+    converted?: boolean; // true if the plugin transcoded this file (@since 1.1.0)
     [key: string]: any;
   }>;
   cancelled?: boolean;
@@ -34,6 +36,8 @@ export interface PickOptions {
   filter?: FilterOptions;
   distanceUnit?: 'kilometers' | 'miles';
   distanceStep?: number;
+  outputFormat?: 'original' | 'jpeg'; // @since 1.1.0
+  jpegQuality?: number; // @since 1.1.0
 }
 
 @Injectable({
@@ -131,8 +135,16 @@ export class Gallery {
       filteredImages = filteredImages.filter((img) => img.exif?.lat && img.exif?.lng);
     }
 
+    // Simulate outputFormat (@since 1.1.0): picsum.photos always serves JPEG, so both
+    // 'original' and 'jpeg' are a no-op passthrough here - there's no HEIC source to convert on web.
+    const imagesWithFormat = filteredImages.map((img) => ({
+      ...img,
+      mimeType: 'image/jpeg',
+      converted: false,
+    }));
+
     return {
-      images: filteredImages,
+      images: imagesWithFormat,
       cancelled: false,
       filterExecutionTimeMs: Math.random() * 500 + 50, // Mock: 50-550ms
     };
@@ -148,7 +160,13 @@ export class Gallery {
   /**
    * Pick images with location filter
    */
-  async pickWithLocationFilter(latitude: number, longitude: number, radiusKm: number): Promise<PickResult> {
+  async pickWithLocationFilter(
+    latitude: number,
+    longitude: number,
+    radiusKm: number,
+    outputFormat: 'original' | 'jpeg' = 'jpeg',
+    jpegQuality = 80,
+  ): Promise<PickResult> {
     if (this.isWebPlatform()) {
       return this.getMockImages({
         filter: {
@@ -169,13 +187,20 @@ export class Gallery {
       },
       distanceUnit: 'kilometers',
       distanceStep: 5,
+      outputFormat,
+      jpegQuality,
     });
   }
 
   /**
    * Pick images with polyline filter
    */
-  async pickWithPolylineFilter(points: Array<{ lat: number; lng: number }>, toleranceKm: number): Promise<PickResult> {
+  async pickWithPolylineFilter(
+    points: Array<{ lat: number; lng: number }>,
+    toleranceKm: number,
+    outputFormat: 'original' | 'jpeg' = 'jpeg',
+    jpegQuality = 80,
+  ): Promise<PickResult> {
     if (this.isWebPlatform()) {
       return this.getMockImages({
         filter: {
@@ -196,13 +221,20 @@ export class Gallery {
       },
       distanceUnit: 'kilometers',
       distanceStep: 5,
+      outputFormat,
+      jpegQuality,
     });
   }
 
   /**
    * Pick images with time range filter
    */
-  async pickWithTimeRangeFilter(startDate: Date, endDate: Date): Promise<PickResult> {
+  async pickWithTimeRangeFilter(
+    startDate: Date,
+    endDate: Date,
+    outputFormat: 'original' | 'jpeg' = 'jpeg',
+    jpegQuality = 80,
+  ): Promise<PickResult> {
     if (this.isWebPlatform()) {
       return this.getMockImages({
         filter: {
@@ -223,6 +255,8 @@ export class Gallery {
       },
       distanceUnit: 'kilometers',
       distanceStep: 5,
+      outputFormat,
+      jpegQuality,
     });
   }
 

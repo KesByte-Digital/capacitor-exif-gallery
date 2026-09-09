@@ -244,7 +244,9 @@ async function pickImagesAdvanced() {
     distanceUnit: 'kilometers',
     distanceStep: 10,
     fallbackThreshold: 5,
-    allowManualAdjustment: true
+    allowManualAdjustment: true,
+    outputFormat: 'jpeg', // Default: guarantees JPEG output, fixes HEIC uploads
+    jpegQuality: 80
   });
 
   if (result.cancelled) {
@@ -292,6 +294,8 @@ interface PickOptions {
   allowManualAdjustment?: boolean;
   distanceUnit?: 'kilometers' | 'miles';
   distanceStep?: number;
+  outputFormat?: 'original' | 'jpeg';  // Default: 'jpeg' (fixes HEIC uploads)
+  jpegQuality?: number;                // Default: 80, only used when transcoding
 }
 
 // Filter configuration
@@ -322,6 +326,8 @@ interface ImageResult {
   webPath?: string;               // Web-safe path for <img>
   exif?: ImageExif;               // EXIF metadata
   filteredBy: 'location' | 'time';
+  mimeType?: string;               // Actual MIME type, e.g. 'image/jpeg', 'image/heic'
+  converted?: boolean;             // true if the plugin transcoded this file
 }
 
 interface ImageExif {
@@ -334,7 +340,13 @@ interface ImageExif {
   /**
    * Get code example for location filter
    */
-  getLocationFilterExample(latitude: number, longitude: number, radiusKm: number): string {
+  getLocationFilterExample(
+    latitude: number,
+    longitude: number,
+    radiusKm: number,
+    outputFormat: 'original' | 'jpeg' = 'jpeg',
+    jpegQuality = 80,
+  ): string {
     return `import { ExifGallery } from '@kesbyte/capacitor-exif-gallery';
 
 async function pickNearbyImages() {
@@ -348,7 +360,9 @@ async function pickNearbyImages() {
       }
     },
     distanceUnit: 'kilometers',
-    distanceStep: 5
+    distanceStep: 5,
+    outputFormat: '${outputFormat}', // 'jpeg' (default) fixes HEIC uploads automatically
+    jpegQuality: ${jpegQuality}
   });
 
   return result.images;
@@ -364,6 +378,8 @@ pickNearbyImages();`;
     routeName: string,
     points: Array<{ lat: number; lng: number; label?: string }>,
     toleranceKm: number,
+    outputFormat: 'original' | 'jpeg' = 'jpeg',
+    jpegQuality = 80,
   ): string {
     const pointsCode = points
       .map(
@@ -386,7 +402,9 @@ ${pointsCode}
       }
     },
     distanceUnit: 'kilometers',
-    distanceStep: 5
+    distanceStep: 5,
+    outputFormat: '${outputFormat}', // 'jpeg' (default) fixes HEIC uploads automatically
+    jpegQuality: ${jpegQuality}
   });
 
   return result.images;
@@ -444,7 +462,12 @@ pickWithEncodedPolyline();`;
   /**
    * Get code example for time range filter
    */
-  getTimeRangeFilterExample(startDate: Date, endDate: Date): string {
+  getTimeRangeFilterExample(
+    startDate: Date,
+    endDate: Date,
+    outputFormat: 'original' | 'jpeg' = 'jpeg',
+    jpegQuality = 80,
+  ): string {
     const startStr = startDate.toISOString().split('T')[0];
     const endStr = endDate.toISOString().split('T')[0];
 
@@ -459,7 +482,9 @@ async function pickImagesByDate() {
       }
     },
     distanceUnit: 'kilometers',
-    distanceStep: 5
+    distanceStep: 5,
+    outputFormat: '${outputFormat}', // 'jpeg' (default) fixes HEIC uploads automatically
+    jpegQuality: ${jpegQuality}
   });
 
   return result.images;

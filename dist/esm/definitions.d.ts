@@ -9,6 +9,12 @@ export type SupportedLocale = 'en' | 'de' | 'fr' | 'es';
  */
 export type DistanceUnit = 'kilometers' | 'miles';
 /**
+ * Output format for returned image files.
+ *
+ * @since 1.1.0
+ */
+export type OutputFormat = 'original' | 'jpeg';
+/**
  * Complete set of UI text keys used by the plugin.
  * All keys are required for a complete translation.
  */
@@ -45,6 +51,8 @@ export interface TranslationSet {
     errorMessage: string;
     /** "Retry" button text */
     retryButton: string;
+    /** Progress message shown while images are being exported/converted. Placeholders: {count}, {total} */
+    exportingMessage: string;
     /** "Plugin not initialized" error */
     initializationError: string;
     /** "Permission denied" error */
@@ -340,6 +348,59 @@ export interface PickOptions {
      * ```
      */
     distanceStep?: number;
+    /**
+     * Format of the returned image files.
+     *
+     * - `'jpeg'` (Default): Guarantees JPEG output. Non-JPEG sources (most notably HEIC from
+     *   iPhone cameras) are transcoded natively. Files that are already JPEG are passed through
+     *   unchanged (no re-encoding). EXIF, GPS, and orientation metadata are preserved.
+     * - `'original'`: Returns the file bytes exactly as stored in the photo library
+     *   (HEIC, JPEG, PNG, DNG, ...). The file extension always matches the actual content.
+     *
+     * **Why the default is `'jpeg'`:** iPhone cameras record HEIC by default since iOS 11. Many
+     * server-side image libraries and non-Apple platforms cannot process HEIC, which causes
+     * uploads to fail. Guaranteeing JPEG output fixes this for every caller without extra code.
+     * If your app needs the untouched original bytes, set this to `'original'` explicitly.
+     *
+     * **Performance:** Converting HEIC to JPEG adds real per-image cost (roughly 150ms-1s
+     * depending on resolution and device) and increases file size compared to HEIC. See the
+     * `jpegQuality` option to tune the size/quality trade-off.
+     *
+     * @default 'jpeg'
+     * @since 1.1.0
+     *
+     * @example
+     * ```typescript
+     * // Default: guaranteed JPEG, safe for any upload backend
+     * const result = await ExifGallery.pick();
+     *
+     * // Opt out: keep original bytes (e.g. HEIC), no conversion cost
+     * const result = await ExifGallery.pick({ outputFormat: 'original' });
+     * ```
+     */
+    outputFormat?: OutputFormat;
+    /**
+     * JPEG quality (1-100) used when `outputFormat` is `'jpeg'` and the source image needs to be
+     * transcoded. Has no effect on `outputFormat: 'original'` or on sources that are already JPEG
+     * (passed through without re-encoding).
+     *
+     * **Default:** `80` - deliberately tuned for upload scenarios (smaller files, faster
+     * transfers) rather than maximum visual fidelity. Increase it if your use case needs higher
+     * quality (e.g. `90`, matching `@capacitor/camera`'s default).
+     *
+     * @default 80
+     * @since 1.1.0
+     *
+     * @example
+     * ```typescript
+     * // Higher quality, larger files
+     * await ExifGallery.pick({ outputFormat: 'jpeg', jpegQuality: 90 });
+     *
+     * // Smaller files, more compression
+     * await ExifGallery.pick({ outputFormat: 'jpeg', jpegQuality: 60 });
+     * ```
+     */
+    jpegQuality?: number;
 }
 /**
  * EXIF metadata extracted from an image.
@@ -381,6 +442,21 @@ export interface ImageResult {
      * - 'time': Matched time filter (or fallback from location filter)
      */
     filteredBy: 'location' | 'time';
+    /**
+     * MIME type of the file at `uri`, e.g. `'image/jpeg'`, `'image/heic'`, `'image/png'`.
+     * Always reflects the actual file content, regardless of `outputFormat`.
+     *
+     * @since 1.1.0
+     */
+    mimeType?: string;
+    /**
+     * `true` if this file was transcoded by the plugin (see `PickOptions.outputFormat`).
+     * `false` if the file is byte-identical to the source (either `outputFormat: 'original'`,
+     * or the source was already in the requested format).
+     *
+     * @since 1.1.0
+     */
+    converted?: boolean;
 }
 /**
  * Result from pick() method.
@@ -521,6 +597,10 @@ export interface ExifGalleryPlugin {
      *   fallbackThreshold: 10,
      *   allowManualAdjustment: false
      * });
+     *
+     * // Output format: JPEG is the default (fixes HEIC upload issues automatically).
+     * // Opt out to receive original bytes (e.g. HEIC) without conversion cost:
+     * const originalResult = await ExifGallery.pick({ outputFormat: 'original' });
      *
      * // Handle result
      * if (!result.cancelled) {

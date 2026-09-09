@@ -14,6 +14,7 @@
     "emptyMessage": "Aucune image trouvée",
     "errorMessage": "Une erreur s'est produite",
     "retryButton": "Réessayer",
+    "exportingMessage": "Préparation de l'image {count} sur {total}...",
     "initializationError": "Plugin non initialisé. Appelez d'abord initialize().",
     "permissionError": "Permission refusée. Veuillez autoriser l'accès à votre photothèque.",
     "filterError": "Paramètres de filtre invalides. Veuillez vérifier votre configuration."

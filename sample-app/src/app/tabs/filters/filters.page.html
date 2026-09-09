@@ -8,6 +8,54 @@
     <p class="hero-subtitle">Test location, polyline, and time range filters with adjustable parameters</p>
   </div>
 
+  <!-- Output Format Card (@since 1.1.0) - applies to all filters below -->
+  <div class="filter-card filter-card-output">
+    <div class="filter-card-header">
+      <div class="filter-icon-wrapper icon-blue">
+        <ion-icon name="image-outline"></ion-icon>
+      </div>
+      <h3>Output Format</h3>
+    </div>
+
+    <div class="filter-parameters">
+      <ion-segment [(ngModel)]="outputFormat" class="output-format-segment">
+        <ion-segment-button value="jpeg">
+          <ion-label>JPEG (default)</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="original">
+          <ion-label>Original</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+      <p class="output-format-hint">
+        <span *ngIf="outputFormat === 'jpeg'"
+          >HEIC and other non-JPEG sources (e.g. from an iPhone camera) are converted to JPEG automatically.
+          Already-JPEG sources pass through unchanged.</span
+        >
+        <span *ngIf="outputFormat === 'original'"
+          >Returns the original file bytes (e.g. HEIC) without conversion. The file extension always matches the actual
+          content.</span
+        >
+      </p>
+
+      <ng-container *ngIf="outputFormat === 'jpeg'">
+        <div class="filter-param-row">
+          <label>JPEG Quality</label>
+          <span class="param-value">{{ jpegQuality }}</span>
+        </div>
+        <ion-range
+          [min]="1"
+          [max]="100"
+          [value]="jpegQuality"
+          [pin]="true"
+          class="filter-slider"
+          (ionChange)="onJpegQualityChange($event)"
+        >
+        </ion-range>
+      </ng-container>
+    </div>
+  </div>
+
   <!-- Location Filter Card -->
   <div class="filter-card filter-card-location">
     <div class="filter-card-header">
@@ -213,6 +261,9 @@
       <div *ngIf="resultCount > 0" class="filters-image-grid">
         <button *ngFor="let image of resultImages.slice(0, 12)" class="grid-item" (click)="previewImage(image)">
           <img [src]="getImageSrc(image)" alt="Gallery Image" loading="lazy" />
+          <span *ngIf="image.mimeType" class="grid-item-badge"
+            >{{ image.converted ? 'JPEG (converted)' : image.mimeType }}</span
+          >
         </button>
       </div>
 

@@ -202,6 +202,7 @@ TranslationLoader.REQUIRED_KEYS = [
     'emptyMessage',
     'errorMessage',
     'retryButton',
+    'exportingMessage',
     'initializationError',
     'permissionError',
     'filterError',

@@ -739,6 +739,34 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ExifGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "Photos",
+        "printedName": "Photos",
+        "declKind": "Import",
+        "moduleName": "ExifGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "ImageIO",
+        "printedName": "ImageIO",
+        "declKind": "Import",
+        "moduleName": "ExifGallery"
+      },
+      {
+        "kind": "Import",
+        "name": "UniformTypeIdentifiers",
+        "printedName": "UniformTypeIdentifiers",
+        "declKind": "Import",
+        "moduleName": "ExifGallery"
+      },
+      {
+        "kind": "Import",
         "name": "Photos",
         "printedName": "Photos",
         "declKind": "Import",
@@ -2719,6 +2747,13 @@
       "value": "true"
     },
     {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/ImageExporter.swift",
+      "kind": "StringLiteral",
+      "offset": 2468,
+      "length": 14,
+      "value": "\"exif-gallery\""
+    },
+    {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/ImageFilterCoordinator.swift",
       "kind": "IntegerLiteral",
       "offset": 3502,
@@ -2762,45 +2797,59 @@
     },
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/ImageGalleryViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1988,
+      "length": 2,
+      "value": "80"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/ImageGalleryViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2571,
+      "offset": 2897,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/ImageGalleryViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2693,
+      "offset": 3019,
       "length": 3,
       "value": "200"
     },
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/ImageGalleryViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2706,
+      "offset": 3032,
       "length": 3,
       "value": "200"
     },
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/ImageGalleryViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4206,
+      "offset": 4532,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/ImageGalleryViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4245,
+      "offset": 4571,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/ImageGalleryViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 4306,
+      "offset": 4632,
       "length": 1,
       "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/ImageGalleryViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4770,
+      "length": 2,
+      "value": "80"
     },
     {
       "filePath": "\/Users\/runner\/work\/capacitor-image-gallery\/capacitor-image-gallery\/ios\/Sources\/ExifGalleryPlugin\/License\/LicenseValidator.swift",

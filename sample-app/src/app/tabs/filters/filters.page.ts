@@ -39,9 +39,13 @@ export class FiltersPage implements OnInit {
   startDate: string;
   endDate: string;
 
+  // Output format state (@since 1.1.0) - applies to all three filters below
+  outputFormat: 'jpeg' | 'original' = 'jpeg';
+  jpegQuality = 80;
+
   // Results state
   showResults = false;
-  resultImages: Array<{ uri: string }> = [];
+  resultImages: Array<{ uri: string; mimeType?: string; converted?: boolean }> = [];
   resultCount = 0;
   resultTime = 0;
   resultFilterName = '';
@@ -133,6 +137,13 @@ export class FiltersPage implements OnInit {
   }
 
   /**
+   * Update JPEG quality value display (@since 1.1.0)
+   */
+  onJpegQualityChange(event: any) {
+    this.jpegQuality = event.detail.value;
+  }
+
+  /**
    * Run location filter
    */
   async runLocationFilter() {
@@ -147,6 +158,8 @@ export class FiltersPage implements OnInit {
         this.locationLatitude,
         this.locationLongitude,
         this.radiusKm,
+        this.outputFormat,
+        this.jpegQuality,
       );
 
       if (result.cancelled) {
@@ -194,7 +207,12 @@ export class FiltersPage implements OnInit {
       const points = this.routesService.routeToPolyline(this.selectedRoute);
 
       // Native gallery opens (has its own loading indicator)
-      const result = await this.galleryService.pickWithPolylineFilter(points, this.toleranceKm);
+      const result = await this.galleryService.pickWithPolylineFilter(
+        points,
+        this.toleranceKm,
+        this.outputFormat,
+        this.jpegQuality,
+      );
 
       if (result.cancelled) {
         return;
@@ -237,7 +255,7 @@ export class FiltersPage implements OnInit {
       const end = new Date(this.endDate);
 
       // Native gallery opens (has its own loading indicator)
-      const result = await this.galleryService.pickWithTimeRangeFilter(start, end);
+      const result = await this.galleryService.pickWithTimeRangeFilter(start, end, this.outputFormat, this.jpegQuality);
 
       if (result.cancelled) {
         return;
@@ -326,6 +344,8 @@ export class FiltersPage implements OnInit {
       this.locationLatitude,
       this.locationLongitude,
       this.radiusKm,
+      this.outputFormat,
+      this.jpegQuality,
     );
     await this.showCodeModal('Location Filter', code);
   }
@@ -343,6 +363,8 @@ export class FiltersPage implements OnInit {
       this.selectedRoute.name,
       this.selectedRoute.points,
       this.toleranceKm,
+      this.outputFormat,
+      this.jpegQuality,
     );
     await this.showCodeModal('Polyline Filter', code);
   }
@@ -354,7 +376,7 @@ export class FiltersPage implements OnInit {
     const start = new Date(this.startDate);
     const end = new Date(this.endDate);
 
-    const code = this.codeExamplesService.getTimeRangeFilterExample(start, end);
+    const code = this.codeExamplesService.getTimeRangeFilterExample(start, end, this.outputFormat, this.jpegQuality);
     await this.showCodeModal('Time Range Filter', code);
   }
 

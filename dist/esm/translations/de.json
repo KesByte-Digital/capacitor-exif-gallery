@@ -14,6 +14,7 @@
     "emptyMessage": "Keine Bilder gefunden",
     "errorMessage": "Ein Fehler ist aufgetreten",
     "retryButton": "Erneut versuchen",
+    "exportingMessage": "Bild {count} von {total} wird vorbereitet...",
     "initializationError": "Plugin nicht initialisiert. Rufen Sie zuerst initialize() auf.",
     "permissionError": "Berechtigung verweigert. Bitte gewähren Sie Zugriff auf Ihre Fotobibliothek.",
     "filterError": "Ungültige Filter-Parameter. Bitte überprüfen Sie Ihre Konfiguration."
